@@ -1,10 +1,9 @@
 package com.example.passion.src.main.interfaces;
 
-import android.telecom.Call;
-
 import com.example.passion.src.main.models.DefaultResponse;
 
 import okhttp3.RequestBody;
+import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -12,8 +11,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface MainRetrofitInterface {
-//    @GET("/test")
-    @GET("/jwt")
+    @GET("/test")
     Call<DefaultResponse> getTest();
 
     @GET("/test/{number}")

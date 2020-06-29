@@ -1,15 +1,14 @@
 package com.example.passion.src.main;
 
+import com.example.passion.src.main.interfaces.MainActivityView;
+import com.example.passion.src.main.interfaces.MainRetrofitInterface;
 import com.example.passion.src.main.models.DefaultResponse;
-import com.softsquared.template.src.main.MainActivity;
-import com.softsquared.template.src.main.interfaces.MainActivityView;
-import com.softsquared.template.src.main.interfaces.MainRetrofitInterface;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.softsquared.template.src.ApplicationClass.getRetrofit;
+import static com.example.passion.src.ApplicationClass.getRetrofit;
 
 public class MainService {
     private final MainActivityView mMainActivityView;
