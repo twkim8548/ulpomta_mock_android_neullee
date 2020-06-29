@@ -1,4 +1,4 @@
-package com.example.passion.src.main.models;
+package com.example.passion.src.pallomain.models;
 
 import com.google.gson.annotations.SerializedName;
 

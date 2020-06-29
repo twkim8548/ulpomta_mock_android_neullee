@@ -1,6 +1,6 @@
-package com.example.passion.src.main.interfaces;
+package com.example.passion.src.pallomain.interfaces;
 
-import com.example.passion.src.main.models.DefaultResponse;
+import com.example.passion.src.pallomain.models.DefaultResponse;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;

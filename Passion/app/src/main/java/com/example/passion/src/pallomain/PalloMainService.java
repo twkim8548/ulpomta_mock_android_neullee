@@ -1,8 +1,8 @@
-package com.example.passion.src.main;
+package com.example.passion.src.pallomain;
 
-import com.example.passion.src.main.interfaces.MainActivityView;
-import com.example.passion.src.main.interfaces.MainRetrofitInterface;
-import com.example.passion.src.main.models.DefaultResponse;
+import com.example.passion.src.pallomain.interfaces.MainActivityView;
+import com.example.passion.src.pallomain.interfaces.MainRetrofitInterface;
+import com.example.passion.src.pallomain.models.DefaultResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -10,11 +10,11 @@ import retrofit2.Response;
 
 import static com.example.passion.src.ApplicationClass.getRetrofit;
 
-public class MainService {
+public class PalloMainService {
     private final MainActivityView mMainActivityView;
 
-    public MainService(final MainActivity mainActivityView) {
-        this.mMainActivityView = mainActivityView;
+    public PalloMainService(final PalloMainActivity palloMainActivityView) {
+        this.mMainActivityView = palloMainActivityView;
     }
 
     public void getTest() {

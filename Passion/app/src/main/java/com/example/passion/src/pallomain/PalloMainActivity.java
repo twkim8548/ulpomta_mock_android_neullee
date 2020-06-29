@@ -1,4 +1,4 @@
-package com.example.passion.src.main;
+package com.example.passion.src.pallomain;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,22 +7,22 @@ import androidx.annotation.Nullable;
 
 import com.example.passion.R;
 import com.example.passion.src.BaseActivity;
-import com.example.passion.src.main.interfaces.MainActivityView;
+import com.example.passion.src.pallomain.interfaces.MainActivityView;
 
-public class MainActivity extends BaseActivity implements MainActivityView {
+public class PalloMainActivity extends BaseActivity implements MainActivityView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_pallo);
 
     }
 
     private void tryGetTest() {
         showProgressDialog();
 
-        final MainService mainService = new MainService(this);
-        mainService.getTest();
+        final PalloMainService palloMainService = new PalloMainService(this);
+        palloMainService.getTest();
     }
 
     @Override

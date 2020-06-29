@@ -1,4 +1,4 @@
-package com.example.passion.src.main.interfaces;
+package com.example.passion.src.pallomain.interfaces;
 
 public interface MainActivityView {
 

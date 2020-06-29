@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".src.main.MainActivity">
+    tools:context=".src.pallomain.PalloMainActivity">
 
 
     <LinearLayout
@@ -19,13 +19,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/iv_main_study"
+            android:id="@+id/iv_palloMain_study"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_study" />
 
         <TextView
-            android:id="@+id/tv_main_study"
+            android:id="@+id/tv_palloMain_study"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -38,37 +38,37 @@
 
 
     <Button
-        android:id="@+id/btn_main_signIn_for_memvership"
+        android:id="@+id/btn_palloMain_signIn_for_memvership"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/button_stroke"
         android:text="@string/signIn_for_memvership"
         android:textColor="@color/colorOrange"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/use_without_signIn" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_palloMain_use_without_signIn" />
 
     <Button
-        android:id="@+id/use_without_signIn"
+        android:id="@+id/btn_palloMain_use_without_signIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/button_test"
         android:text="@string/use_without_signIn"
         android:textColor="@color/colorOrange"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/tv_main_pallo"
+        app:layout_constraintBottom_toTopOf="@id/tv_palloMain"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="20dp"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
-        android:id="@+id/tv_main_pallo"
+        android:id="@+id/tv_palloMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pallo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
