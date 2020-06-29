@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:padding="15dp"
     tools:context="com.example.passion.src.pallomain.models.PalloSignInForMembershipActivity">
 
     <ImageView
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/layout_palloSign"
+        android:id="@+id/layout_palloSign_Enter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -47,7 +47,6 @@
             android:backgroundTint="@color/colorGray"
             android:hint="@string/enterPW"
             android:paddingBottom="20dp" />
-
     </LinearLayout>
 
     <Button
@@ -61,9 +60,10 @@
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_palloSign" />
+        app:layout_constraintTop_toBottomOf="@id/layout_palloSign_Enter" />
 
     <LinearLayout
+        android:id="@+id/layout_palloSign_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -89,15 +89,90 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/findPW"
-            android:textSize="15dp"
-
-            />
-
+            android:textSize="15dp" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/layout_palloSign_or"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_palloSign_Login">
 
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            android:layout_weight="1"
+            android:background="@color/colorGray" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="@string/or"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp" />
 
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            android:layout_weight="1"
+            android:background="@color/colorGray" />
+    </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_palloSing_Login_kakao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_stroke"
+        android:text="@string/kakaoLogin"
+        android:textColor="@color/colorOrange"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/layout_palloSign_or" />
 
+    <Button
+        android:id="@+id/btn_palloSing_Login_naver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/button_stroke"
+        android:text="@string/naverLogin"
+        android:textColor="@color/colorOrange"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btn_palloSing_Login_kakao" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:text="@string/yetAccount"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/tv_palloSign_ToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/toLogin"
+            android:textColor="@color/colorOrange"
+            android:textStyle="bold" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

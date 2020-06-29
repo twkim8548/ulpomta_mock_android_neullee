@@ -12,6 +12,11 @@
     <string name="login">로그인</string>
     <string name="findEmail">이메일 찾기</string>
     <string name="findPW">비밀번호 찾기</string>
+    <string name="or">또는</string>
+    <string name="kakaoLogin">카카오톡으로 로그인</string>
+    <string name="naverLogin">네이버로 로그인</string>
+    <string name="yetAccount">아직 계정을 안만드셨나요?</string>
+    <string name="toLogin">가입하기</string>
 
 
 </resources>
