@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.softsquared.template.R;
+import com.example.passion.R;
 
 @SuppressLint("Registered")
 public class BaseActivity extends AppCompatActivity {

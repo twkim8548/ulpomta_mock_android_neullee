@@ -1,15 +1,13 @@
-package com.softsquared.template.src.main;
+package com.example.passion.src.main;
 
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import com.example.passion.R;
 import com.example.passion.src.BaseActivity;
-import com.example.passion.src.main.MainService;
 import com.example.passion.src.main.interfaces.MainActivityView;
-
-import om.softsquared.template.R;
 
 public class MainActivity extends BaseActivity implements MainActivityView {
 
