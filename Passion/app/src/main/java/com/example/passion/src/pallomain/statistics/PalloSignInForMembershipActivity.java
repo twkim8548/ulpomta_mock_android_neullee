@@ -1,4 +1,4 @@
-package com.example.passion.src.pallomain.models;
+package com.example.passion.src.pallomain.statistics;
 
 import android.os.Bundle;
 

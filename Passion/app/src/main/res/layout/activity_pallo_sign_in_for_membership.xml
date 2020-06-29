@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context="com.example.passion.src.pallomain.models.PalloSignInForMembershipActivity">
+    tools:context="com.example.passion.src.pallomain.statistics.PalloSignInForMembershipActivity">
 
     <ImageView
         android:id="@+id/iv_palloSign_keyboard_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/ic_keyboard_left"
         android:tint="@color/colorOrange"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -38,7 +38,9 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorGray"
             android:hint="@string/enterEmail"
-            android:paddingBottom="20dp" />
+            android:lines="1"
+            android:paddingBottom="20dp"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/et_palloSign_enterPW"
@@ -46,7 +48,10 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorGray"
             android:hint="@string/enterPW"
-            android:paddingBottom="20dp" />
+            android:inputType="textPassword"
+            android:lines="1"
+            android:paddingBottom="20dp"
+            android:textSize="15dp" />
     </LinearLayout>
 
     <Button

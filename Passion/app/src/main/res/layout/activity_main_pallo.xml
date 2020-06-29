@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".src.pallomain.PalloMainActivity">
+    tools:context=".src.pallomain.statistics.PalloMainActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_stroke"
-        android:text="@string/signIn_for_memvership"
+        android:text="@string/signInForMemvership"
         android:textColor="@color/colorOrange"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn_palloMain_use_without_signIn" />

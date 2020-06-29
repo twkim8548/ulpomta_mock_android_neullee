@@ -3,12 +3,13 @@
     <string name="loading">로딩중입니다.</string>
     <string name="network_error">네트워크 연결이 원활하지 않습니다.</string>
     <string name="study">공부,혼자 하지 말고 열품타에서 함께 하세요!</string>
-    <string name="signIn_for_memvership">회원가입 / 로그인</string>
+    <string name="signInForMemvership">회원가입 / 로그인</string>
     <string name="use_without_signIn">가입없이 이용하기</string>
     <string name="pallo">Pallo</string>
     <string name="account">계정</string>
     <string name="enterEmail">이메일 입력</string>
     <string name="enterPW">비밀번호 입력</string>
+    <string name="checkPW">비밀번호 확인</string>
     <string name="login">로그인</string>
     <string name="findEmail">이메일 찾기</string>
     <string name="findPW">비밀번호 찾기</string>
@@ -17,6 +18,11 @@
     <string name="naverLogin">네이버로 로그인</string>
     <string name="yetAccount">아직 계정을 안만드셨나요?</string>
     <string name="toLogin">가입하기</string>
+    <string name="passionTimer">열정 품은 타이머</string>
+    <string name="SignInMembership">회원가입</string>
+    <string name="findEmailAccount">이메일 계정 찾기</string>
+    <string name="checkEmailAccount">이메일 계정 확인</string>
+    <string name="information">﻿·\t이메일로 가입한 계정이 있는지 확인합니다.\n﻿·\t카카오톡/네이버로 가입했다면 이전화면에서\n\t\t카카오톡/네이버 아이콘을 클릭해주세요.</string>
 
 
 </resources>
