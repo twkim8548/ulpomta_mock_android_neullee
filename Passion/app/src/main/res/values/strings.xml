@@ -23,6 +23,10 @@
     <string name="findEmailAccount">이메일 계정 찾기</string>
     <string name="checkEmailAccount">이메일 계정 확인</string>
     <string name="information">﻿·\t이메일로 가입한 계정이 있는지 확인합니다.\n﻿·\t카카오톡/네이버로 가입했다면 이전화면에서\n\t\t카카오톡/네이버 아이콘을 클릭해주세요.</string>
+    <string name="makeNickname">닉네임 만들기</string>
+    <string name="enterNickname">사용할 닉네임을 입력해주세요</string>
+    <string name="letterByte">0/60 Bytes</string>
+
 
 
 </resources>

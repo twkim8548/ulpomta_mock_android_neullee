@@ -8,5 +8,6 @@
     <color name="colorGray">#CFD1D2</color>
     <color name="coloLightGray">#F3F3F3</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTransparentWhite">#85FFFFFF</color>
 
 </resources>
