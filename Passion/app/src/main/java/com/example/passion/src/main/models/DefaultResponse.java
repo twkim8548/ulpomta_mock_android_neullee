@@ -1,4 +1,4 @@
-package com.softsquared.template.src.main.models;
+package com.example.passion.src.main.models;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package com.softsquared.template.src.main.interfaces;
+package com.example.passion.src.main.interfaces;
 
 public interface MainActivityView {
 

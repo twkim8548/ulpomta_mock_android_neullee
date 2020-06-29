@@ -1,4 +1,4 @@
-package com.softsquared.template.config;
+package com.example.passion.config;
 
 import androidx.annotation.NonNull;
 

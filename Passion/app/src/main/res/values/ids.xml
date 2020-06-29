@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <item name="main_btn_hello_world" type="id" />
+</resources>

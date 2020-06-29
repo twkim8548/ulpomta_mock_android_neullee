@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/template_android.iml" filepath="$PROJECT_DIR$/template_android.iml" group="template_android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Template_android.iml" filepath="$PROJECT_DIR$/.idea/modules/Template_android.iml" group="Template_android" />
     </modules>
   </component>
 </project>

@@ -1,10 +1,10 @@
-package com.softsquared.template.src;
+package com.example.passion.src;
 
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.softsquared.template.config.XAccessTokenInterceptor;
+import com.example.passion.config.XAccessTokenInterceptor;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;

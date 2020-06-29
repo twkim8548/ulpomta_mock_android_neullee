@@ -1,4 +1,4 @@
-package com.softsquared.template.src;
+package com.example.passion.src;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;

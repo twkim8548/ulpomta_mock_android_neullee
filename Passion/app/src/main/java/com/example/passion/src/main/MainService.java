@@ -1,5 +1,7 @@
-package com.example.passion.src.main.models;
+package com.example.passion.src.main;
 
+import com.example.passion.src.main.models.DefaultResponse;
+import com.softsquared.template.src.main.MainActivity;
 import com.softsquared.template.src.main.interfaces.MainActivityView;
 import com.softsquared.template.src.main.interfaces.MainRetrofitInterface;
 
@@ -9,14 +11,14 @@ import retrofit2.Response;
 
 import static com.softsquared.template.src.ApplicationClass.getRetrofit;
 
-class MainService {
+public class MainService {
     private final MainActivityView mMainActivityView;
 
-    MainService(final MainActivityView mainActivityView) {
+    public MainService(final MainActivity mainActivityView) {
         this.mMainActivityView = mainActivityView;
     }
 
-    void getTest() {
+    public void getTest() {
         final MainRetrofitInterface mainRetrofitInterface = getRetrofit().create(MainRetrofitInterface.class);
         mainRetrofitInterface.getTest().enqueue(new Callback<DefaultResponse>() {
             @Override
