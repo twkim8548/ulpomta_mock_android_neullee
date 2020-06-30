@@ -6,6 +6,7 @@
     <color name="colorBlack">#000000</color>
     <color name="colorOrange">#F96E1E</color>
     <color name="colorGray">#CFD1D2</color>
+    <color name="colorDarkGray">#A3A3A3</color>
     <color name="coloLightGray">#F3F3F3</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorTransparentWhite">#85FFFFFF</color>

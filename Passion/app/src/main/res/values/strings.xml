@@ -26,6 +26,15 @@
     <string name="makeNickname">닉네임 만들기</string>
     <string name="enterNickname">사용할 닉네임을 입력해주세요</string>
     <string name="letterByte">0/60 Bytes</string>
+    <string name="completion">완료</string>
+    <string name="d_day">D-Day를 추가해주세요!</string>
+    <string name="date">오늘 날짜</string>
+    <string name="time">00 : 00 : 00</string>
+    <string name="goal">목표/과목</string>
+    <string name="rest">휴식 00시간 00분 00초</string>
+    <string name="studytime">공부시간</string>
+    <string name="addSubject">과목추가하기</string>
+    <string name="toic">토익</string>
 
 
 

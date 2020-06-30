@@ -15,7 +15,7 @@ public class PalloMainActivity extends BaseActivity implements MainActivityView 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pallo_find_pw);
+        setContentView(R.layout.frag1_main_home);
 
     }
 
