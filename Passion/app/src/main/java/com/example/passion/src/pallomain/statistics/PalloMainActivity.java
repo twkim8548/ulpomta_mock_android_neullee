@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import com.example.passion.R;
 import com.example.passion.src.BaseActivity;
 import com.example.passion.src.Main.statistics.CustomDialogClickListener;
+import com.example.passion.src.Main.statistics.OptionDialog;
 import com.example.passion.src.pallomain.PalloMainService;
 import com.example.passion.src.pallomain.interfaces.MainActivityView;
 
@@ -20,7 +21,7 @@ public class PalloMainActivity extends BaseActivity implements MainActivityView 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_frag1_main_home);
+        setContentView(R.layout.activity_main_pallo);
         test = findViewById(R.id.test);
 
 

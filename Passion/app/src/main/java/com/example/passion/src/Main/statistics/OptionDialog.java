@@ -1,24 +1,23 @@
-package com.example.passion.src.pallomain.statistics;
+package com.example.passion.src.Main.statistics;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import com.example.passion.R;
-import com.example.passion.src.Main.statistics.CustomDialogClickListener;
-
 
 public class OptionDialog extends Dialog {
 
     private Context context;
     private CustomDialogClickListener customDialogClickListener;
-    private TextView tvTitle, tvList1,tvList2,tvList3,tvList4,tvList5,tvNegative;
+    private TextView tvTitle, tvList1, tvList2, tvList3, tvList4, tvList5, tvNegative;
 
-    public OptionDialog(@NonNull Context context,CustomDialogClickListener customDialogClickListener) {
+    public OptionDialog(@NonNull Context context, CustomDialogClickListener customDialogClickListener) {
         super(context);
         this.context = context;
         this.customDialogClickListener = customDialogClickListener;
@@ -36,11 +35,34 @@ public class OptionDialog extends Dialog {
         tvList5 = findViewById(R.id.tv_dialog_5);
         tvNegative = findViewById(R.id.tv_dialog_cancel);
 
+        tvList1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OptionDialogInDialog dialogInDialog = new OptionDialogInDialog(getContext(), new CustomDialogClickListener() {
+                    @Override
+                    public void onPositiveClick() {
+
+                    }
+
+                    @Override
+                    public void onNegativeClick() {
+
+                    }
+                });
+                dialogInDialog.setCanceledOnTouchOutside(true);
+                dialogInDialog.setCancelable(true);
+                dialogInDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+                dialogInDialog.show();
+                dismiss();
+            }
+        });
+
+
         tvNegative.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               customDialogClickListener.onNegativeClick();
-               dismiss();
+                customDialogClickListener.onNegativeClick();
+                dismiss();
             }
         });
 

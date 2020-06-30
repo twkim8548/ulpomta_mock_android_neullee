@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -52,7 +51,6 @@
             android:src="@drawable/ic_cafe" />
 
     </LinearLayout>
-
 
     <!--스크롤-->
     <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
@@ -170,11 +168,12 @@
                 android:id="@+id/recylerView_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
             <Button
+                android:id="@+id/test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="tes"
-                android:id="@+id/test"/>
+                android:text="tes" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -191,6 +190,5 @@
 
 
     </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
-
 
 </LinearLayout>
