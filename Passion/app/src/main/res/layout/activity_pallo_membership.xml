@@ -13,11 +13,6 @@
         android:src="@drawable/ic_keyboard_left"
         android:tint="@color/colorOrange" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
     <TextView
         android:id="@+id/tv_palloMember_passionTimer"
         android:layout_width="wrap_content"

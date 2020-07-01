@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context="com.example.passion.src.pallomain.statistics.PalloSignInForMembershipActivity">
+    tools:context="com.example.passion.src.pallosignin.PalloSignInActivity">
 
     <ImageView
         android:id="@+id/iv_palloSign_keyboard_left"
@@ -40,7 +39,9 @@
             android:backgroundTint="@color/colorGray"
             android:hint="@string/enterEmail"
             android:lines="1"
+            android:maxLines="1"
             android:paddingBottom="20dp"
+            android:textColor="@color/colorOrange"
             android:textSize="15dp" />
 
         <EditText
@@ -51,7 +52,9 @@
             android:hint="@string/enterPW"
             android:inputType="textPassword"
             android:lines="1"
+            android:maxLines="1"
             android:paddingBottom="20dp"
+            android:textColor="@color/colorOrange"
             android:textSize="15dp" />
     </LinearLayout>
 
@@ -61,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/button_shape"
+        android:onClick="customOnClick"
         android:text="@string/login"
         android:textColor="@color/colorWhite"
         android:textSize="15dp"

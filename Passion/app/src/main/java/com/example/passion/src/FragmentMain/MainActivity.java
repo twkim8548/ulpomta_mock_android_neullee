@@ -1,4 +1,4 @@
-package com.example.passion.src.Main.statistics;
+package com.example.passion.src.FragmentMain;
 
 import android.os.Bundle;
 

@@ -17,21 +17,18 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".src.Main.statistics.MainActivity">
+        <activity android:name=".src.FragmentMain.MainActivity">
+
+        </activity>
+        <activity android:name=".src.pallosignin.PalloSignInActivity">
+
+        </activity>
+        <activity android:name=".src.pallosignin.statistics.PalloMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".src.pallomain.statistics.PalloMainActivity">
-
-
-        </activity>
-        <activity
-            android:name=".src.pallomain.statistics.PalloSignInForMembershipActivity"
-            tools:ignore="DuplicateActivity">
-
         </activity>
     </application>
 

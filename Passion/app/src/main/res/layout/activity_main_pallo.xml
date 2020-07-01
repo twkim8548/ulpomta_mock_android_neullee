@@ -5,7 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".src.pallomain.statistics.PalloMainActivity">
+    tools:context=".src.pallosignin.statistics.PalloMainActivity">
+
+    <!--테스트-->
+    <TextView
+        android:id="@+id/tv_palloMain_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="테스트용"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -31,27 +41,28 @@
             android:fontFamily="@font/dohyeonregular"
             android:text="@string/study"
             android:textColor="@color/colorBlack"
+            android:textSize="15dp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_palloMain_signIn_for_memvership"
+        android:id="@+id/btn_palloMain_NewStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_stroke"
-        android:text="@string/signInForMemvership"
+        android:text="@string/newStartMemvership"
         android:textColor="@color/colorOrange"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_palloMain_use_without_signIn" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_palloMain_LogIn" />
 
     <Button
-        android:id="@+id/btn_palloMain_use_without_signIn"
+        android:id="@+id/btn_palloMain_LogIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_test"
-        android:text="@string/use_without_signIn"
+        android:text="@string/login"
         android:textColor="@color/colorOrange"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/tv_palloMain"

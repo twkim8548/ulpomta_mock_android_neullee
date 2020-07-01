@@ -1,4 +1,4 @@
-package com.example.passion.src.Main.statistics;
+package com.example.passion.src.FragmentThree.statistics;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

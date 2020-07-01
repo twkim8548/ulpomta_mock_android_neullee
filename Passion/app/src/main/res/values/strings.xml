@@ -4,6 +4,7 @@
     <string name="network_error">네트워크 연결이 원활하지 않습니다.</string>
     <string name="study">공부,혼자 하지 말고 열품타에서 함께 하세요!</string>
     <string name="signInForMemvership">회원가입 / 로그인</string>
+    <string name="newStartMemvership">새로 시작하기</string>
     <string name="use_without_signIn">가입없이 이용하기</string>
     <string name="pallo">Pallo</string>
     <string name="account">계정</string>
