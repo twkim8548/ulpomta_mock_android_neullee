@@ -1,4 +1,4 @@
-package com.example.passion.src.FragmentThree.statistics;
+package com.example.recycleview;
 
 public class MainData {
     private int ivPlay;

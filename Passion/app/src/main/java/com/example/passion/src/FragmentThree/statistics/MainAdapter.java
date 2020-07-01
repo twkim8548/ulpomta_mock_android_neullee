@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +24,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
     @NonNull
     @Override
     public MainAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home, parent, false);
         CustomViewHolder holder = new CustomViewHolder(view);
         return holder;
     }
@@ -36,14 +35,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
         holder.ivPlay.setImageResource(dataArrayList.get(position).getIvPlay());
         holder.tvGoal.setText(dataArrayList.get(position).getTvGoal());
         holder.tvTime.setText(dataArrayList.get(position).getTvTime());
+        holder.ivMenu.setImageResource(dataArrayList.get(position).getIvMenu());
 
-        //리스뷰터 클릭 또는 롱클릭
+
+        //리스뷰터가 클릭되었을 때 구현되어야 함
+        //<미구현>
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String curName = holder.tvGoal.getText().toString();
-                Toast.makeText(v.getContext(), curName, Toast.LENGTH_SHORT).show();
+                //클릭시 카운트 화면으로 넘어간다
             }
         });
     }
@@ -53,20 +54,20 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
         return (null != dataArrayList ? dataArrayList.size() : 0);
     }
 
-
     public class CustomViewHolder extends RecyclerView.ViewHolder {
 
         protected ImageView ivPlay;
         protected TextView tvGoal;
         protected TextView tvTime;
+        protected ImageView ivMenu;
 
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.ivPlay = (ImageView) itemView.findViewById(R.id.ivPlay);
-            this.tvGoal = (TextView) itemView.findViewById(R.id.tvGoal);
-            this.tvTime = (TextView) itemView.findViewById(R.id.tvTime);
-
+            this.ivPlay = (ImageView) itemView.findViewById(R.id.iv_item_main);
+            this.tvGoal = (TextView) itemView.findViewById(R.id.tv_item_goal);
+            this.tvTime = (TextView) itemView.findViewById(R.id.tv_item_main);
+            this.ivMenu = (ImageView) itemView.findViewById(R.id.iv_item_menu);
         }
     }
 }

@@ -20,10 +20,10 @@
         <activity android:name=".src.FragmentMain.MainActivity">
 
         </activity>
-        <activity android:name=".src.pallosignin.PalloSignInActivity">
+        <activity android:name=".src.PalloSingIn.PalloSignInActivity">
 
         </activity>
-        <activity android:name=".src.pallosignin.statistics.PalloMainActivity">
+        <activity android:name=".src.PalloMain.statistics.PalloMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
