@@ -1,5 +1,6 @@
 package com.example.passion.src.FragmentThree;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
+import com.example.passion.src.FragmentThree.statistics.AddGoalActivity;
 import com.example.passion.src.FragmentThree.statistics.MainAdapter;
 import com.example.passion.src.FragmentThree.statistics.MainData;
 
@@ -27,7 +29,8 @@ public class FragThreeActivity extends Fragment implements View.OnClickListener 
     private RecyclerView mRecyclerView;
     private LinearLayoutManager linearLayoutManager;
 
-    TextView mTvAddGoal;
+    private TextView mTvAddGoal;
+    private String mSubject;
 
 
     @Nullable
@@ -52,9 +55,16 @@ public class FragThreeActivity extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_FragThree_addSubject:
+                Intent intent = new Intent(getContext(), AddGoalActivity.class);
+                startActivity(intent);
+//                if (mSubject != null) {
+//                    Intent intent1 = new Intent();
+//                    mSubject = intent1.getStringExtra("AddSubject");
+//                    <아래 목표/과목을 받아오는 구현하기>
                 MainData mainData = new MainData(R.drawable.ic_play, "목표/과목", "00:00:00", R.drawable.ic_more);
                 mArrayList.add(mainData);
                 mMainAdapter.notifyDataSetChanged();
+//                }
                 break;
             default:
                 break;

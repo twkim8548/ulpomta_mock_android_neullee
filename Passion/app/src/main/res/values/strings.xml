@@ -34,7 +34,7 @@
     <string name="goal">목표/과목</string>
     <string name="rest">휴식 00시간 00분 00초</string>
     <string name="studytime">공부시간</string>
-    <string name="addSubject">과목추가하기</string>
+    <string name="addSubject">과목 추가하기</string>
     <string name="toic">토익</string>
     <string name="title_dialog">목표/과목</string>
     <string name="dialog_1">To-Do 만들기</string>
@@ -45,6 +45,10 @@
     <string name="cancel">취소</string>
     <string name="enterToDo">할일을 입력해주세요.</string>
     <string name="check">확인</string>
+    <string name="add">추가</string>
+    <string name="nameOfSubjectToMeasure">측정할 과목 이름</string>
+    <string name="forexample">ex) 수학, 영어, 과학, 한국사..</string>
+    <string name="colorSubject">과목 색상</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
