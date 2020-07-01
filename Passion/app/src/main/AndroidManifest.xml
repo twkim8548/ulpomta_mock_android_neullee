@@ -17,12 +17,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".src.FragmentMain.MainActivity">
-
-        </activity>
-        <activity android:name=".src.PalloSingIn.PalloSignInActivity">
-
-        </activity>
+        <activity android:name=".src.FragmentThree.statistics.AddGoalActivity"></activity>
+        <activity android:name=".src.FragmentMain.FragmentMainActivity"></activity>
+        <activity android:name=".src.PalloSingIn.PalloSignInActivity"></activity>
         <activity android:name=".src.PalloMain.statistics.PalloMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

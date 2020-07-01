@@ -1,4 +1,4 @@
-package com.example.passion.src.FragmentMain.statistics;
+package com.example.passion.src.FragmentThree.statistics;
 
 import android.app.Dialog;
 import android.content.Context;

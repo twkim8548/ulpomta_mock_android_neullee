@@ -18,7 +18,7 @@ import com.example.passion.src.FragmentThree.statistics.MainData;
 
 import java.util.ArrayList;
 
-public class ThreeFragment extends Fragment {
+public class FragThreeActivity extends Fragment implements View.OnClickListener {
 
     ViewGroup viewGroup;
 
@@ -42,18 +42,22 @@ public class ThreeFragment extends Fragment {
         mArrayList = new ArrayList<>();//어레이리스트 데이터
         mMainAdapter = new MainAdapter(mArrayList);//어뎁터
         mRecyclerView.setAdapter(mMainAdapter);//리사이클러뷰 어뎁터 세팅
-
         mTvAddGoal = viewGroup.findViewById(R.id.tv_FragThree_addSubject);//과목추가
-        mTvAddGoal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainData mainData = new MainData(R.drawable.ic_play,"목표/과목(입력값","00:00:00(시간)",R.drawable.ic_more);
-                mArrayList.add(mainData);
-                mMainAdapter.notifyDataSetChanged();
-            }
-        });
-
+        mTvAddGoal.setOnClickListener(this);//클릭 메소드
 
         return viewGroup;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_FragThree_addSubject:
+                MainData mainData = new MainData(R.drawable.ic_play, "목표/과목", "00:00:00", R.drawable.ic_more);
+                mArrayList.add(mainData);
+                mMainAdapter.notifyDataSetChanged();
+                break;
+            default:
+                break;
+        }
     }
 }

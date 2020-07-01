@@ -3,6 +3,7 @@ package com.example.passion.src.FragmentThree.statistics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
+import com.example.passion.src.FragmentMain.interfaces.CustomDialogClickListener;
 
 import java.util.ArrayList;
 
@@ -37,6 +39,28 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
         holder.tvTime.setText(dataArrayList.get(position).getTvTime());
         holder.ivMenu.setImageResource(dataArrayList.get(position).getIvMenu());
 
+        //메뉴를 클릭했을 때 나오는 엑티비티화면
+        holder.ivMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //클릭시 커스텀 다이얼로그 화면이 나옵니다.
+                OptionDialog optionDialog = new OptionDialog(v.getContext(), new CustomDialogClickListener() {
+                    @Override
+                    public void onPositiveClick() {
+
+                    }
+
+                    @Override
+                    public void onNegativeClick() {
+
+                    }
+                });
+                optionDialog.setCancelable(true);
+                optionDialog.setCanceledOnTouchOutside(true);
+                optionDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+                optionDialog.show();
+            }
+        });
 
         //리스뷰터가 클릭되었을 때 구현되어야 함
         //<미구현>

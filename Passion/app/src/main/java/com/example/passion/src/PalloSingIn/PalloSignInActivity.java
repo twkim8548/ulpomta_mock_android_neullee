@@ -12,7 +12,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.example.passion.R;
 import com.example.passion.src.BaseActivity;
-import com.example.passion.src.FragmentMain.MainActivity;
+import com.example.passion.src.FragmentMain.FragmentMainActivity;
 import com.example.passion.src.PalloSingIn.interfaces.PalloSignInActivityView;
 
 public class PalloSignInActivity extends BaseActivity implements PalloSignInActivityView {
@@ -53,7 +53,7 @@ public class PalloSignInActivity extends BaseActivity implements PalloSignInActi
     public void signInSuccess(boolean isSucess, String message) {
         hideProgressDialog();
         if (isSucess == true) {
-            Intent intent = new Intent(PalloSignInActivity.this, MainActivity.class);
+            Intent intent = new Intent(PalloSignInActivity.this, FragmentMainActivity.class);
             startActivity(intent);
             ActivityCompat.finishAffinity(PalloSignInActivity.this);
         } else {

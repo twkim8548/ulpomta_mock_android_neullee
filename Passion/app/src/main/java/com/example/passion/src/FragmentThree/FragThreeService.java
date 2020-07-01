@@ -2,10 +2,10 @@ package com.example.passion.src.FragmentThree;
 
 import com.example.passion.src.FragmentThree.interfaces.FragThreeActivityView;
 
-public class MainService {
+public class FragThreeService {
     private final FragThreeActivityView mFragThreeActivityView;
 
-    public MainService(final FragThreeActivityView fragThreeActivityView) {
+    public FragThreeService(final FragThreeActivityView fragThreeActivityView) {
         this.mFragThreeActivityView = fragThreeActivityView;
     }
 

@@ -8,26 +8,26 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.passion.R;
-import com.example.passion.src.FragmentThree.ThreeFragment;
+import com.example.passion.src.FragmentThree.FragThreeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class FragmentMainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    ThreeFragment threeFragment;
+    FragThreeActivity fragThreeActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_fragment_main);
         //초기화
         bottomNavigationView = findViewById(R.id.btnNavigation_main);
 
         //프래그먼트 생성
-        threeFragment = new ThreeFragment();
+        fragThreeActivity = new FragThreeActivity();
 
         //제일 처름 띄워줄 뷰 세팅 (commit();까지 해줘야함)
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, threeFragment).commitAllowingStateLoss();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragThreeActivity).commitAllowingStateLoss();
 
         //버튼 네비게이션 초기 선택 값
         bottomNavigationView.setSelectedItemId(R.id.ic_main_home);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 //                    ic_main_rank
 //                    ic_main_group
                     case R.id.ic_main_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, threeFragment).commitAllowingStateLoss();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragThreeActivity).commitAllowingStateLoss();
                         return true;
 
                     default:

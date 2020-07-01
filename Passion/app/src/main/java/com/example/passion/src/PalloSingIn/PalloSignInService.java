@@ -18,7 +18,6 @@ public class PalloSignInService {
         this.mPalloSignInActivityView = palloSignInActivityView;
     }
 
-
     //Post 로그인
     public void postSingIn(String email, String password) {
         final PalloSignInRetrofitInterface palloSignInRetrofitInterface = getRetrofit().create(PalloSignInRetrofitInterface.class);
