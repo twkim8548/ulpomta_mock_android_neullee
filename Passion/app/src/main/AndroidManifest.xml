@@ -17,9 +17,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".src.SignUp.SignUpActivity.SignUpActivity"/>
+        <activity android:name=".src.SignUp.SignUpStart.SignUpStartActivity"/>
         <activity android:name=".src.SignUp.Email.SignupEmailActivity" />
-        <activity android:name=".src.SignIn.FindPW.FindPwStartActivity" />
+        <activity android:name=".src.SignIn.FindPW.FindPwActivity" />
         <activity android:name=".src.TimerFragment.FragmentHome.statistics.AddSubjectActivity" />
         <activity android:name=".src.TimerFragment.FragmentStartActivity.FragmentStartActivity" />
         <activity android:name=".src.SignIn.SingInStart.SignInStartActivity" />

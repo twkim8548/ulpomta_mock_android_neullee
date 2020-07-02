@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:background="@null"
-            android:hint="@string/forexample"
+            android:hint="@string/example"
             android:inputType="text"
             android:maxLines="1"
             android:scrollHorizontally="false" />

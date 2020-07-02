@@ -15,16 +15,12 @@ import com.example.passion.R;
 import com.example.passion.src.BaseActivity;
 import com.example.passion.src.SignIn.SingInStart.interfaces.SignInStartActivityView;
 
-public class FindPwStartActivity extends BaseActivity implements SignInStartActivityView, View.OnClickListener {
+public class FindPwActivity extends BaseActivity implements SignInStartActivityView, View.OnClickListener {
 
     //멤버변수
     private EditText mEtEmail; //이메일 입력
 
-    //유효성 검사
-    private String mEmailValidation = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-    private String mTitle = "이메일 계정확인";
-    private String mContents = "이메일 형식이 잘못되었습니다.";
-    private String mCheck = "확인";
+
     private ImageView mBack;
 
     @Override
@@ -52,24 +48,33 @@ public class FindPwStartActivity extends BaseActivity implements SignInStartActi
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            //<배경> 해당 화면에는 버튼 하나만 클릭을 하기 때문에 setOnclickListener과 new를 배정
-            //<기능> '이메일 계정확인' 버튼을 누르면 알럿창이 확인됩니다.
+            //<기능> '이메일 계정확인' 버튼을 누르면 자체적으로 유효성검사 후 네트워크 통신을 통해 알럿창이 확인됩니다.
             case R.id.btn_palloFindPW_Login:
+                //유효성 검사
+                String emailValidation = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+                String Title = "이메일 계정확인";
+                String Contents = "이메일 형식이 잘못되었습니다.";
+                String Check = "확인";
+
                 //<기능> 입력한 email 저장
                 String email = mEtEmail.getText().toString();
 
                 //<기능> email의 유효성 검사를 알럿창을 통해 보여준다
                 //<설명> 이메일 유효성검사 true & 입력한 글자 수가 1글자 이상
-                if (email.matches(mEmailValidation)) {
+                if (email.matches(emailValidation)) {
                     //<기능> 네트워크 통신
+
+
+
+
                     //<설명>
-                    Toast.makeText(FindPwStartActivity.this, "개발중", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FindPwActivity.this, "개발중", Toast.LENGTH_SHORT).show();
                 }
-                if (!(email.matches(mEmailValidation))) {
+                if (!(email.matches(emailValidation))) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                    builder.setTitle(mTitle);
-                    builder.setMessage(mContents);
-                    builder.setPositiveButton(mCheck, new DialogInterface.OnClickListener() {
+                    builder.setTitle(Title);
+                    builder.setMessage(Contents);
+                    builder.setPositiveButton(Check, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.cancel();

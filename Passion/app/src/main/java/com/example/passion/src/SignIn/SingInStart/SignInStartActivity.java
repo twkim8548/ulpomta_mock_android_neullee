@@ -17,7 +17,7 @@ import androidx.core.app.ActivityCompat;
 import com.example.passion.R;
 import com.example.passion.src.TimerFragment.FragmentStartActivity.FragmentStartActivity;
 import com.example.passion.src.BaseActivity;
-import com.example.passion.src.SignIn.FindPW.FindPwStartActivity;
+import com.example.passion.src.SignIn.FindPW.FindPwActivity;
 import com.example.passion.src.SignIn.SingInStart.interfaces.SignInStartActivityView;
 
 public class SignInStartActivity extends BaseActivity implements SignInStartActivityView, View.OnClickListener {
@@ -26,10 +26,6 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
     private String mStrEmail, mStrPW;//저장 : 이메일 / 비밀번호
     private SignInStartService signInStartService;//전역변수 : 서비스
 
-    private String mTitle = "이메일 찾기",
-            mHintContens = "닉네임을 입력하세요",
-            mCancel = "취소",
-            mCheck = "확인";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +37,8 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
         mFindPW.setOnClickListener(this);//비밀번호 찾기
         TextView mFindEmail = findViewById(R.id.tv_palloSing_findEmail);//이메일 찾기
         mFindEmail.setOnClickListener(this);//이메일 찾기
-        TextView mMembership = findViewById(R.id.tv_palloSign_ToLogin);//가입하기
-        mMembership.setOnClickListener(this);//가입하기
-        ImageView btnBack = findViewById(R.id.iv_palloSign_keyboard_left);//< 버튼
-        btnBack.setOnClickListener(this);//< 버튼
+        ImageView ivBack = findViewById(R.id.iv_palloSign_keyboard_left);//< 버튼
+        ivBack.setOnClickListener(this);//< 버튼
         Button btnLogin = findViewById(R.id.btn_palloSing_Login);//로그인 버튼
         btnLogin.setOnClickListener(this);//로그인 버튼
         signInStartService = new SignInStartService(this);//서비스 객체화
@@ -97,22 +91,29 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
                 break;
             //<기능> 비밀번호 찾기
             case R.id.tv_palloSing_findPW:
-                Intent intent = new Intent(this, FindPwStartActivity.class);
+                Intent intent = new Intent(this, FindPwActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;
+
             //<기능> 이메일 찾기
             //[미구현]
+            //닉네임을 입력하세요 => 사용자가 입력할 수 있도록 커스텀 다이얼로그를 설정해야한다
+
             case R.id.tv_palloSing_findEmail:
+                String title = "이메일 찾기",
+                        hintContents = "닉네임을 입력하세요",
+                        cancel = "취소",
+                        check = "확인";
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);//this = v.getContext
-                builder.setTitle(mTitle).setMessage(mHintContens);
-                builder.setPositiveButton(mCheck, new DialogInterface.OnClickListener() {
+                builder.setTitle(title).setMessage(hintContents);
+                builder.setPositiveButton(check, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(SignInStartActivity.this, "네트워크 통신을 해야합니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
-                builder.setNegativeButton(mCancel, new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
@@ -120,15 +121,11 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
                 });
                 builder.show();
                 break;
-            //<기능> 가입하기
-            case R.id.tv_palloSign_ToLogin://스네이크 케이스 : 모두 소문자로 사용해야함
-                Intent intent1 = new Intent(this, FragmentStartActivity.class);
-                overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-                startActivity(intent1);
-                //<기능> <- 버튼
+
+            //<기능> <- 버튼
             case R.id.iv_palloSign_keyboard_left:
                 finish();
-                overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+                overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
                 break;
             default:
                 break;

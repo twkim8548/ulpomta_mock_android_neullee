@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context="com.example.passion.src.SignUp.SignUpStart.SignUpStartActivity">
+
+    <!--뒤로가기-->
+    <ImageView
+        android:id="@+id/iv_sign_up_keyboard_left"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_keyboard_left"
+        android:tint="@color/colorOrange" />
+
+    <!--열정 품은 타이머-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/passionTimer"
+        android:textColor="@color/colorBlack"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <!--가입하기-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/toLogin"
+        android:textColor="@color/colorOrange"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <!--이메일로 시작하기-->
+    <Button
+        android:id="@+id/btn_sign_up_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape_gray"
+        android:drawableLeft="@drawable/ic_post"
+        android:paddingHorizontal="20dp"
+        android:text="@string/startEmail" />
+
+    <!--페이스북로 시작하기-->
+    <Button
+        android:id="@+id/btn_sign_up_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape_gray"
+        android:drawableLeft="@drawable/drawable_left_facebook"
+        android:paddingHorizontal="20dp"
+        android:text="@string/startEmail" />
+
+    <!--카카오로 시작하기-->
+    <Button
+        android:id="@+id/btn_sign_up_kakao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape_gray"
+        android:drawableLeft="@drawable/drawable_left_kakao"
+        android:paddingHorizontal="20dp"
+        android:text="@string/startEmail" />
+
+    <!--네이버로 시작하기-->
+    <Button
+        android:id="@+id/btn_sign_up_naver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape_gray"
+        android:drawableLeft="@drawable/drawable_left_naver"
+        android:paddingHorizontal="20dp"
+        android:text="@string/startEmail" />
+
+    <!--로그인-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:text="@string/yetAccount"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/tv_sign_up_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/login"
+            android:textColor="@color/colorOrange"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
