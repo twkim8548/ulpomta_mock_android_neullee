@@ -1,8 +1,9 @@
 <resources>
+<!--    주석처리하면서 사용하기-->
     <string name="app_name">Passion</string>
     <string name="loading">로딩중입니다.</string>
     <string name="network_error">네트워크 연결이 원활하지 않습니다.</string>
-    <string name="study">공부,혼자 하지 말고 열품타에서 함께 하세요!</string>
+    <string name="study">공부, 혼자 하지 말고 열품타에서 함께 하세요!</string>
     <string name="signInForMemvership">회원가입 / 로그인</string>
     <string name="newStartMemvership">새로 시작하기</string>
     <string name="use_without_signIn">가입없이 이용하기</string>
@@ -23,7 +24,7 @@
     <string name="SignInMembership">회원가입</string>
     <string name="findEmailAccount">이메일 계정 찾기</string>
     <string name="checkEmailAccount">이메일 계정 확인</string>
-    <string name="information">﻿·\t이메일로 가입한 계정이 있는지 확인합니다.\n﻿·\t카카오톡/네이버로 가입했다면 이전화면에서\n\t\t카카오톡/네이버 아이콘을 클릭해주세요.</string>
+    <string name="information">﻿·\t이메일로 가입한 계정이 있는지 확인합니다.\n﻿·\t카카오톡/네이버로 가입했다면 이전화면에서 카카오톡/네이버 아이콘을 클릭해주세요.</string>
     <string name="makeNickname">닉네임 만들기</string>
     <string name="enterNickname">사용할 닉네임을 입력해주세요</string>
     <string name="letterByte">0/60 Bytes</string>

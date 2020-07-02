@@ -11,6 +11,7 @@
         android:id="@+id/ic_main_planner"
         android:icon="@drawable/ic_planner"
         android:title="플래너"
+        android:titleCondensed=""
         app:showAsAction="always" />
 
     <item

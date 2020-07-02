@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context=".src.PalloMain.statistics.PalloMainActivity">
+    android:background="@color/colorWhite"
+    tools:context=".src.SignIn.PalloMain.PalloMainActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,17 +18,18 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/iv_palloMain_study"
-            android:layout_width="wrap_content"
+            android:id="@+id/iv_pallomain_study"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_study" />
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_main" />
 
         <TextView
-            android:id="@+id/tv_palloMain_study"
+            android:id="@+id/tv_pallomain_study"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/dohyeonregular"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/notosanskrmedium"
             android:text="@string/study"
             android:textColor="@color/colorBlack"
             android:textSize="15dp"
@@ -36,34 +37,42 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_palloMain_NewStart"
+        android:id="@+id/btn_pallomain_new_start"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="15dp"
         android:background="@drawable/button_stroke"
         android:text="@string/newStartMemvership"
         android:textColor="@color/colorOrange"
+        android:textSize="17dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_palloMain_LogIn" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_pallomain_login" />
 
     <Button
-        android:id="@+id/btn_palloMain_LogIn"
+        android:id="@+id/btn_pallomain_login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/button_test"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_stroke"
         android:text="@string/login"
         android:textColor="@color/colorOrange"
+        android:textSize="17dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/tv_palloMain"
+        app:layout_constraintBottom_toTopOf="@id/tv_pallomain"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
-        android:id="@+id/tv_palloMain"
+        android:id="@+id/tv_pallomain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/pallo"
+        android:textSize="12dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

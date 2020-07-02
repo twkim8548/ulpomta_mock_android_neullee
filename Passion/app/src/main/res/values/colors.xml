@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<!--화면별로 : common 등 주석 처리-->
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="colorBlack">#000000</color>
     <color name="colorOrange">#F96E1E</color>
     <color name="colorGray">#CFD1D2</color>
+    <color name="colorMiddleGray">#B3B3B3</color>
     <color name="colorDarkGray">#A3A3A3</color>
-    <color name="coloLightGray">#F3F3F3</color>
+    <color name="coloLightGray">#F8F8F8</color>
+    <color name="coloMoreLightGray">#D1D1D1</color>
+    <color name="colorFindPw">#F4F4F4</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorTransparentWhite">#BBFFFFFF</color>
     <color name="colorBlue">#007BDC</color>
     <color name="colorIndigo">#454656</color>
-    <color name="colorMiddleGray">#B3B3B3</color>
 
 
 </resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context="com.example.passion.src.PalloSingIn.PalloSignInActivity">
+    tools:context=".src.SignIn.PalloSingIn.PalloSignInActivity">
 
     <ImageView
         android:id="@+id/iv_palloSign_keyboard_left"
@@ -36,38 +36,41 @@
             android:id="@+id/et_palloSign_enterEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorGray"
+            android:backgroundTint="@color/coloLightGray"
             android:hint="@string/enterEmail"
             android:lines="1"
             android:maxLines="1"
             android:paddingBottom="20dp"
             android:textColor="@color/colorOrange"
-            android:textSize="15dp" />
+            android:textColorHint="@color/coloMoreLightGray"
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/et_palloSign_enterPW"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorGray"
+            android:backgroundTint="@color/coloLightGray"
             android:hint="@string/enterPW"
             android:inputType="textPassword"
             android:lines="1"
             android:maxLines="1"
             android:paddingBottom="20dp"
             android:textColor="@color/colorOrange"
-            android:textSize="15dp" />
+            android:textColorHint="@color/coloMoreLightGray"
+            android:textSize="18dp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_palloSing_Login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/button_shape_orange"
         android:onClick="customOnClick"
         android:text="@string/login"
         android:textColor="@color/colorWhite"
-        android:textSize="15dp"
+        android:textSize="17dp"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_palloSign_Enter" />
@@ -87,18 +90,22 @@
             android:id="@+id/tv_palloSing_findEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="right"
             android:text="@string/findEmail"
+            android:textColor="@color/colorDarkGray"
             android:textSize="15dp" />
 
         <TextView
             android:id="@+id/tv_palloSing_findPW"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="left"
             android:text="@string/findPW"
+            android:textColor="@color/colorDarkGray"
             android:textSize="15dp" />
     </LinearLayout>
 
@@ -106,7 +113,7 @@
         android:id="@+id/layout_palloSign_or"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="30dp"
+        android:layout_marginVertical="40dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -115,9 +122,9 @@
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="1px"
+            android:layout_height="2px"
             android:layout_weight="1"
-            android:background="@color/colorGray" />
+            android:background="@color/colorDarkGray" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -129,9 +136,9 @@
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="1px"
+            android:layout_height="2px"
             android:layout_weight="1"
-            android:background="@color/colorGray" />
+            android:background="@color/colorDarkGray" />
     </LinearLayout>
 
     <Button

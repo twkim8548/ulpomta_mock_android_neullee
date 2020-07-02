@@ -17,10 +17,13 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".src.FragmentThree.statistics.AddGoalActivity"></activity>
-        <activity android:name=".src.FragmentMain.FragmentMainActivity"></activity>
-        <activity android:name=".src.PalloSingIn.PalloSignInActivity"></activity>
-        <activity android:name=".src.PalloMain.statistics.PalloMainActivity">
+        <activity android:name=".src.SignIn.PalloMembershipMain.PalloMembersipMain"/>
+        <activity android:name=".src.SignIn.PalloMembershipEmail.PalloMembershipEmailActivity" />
+        <activity android:name=".src.SignIn.PalloFindPW.PalloFindPwActivity" />
+        <activity android:name=".src.Access.FragmentThree.statistics.AddGoalActivity" />
+        <activity android:name=".src.Access.FragmentMain.FragmentMainActivity" />
+        <activity android:name=".src.SignIn.PalloSingIn.PalloSignInActivity" />
+        <activity android:name=".src.SignIn.PalloMain.PalloMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
