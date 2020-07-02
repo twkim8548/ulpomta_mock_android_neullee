@@ -8,13 +8,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.passion.R;
-import com.example.passion.src.Access.FragmentThree.FragThreeActivity;
+import com.example.passion.src.Access.FragmentHome.FragHomeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class FragmentMainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    FragThreeActivity fragThreeActivity;
+    FragHomeActivity fragHomeActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,10 +24,10 @@ public class FragmentMainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.btnNavigation_main);
 
         //프래그먼트 생성
-        fragThreeActivity = new FragThreeActivity();
+        fragHomeActivity = new FragHomeActivity();
 
         //제일 처름 띄워줄 뷰 세팅 (commit();까지 해줘야함)
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragThreeActivity).commitAllowingStateLoss();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragHomeActivity).commitAllowingStateLoss();
 
         //버튼 네비게이션 초기 선택 값
         bottomNavigationView.setSelectedItemId(R.id.ic_main_home);
@@ -43,15 +43,14 @@ public class FragmentMainActivity extends AppCompatActivity {
 //                    ic_main_rank
 //                    ic_main_group
                     case R.id.ic_main_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragThreeActivity).commitAllowingStateLoss();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragHomeActivity).commitAllowingStateLoss();
                         return true;
 
                     default:
                         return true;
                 }
-
             }
         });
-
     }
+
 }

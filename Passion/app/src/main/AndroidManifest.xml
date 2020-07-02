@@ -20,7 +20,7 @@
         <activity android:name=".src.SignIn.PalloMembershipMain.PalloMembersipMain"/>
         <activity android:name=".src.SignIn.PalloMembershipEmail.PalloMembershipEmailActivity" />
         <activity android:name=".src.SignIn.PalloFindPW.PalloFindPwActivity" />
-        <activity android:name=".src.Access.FragmentThree.statistics.AddGoalActivity" />
+        <activity android:name=".src.Access.FragmentHome.statistics.AddGoalActivity" />
         <activity android:name=".src.Access.FragmentMain.FragmentMainActivity" />
         <activity android:name=".src.SignIn.PalloSingIn.PalloSignInActivity" />
         <activity android:name=".src.SignIn.PalloMain.PalloMainActivity">

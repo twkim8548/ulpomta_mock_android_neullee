@@ -1,6 +1,6 @@
-package com.example.passion.src.Access.FragmentThree;
+package com.example.passion.src.Access.FragmentHome;
 
-import com.example.passion.src.Access.FragmentThree.interfaces.FragThreeActivityView;
+import com.example.passion.src.Access.FragmentHome.interfaces.FragThreeActivityView;
 
 public class FragThreeService {
     private final FragThreeActivityView mFragThreeActivityView;

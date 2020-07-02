@@ -36,7 +36,7 @@
             android:id="@+id/et_palloSign_enterEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/coloLightGray"
+            android:backgroundTint="@color/coloMoreLightGray"
             android:hint="@string/enterEmail"
             android:lines="1"
             android:maxLines="1"
@@ -49,7 +49,7 @@
             android:id="@+id/et_palloSign_enterPW"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/coloLightGray"
+            android:backgroundTint="@color/coloMoreLightGray"
             android:hint="@string/enterPW"
             android:inputType="textPassword"
             android:lines="1"
@@ -66,7 +66,6 @@
         android:layout_height="40dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/button_shape_orange"
-        android:onClick="customOnClick"
         android:text="@string/login"
         android:textColor="@color/colorWhite"
         android:textSize="17dp"
@@ -79,7 +78,7 @@
         android:id="@+id/layout_palloSign_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -93,6 +92,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:gravity="right"
+            android:padding="10dp"
             android:text="@string/findEmail"
             android:textColor="@color/colorDarkGray"
             android:textSize="15dp" />
@@ -104,6 +104,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:gravity="left"
+            android:padding="10dp"
             android:text="@string/findPW"
             android:textColor="@color/colorDarkGray"
             android:textSize="15dp" />
@@ -141,29 +142,40 @@
             android:background="@color/colorDarkGray" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_palloSing_Login_kakao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/button_stroke"
-        android:text="@string/kakaoLogin"
-        android:textColor="@color/colorOrange"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/layout_palloSign_or" />
 
-    <Button
-        android:id="@+id/btn_palloSing_Login_naver"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:background="@drawable/button_stroke"
-        android:text="@string/naverLogin"
-        android:textColor="@color/colorOrange"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/btn_palloSing_Login_kakao" />
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/layout_palloSign_or">
+
+        <Button
+            android:id="@+id/btn_palloSing_Login_kakao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/button_stroke"
+            android:text="@string/kakaoLogin"
+            android:textColor="@color/colorOrange"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/layout_palloSign_or"
+            tools:layout_editor_absoluteX="15dp" />
+
+        <Button
+            android:id="@+id/btn_palloSing_Login_naver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/button_stroke"
+            android:text="@string/naverLogin"
+            android:textColor="@color/colorOrange"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/btn_palloSing_Login_kakao" />
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"

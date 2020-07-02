@@ -1,4 +1,4 @@
-package com.example.passion.src.Access.FragmentThree.statistics;
+package com.example.passion.src.Access.FragmentHome.statistics;
 
 import android.os.Bundle;
 import android.view.View;
@@ -38,7 +38,7 @@ public class AddGoalActivity extends AppCompatActivity implements View.OnClickLi
 //            @Override
 //            public void onClick(View v) {
 //                mName = mContents.getText().toString();
-//                Intent intent = new Intent(AddGoalActivity.this, FragThreeActivity.class);
+//                Intent intent = new Intent(AddGoalActivity.this, FragHomeActivity.class);
 //                intent.putExtra("AddSubject",mName);
 //                startActivity(intent);
 //                finish();
@@ -56,7 +56,7 @@ public class AddGoalActivity extends AppCompatActivity implements View.OnClickLi
                 Toast.makeText(this, "개발중입니다.", Toast.LENGTH_SHORT).show();
 //                  Fragment는 해당 onClick이 안됨
 //                mName = mContents.getText().toString();
-//                Intent intent = new Intent(AddGoalActivity.this, FragThreeActivity.class);
+//                Intent intent = new Intent(AddGoalActivity.this, FragHomeActivity.class);
 //                intent.putExtra("AddSubject",mName);
 //                startActivity(intent);
                 finish();

@@ -1,4 +1,4 @@
-package com.example.passion.src.Access.FragmentThree;
+package com.example.passion.src.Access.FragmentHome;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,13 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
-import com.example.passion.src.Access.FragmentThree.statistics.AddGoalActivity;
-import com.example.passion.src.Access.FragmentThree.statistics.MainAdapter;
-import com.example.passion.src.Access.FragmentThree.statistics.MainData;
+import com.example.passion.src.Access.FragmentHome.statistics.AddGoalActivity;
+import com.example.passion.src.Access.FragmentHome.statistics.MainAdapter;
+import com.example.passion.src.Access.FragmentHome.statistics.MainData;
 
 import java.util.ArrayList;
 
-public class FragThreeActivity extends Fragment implements View.OnClickListener {
+public class FragHomeActivity extends Fragment implements View.OnClickListener {
 
     ViewGroup viewGroup;
 

@@ -1,4 +1,4 @@
-package com.example.passion.src.Access.FragmentThree.interfaces;
+package com.example.passion.src.Access.FragmentHome.interfaces;
 
 public interface FragThreeActivityView {
 

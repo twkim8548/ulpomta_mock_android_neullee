@@ -1,4 +1,4 @@
-package com.example.passion.src.Access.FragmentThree.models;
+package com.example.passion.src.Access.FragmentHome.models;
 
 import com.google.gson.annotations.SerializedName;
 
