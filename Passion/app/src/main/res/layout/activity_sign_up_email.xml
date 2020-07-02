@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="15dp"
+    >
+
+    <ImageView
+        android:id="@+id/iv_palloMember_keyboard_left"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_keyboard_left"
+        android:tint="@color/colorOrange" />
+
+    <TextView
+        android:id="@+id/tv_palloMember_passionTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/passionTimer"
+        android:textColor="@color/colorBlack"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_palloMember_Membership"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/SignInMembership"
+        android:textColor="@color/colorOrange"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_palloMember_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/account"
+        android:textColor="@color/colorOrange" />
+
+    <EditText
+        android:id="@+id/et_palloMember_enterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorGray"
+        android:hint="@string/enterEmail"
+        android:lines="1"
+        android:paddingBottom="20dp"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/et_palloMember_enterPW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorGray"
+        android:hint="@string/enterPW"
+        android:inputType="textPassword"
+        android:lines="1"
+        android:paddingBottom="20dp"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/et_palloMember_checkPW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorGray"
+        android:hint="@string/checkPW"
+        android:inputType="textPassword"
+        android:lines="1"
+        android:paddingBottom="20dp"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btn_palloSing_Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_shape_orange"
+        android:text="@string/login"
+        android:textColor="@color/colorWhite"
+        android:textSize="15dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

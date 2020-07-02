@@ -1,5 +1,5 @@
 <resources>
-<!--    주석처리하면서 사용하기-->
+    <!--    주석처리하면서 사용하기-->
     <string name="app_name">Passion</string>
     <string name="loading">로딩중입니다.</string>
     <string name="network_error">네트워크 연결이 원활하지 않습니다.</string>
