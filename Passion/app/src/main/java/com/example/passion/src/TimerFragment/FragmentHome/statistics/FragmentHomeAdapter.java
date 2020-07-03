@@ -16,17 +16,17 @@ import com.example.passion.src.TimerFragment.Dialog.interfaces.CustomDialogClick
 
 import java.util.ArrayList;
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHolder> {
+public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapter.CustomViewHolder> {
 
-    private ArrayList<MainData> dataArrayList;
+    private ArrayList<FragmentHomeData> dataArrayList;
 
-    public MainAdapter(ArrayList<MainData> dataArrayList) {
+    public FragmentHomeAdapter(ArrayList<FragmentHomeData> dataArrayList) {
         this.dataArrayList = dataArrayList;
     }
 
     @NonNull
     @Override
-    public MainAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FragmentHomeAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home, parent, false);
         CustomViewHolder holder = new CustomViewHolder(view);
         return holder;
@@ -34,9 +34,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
 
     //리스트뷰가 추가될때 실행
     @Override
-    public void onBindViewHolder(@NonNull final MainAdapter.CustomViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final FragmentHomeAdapter.CustomViewHolder holder, int position) {
         holder.ivPlay.setImageResource(dataArrayList.get(position).getIvPlay());
-        holder.tvGoal.setText(dataArrayList.get(position).getTvGoal());
+        holder.tvGoal.setText(dataArrayList.get(position).getTvSubject());
         holder.tvTime.setText(dataArrayList.get(position).getTvTime());
         holder.ivMenu.setImageResource(dataArrayList.get(position).getIvMenu());
 

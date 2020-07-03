@@ -1,14 +1,15 @@
 package com.example.passion.src.TimerFragment.FragmentHome.statistics;
 
-public class MainData {
+public class FragmentHomeData {
     private int ivPlay;
-    private String tvGoal;
+    private String tvSubject;
     private String tvTime;
     private int ivMenu;
 
-    public MainData(int ivPlay, String tvGoal, String tvTime, int ivMenu) {
+    //<구현대상> 시간이 남으면 ivPlay의 tint 색 변경하기
+    public FragmentHomeData(int ivPlay, String tvSubject, String tvTime, int ivMenu) {
         this.ivPlay = ivPlay;
-        this.tvGoal = tvGoal;
+        this.tvSubject = tvSubject;
         this.tvTime = tvTime;
         this.ivMenu = ivMenu;
     }
@@ -29,12 +30,12 @@ public class MainData {
         this.ivPlay = ivPlay;
     }
 
-    public String getTvGoal() {
-        return tvGoal;
+    public String getTvSubject() {
+        return tvSubject;
     }
 
-    public void setTvGoal(String tvGoal) {
-        this.tvGoal = tvGoal;
+    public void setTvSubject(String tvSubject) {
+        this.tvSubject = tvSubject;
     }
 
     public String getTvTime() {

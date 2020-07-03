@@ -1,6 +1,8 @@
 package com.example.passion.src.TimerFragment.FragmentHome;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.passion.R;
 import com.example.passion.src.TimerFragment.AddSubject.AddSubjectActivity;
 import com.example.passion.src.TimerFragment.Dialog.FragmentHomeInfoDialog;
-import com.example.passion.src.TimerFragment.FragmentHome.statistics.MainAdapter;
-import com.example.passion.src.TimerFragment.FragmentHome.statistics.MainData;
-import com.example.passion.src.TimerFragment.AddSubject
+import com.example.passion.src.TimerFragment.FragmentHome.statistics.FragmentHomeAdapter;
+import com.example.passion.src.TimerFragment.FragmentHome.statistics.FragmentHomeData;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,9 +29,9 @@ import java.util.Date;
 
 public class FragmentHome extends Fragment implements View.OnClickListener {
 
-    private ArrayList<MainData> mArrayList;
-    private MainAdapter mMainAdapter;
-    private String mSubject;
+    private ArrayList<FragmentHomeData> mArrayList;
+    private FragmentHomeAdapter mFragmentHomeAdapter;
+    private String mSubjectName;
 
     //[구현대상]
     //<타이머 리셋>
@@ -47,8 +48,8 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());//리니어레이아웃메니저
         recyclerView.setLayoutManager(linearLayoutManager);//리사이클러뷰 리니어레이아웃 세팅
         mArrayList = new ArrayList<>();//어레이리스트 데이터
-        mMainAdapter = new MainAdapter(mArrayList);//어뎁터
-        recyclerView.setAdapter(mMainAdapter);//리사이클러뷰 어뎁터 세팅
+        mFragmentHomeAdapter = new FragmentHomeAdapter(mArrayList);//어뎁터
+        recyclerView.setAdapter(mFragmentHomeAdapter);//리사이클러뷰 어뎁터 세팅
 
         //과목 추가하기 세팅
         TextView tvAddSubject = viewGroup.findViewById(R.id.tv_FragThree_addSubject);//과목추가
@@ -76,13 +77,10 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
                 Toast.makeText(v.getContext(), "개발중", Toast.LENGTH_SHORT).show();
                 //<설명> 과목추가 화면으로 이동 (서버에 저장한다)
                 Intent intent = new Intent(getContext(), AddSubjectActivity.class);
-                startActivity(intent);
-                mArrayList.add()
+                startActivityForResult(intent, 1001);//<기능> Activity 를 넘기고 돌아올때까지 기다린다
 
 
                 break;
-
-
             //<기능> '?' 정보 안내
             case R.id.iv_fragment_home_info:
                 //<미구현> 다이얼로그 사이즈 커스텀 필요함!!
@@ -92,10 +90,24 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
                 dialog.show();
 
 
-
                 break;
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //<설명>AddSubjectActivity 에서 저장된 과목 불러온다.
+        SharedPreferences spf = getContext().getSharedPreferences("spf", Context.MODE_PRIVATE);
+        mSubjectName = spf.getString("subjectName", "");
+
+        //<설명> 리스트뷰에
+        //<구현대상> 시간이 남으면 ivPlay의 tint 색 변경하기
+        FragmentHomeData fragmentHomeData = new FragmentHomeData(R.drawable.ic_play,mSubjectName,"00:00:00",R.drawable.ic_more);//시간 변경하기
+        mArrayList.add(fragmentHomeData);
+        mFragmentHomeAdapter.notifyDataSetChanged();
+
     }
 }

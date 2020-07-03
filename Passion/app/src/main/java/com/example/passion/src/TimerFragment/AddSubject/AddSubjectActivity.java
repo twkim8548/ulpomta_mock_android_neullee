@@ -2,6 +2,7 @@ package com.example.passion.src.TimerFragment.AddSubject;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,8 +21,9 @@ import com.example.passion.src.TimerFragment.FragmentStartActivity.FragmentStart
 public class AddSubjectActivity extends BaseActivity implements AddSubjectActivityView, View.OnClickListener {
 
     private String mName;
-    TextView tvAdd;
-    String mStrEnterSubject;
+    private TextView tvAddSubject;
+    private String mStrEnterSubject;
+    private EditText mEtEnterContents;
     private AddSubjectService mAddSubjectService;
 
     @Override
@@ -31,9 +33,9 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
 
         ImageView ivBack = findViewById(R.id.iv_add_subject_keyboard_left);//'<' 뒤로가기
         ivBack.setOnClickListener(this);//'<' 뒤로가기
-        tvAdd = findViewById(R.id.tv_addGoal_add);//추가 클릭
-        tvAdd.setOnClickListener(this);
-        EditText etEnterContents = findViewById(R.id.et_addGoal_input);//입력내용
+        tvAddSubject = findViewById(R.id.tv_addGoal_add);//추가 클릭
+        tvAddSubject.setOnClickListener(this);
+        mEtEnterContents = findViewById(R.id.et_addGoal_input);//입력내용
         Button btnColor = findViewById(R.id.btn_addGoal_circle);//색상 선택
         btnColor.setOnClickListener(this);//색상 선택
         mAddSubjectService = new AddSubjectService(this);
@@ -58,7 +60,11 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
         if (code == responseCode) {//과목추가 성공
             Toast.makeText(this, "과목추가 성공", Toast.LENGTH_SHORT).show();
 
-            //<구현대상 > 입력한 과목을 SharedPreference에 저장
+            //<기능> 입력한 과목을 SharedPreference 에 저장
+            SharedPreferences spf = getSharedPreferences("spf", MODE_PRIVATE);
+            SharedPreferences.Editor editor = spf.edit();
+            editor.putString("subjectName", mStrEnterSubject);
+            editor.apply();
 
             //과목 추가 > 성공 > 입력한 과목을 FragmentHome 의 리스뷰에 표기가 된다
             //<설명> FragmentHome 으로 이동한다.
@@ -66,6 +72,11 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
             startActivity(intent);
             finish();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -79,11 +90,13 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
             //<기능> 추가 버튼
             //<설명> 입력한 과목을 서버 저장 후 리사이클러뷰 목록에 이름으로 보냅니다.
             case R.id.tv_addGoal_add:
-                //입력한 과목 변수저장
-                mStrEnterSubject = tvAdd.getText().toString();
 
+                //입력한 과목 변수저장
+                //디버그 결과 : mStrEnterSubject => null
+                mStrEnterSubject = mEtEnterContents.getText().toString();
                 //<기능> 입력한 과목 '전달'
-                if (mStrEnterSubject.length() > 0) {
+                //디버그 결과 : mStrEnterSubject.length() => 1
+                if (!(mStrEnterSubject.length()==0)) {
                     tryPostAddSubject();//<설명> 과목 생성 API : POST
                 } else {//<기능> 과목 입력 없음 : 다이얼로그
                     //<설명> 다이얼로그
@@ -99,12 +112,9 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
                         }
                     });
                 }
-
-
-                finish();
                 break;
             case R.id.btn_addGoal_circle:
-                Toast.makeText(this, "개발중입니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "시간이 남으면 개발예정입니다.", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             default:
