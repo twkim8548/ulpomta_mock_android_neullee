@@ -14,7 +14,9 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_keyboard_left"
-        android:tint="@color/colorOrange" />
+        android:tint="@color/colorOrange"
+        tools:ignore="ContentDescription" />
+    <!--ignore 뜻 :         -->
 
     <!--열정 품은 타이머-->
     <TextView
@@ -23,7 +25,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/passionTimer"
         android:textColor="@color/colorBlack"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <!--가입하기-->
@@ -33,7 +35,7 @@
         android:layout_marginTop="10dp"
         android:text="@string/toLogin"
         android:textColor="@color/colorOrange"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <!--이메일로 시작하기-->
@@ -41,8 +43,9 @@
         android:id="@+id/btn_sign_up_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/button_shape_gray"
-        android:drawableLeft="@drawable/ic_post"
+        android:drawableStart="@drawable/ic_post"
         android:paddingHorizontal="20dp"
         android:text="@string/startEmail" />
 
@@ -51,30 +54,33 @@
         android:id="@+id/btn_sign_up_facebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/button_shape_gray"
-        android:drawableLeft="@drawable/drawable_left_facebook"
+        android:drawableStart="@drawable/drawable_left_facebook"
         android:paddingHorizontal="20dp"
-        android:text="@string/startEmail" />
+        android:text="@string/startFacebook" />
 
     <!--카카오로 시작하기-->
     <Button
         android:id="@+id/btn_sign_up_kakao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/button_shape_gray"
-        android:drawableLeft="@drawable/drawable_left_kakao"
+        android:drawableStart="@drawable/drawable_left_kakao"
         android:paddingHorizontal="20dp"
-        android:text="@string/startEmail" />
+        android:text="@string/startKakao" />
 
     <!--네이버로 시작하기-->
     <Button
         android:id="@+id/btn_sign_up_naver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/button_shape_gray"
-        android:drawableLeft="@drawable/drawable_left_naver"
+        android:drawableStart="@drawable/drawable_left_naver"
         android:paddingHorizontal="20dp"
-        android:text="@string/startEmail" />
+        android:text="@string/startNaver" />
 
     <!--로그인-->
     <LinearLayout
@@ -90,7 +96,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
             android:gravity="center"
             android:text="@string/yetAccount"
             android:textColor="@color/colorBlack" />
@@ -100,9 +106,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
+            android:padding="10dp"
             android:text="@string/login"
             android:textColor="@color/colorOrange"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
     </LinearLayout>
-
 </LinearLayout>

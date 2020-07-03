@@ -20,7 +20,7 @@
         <activity android:name=".src.SignUp.SignUpStart.SignUpStartActivity"/>
         <activity android:name=".src.SignUp.Email.SignupEmailActivity" />
         <activity android:name=".src.SignIn.FindPW.FindPwActivity" />
-        <activity android:name=".src.TimerFragment.FragmentHome.statistics.AddSubjectActivity" />
+        <activity android:name=".src.TimerFragment.AddSubject.AddSubjectActivity" />
         <activity android:name=".src.TimerFragment.FragmentStartActivity.FragmentStartActivity" />
         <activity android:name=".src.SignIn.SingInStart.SignInStartActivity" />
         <activity android:name=".src.StartActivity.StartActivity">

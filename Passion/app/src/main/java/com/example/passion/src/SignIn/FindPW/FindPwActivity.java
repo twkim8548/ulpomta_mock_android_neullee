@@ -29,7 +29,7 @@ public class FindPwActivity extends BaseActivity implements SignInStartActivityV
         setContentView(R.layout.activity_find_pw);
         Button BtnFindPW = findViewById(R.id.btn_palloFindPW_Login); //패스워드를 찾는 버튼
         mEtEmail = findViewById(R.id.et_palloFindPW_enterEmail);
-        mBack = findViewById(R.id.iv_palloMember_keyboard_left);
+        mBack = findViewById(R.id.iv_sign_up_keyboard_left);
 
         BtnFindPW.setOnClickListener(this);
         mBack.setOnClickListener(this);
@@ -84,7 +84,7 @@ public class FindPwActivity extends BaseActivity implements SignInStartActivityV
                 }
                 break;
 
-            case R.id.iv_palloMember_keyboard_left:
+            case R.id.iv_sign_up_keyboard_left:
                 finish();
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;

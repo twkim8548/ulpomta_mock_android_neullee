@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".src.TimerFragment.FragmentHome.statistics.AddSubjectActivity">
+    tools:context=".src.TimerFragment.AddSubject.AddSubjectActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:padding="15dp">
 
         <ImageView
-            android:id="@+id/iv_addGoal_keyboard_left"
+            android:id="@+id/iv_add_subject_keyboard_left"
             android:layout_width="40dp"
             android:layout_height="36dp"
             android:layout_gravity="center_vertical"

@@ -24,7 +24,7 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
 
     private EditText mEtEmail, mEtPW;//입력 : 이메일 / 비밀번호
     private String mStrEmail, mStrPW;//저장 : 이메일 / 비밀번호
-    private SignInStartService signInStartService;//전역변수 : 서비스
+    private SignInStartService mSignInStartService;//전역변수 : 서비스
 
 
     @Override
@@ -41,13 +41,13 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
         ivBack.setOnClickListener(this);//< 버튼
         Button btnLogin = findViewById(R.id.btn_palloSing_Login);//로그인 버튼
         btnLogin.setOnClickListener(this);//로그인 버튼
-        signInStartService = new SignInStartService(this);//서비스 객체화
+        mSignInStartService = new SignInStartService(this);//서비스 객체화
     }
 
     //<설명> 네트워크 작업
     private void tryPostSignIn() {
         showProgressDialog();
-        signInStartService.postSingIn(mStrEmail, mStrPW);
+        mSignInStartService.postSingIn(mStrEmail, mStrPW);
     }
 
     //<설명> 실패하면>
@@ -59,9 +59,9 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
 
     //<설명> 성공화면
     @Override
-    public void signInSuccess(boolean isSucess, String message) {//오타수정
+    public void signInSuccess(boolean isSuccess, String message) {//오타수정
         hideProgressDialog();
-        if (isSucess) {//<수정완료> isSucess = ture -> isSuccess 자체가 boolean형태
+        if (isSuccess) {//<수정완료> isSucess = ture -> isSuccess 자체가 boolean형태
             Intent intent = new Intent(SignInStartActivity.this, FragmentStartActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.fadein, R.anim.fadeout);

@@ -1,4 +1,4 @@
-package com.example.passion.src.TimerFragment.FragmentHome.statistics;
+package com.example.passion.src.TimerFragment.Dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.passion.R;
-import com.example.passion.src.TimerFragment.FragmentStartActivity.interfaces.CustomDialogClickListener;
+import com.example.passion.src.TimerFragment.Dialog.interfaces.CustomDialogClickListener;
 
 public class OptionDialogInDialog extends Dialog {
 

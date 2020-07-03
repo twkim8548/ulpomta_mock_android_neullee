@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
-import com.example.passion.src.TimerFragment.FragmentStartActivity.interfaces.CustomDialogClickListener;
+import com.example.passion.src.TimerFragment.Dialog.OptionDialog;
+import com.example.passion.src.TimerFragment.Dialog.interfaces.CustomDialogClickListener;
 
 import java.util.ArrayList;
 

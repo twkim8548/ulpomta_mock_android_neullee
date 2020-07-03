@@ -12,7 +12,7 @@
         android:padding="15dp">
 
         <ImageView
-            android:id="@+id/iv_palloMember_keyboard_left"
+            android:id="@+id/iv_sign_up_keyboard_left"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"

@@ -8,13 +8,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.passion.R;
-import com.example.passion.src.TimerFragment.FragmentHome.FragmentHomeActivity;
+import com.example.passion.src.TimerFragment.FragmentHome.FragmentHome;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class FragmentStartActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    FragmentHomeActivity fragmentHomeActivity;
+    FragmentHome fragmentHome;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,10 +24,10 @@ public class FragmentStartActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.btnNavigation_main);
 
         //프래그먼트 생성
-        fragmentHomeActivity = new FragmentHomeActivity();
+        fragmentHome = new FragmentHome();
 
         //제일 처름 띄워줄 뷰 세팅 (commit();까지 해줘야함)
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragmentHomeActivity).commitAllowingStateLoss();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragmentHome).commitAllowingStateLoss();
 
         //버튼 네비게이션 초기 선택 값
         bottomNavigationView.setSelectedItemId(R.id.ic_main_home);
@@ -43,7 +43,7 @@ public class FragmentStartActivity extends AppCompatActivity {
 //                    ic_main_rank
 //                    ic_main_group
                     case R.id.ic_main_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragmentHomeActivity).commitAllowingStateLoss();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragmentHome).commitAllowingStateLoss();
                         return true;
 
                     default:
