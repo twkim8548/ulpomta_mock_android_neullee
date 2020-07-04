@@ -22,7 +22,7 @@ public class SignUpStartActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_sign_up_start);
         TextView signIn = findViewById(R.id.tv_sign_up_sign_in);//로그인
         signIn.setOnClickListener(this);//로그인
-        ImageView ivBack = findViewById(R.id.iv_sign_up_keyboard_left);// '<'뒤로가기 버튼
+        ImageView ivBack = findViewById(R.id.iv_find_pw_keyboard_left);// '<'뒤로가기 버튼
         ivBack.setOnClickListener(this);// '<'뒤로가기 버튼
         Button signUpEmail = findViewById(R.id.btn_sign_up_email);//이메일로 가입하기
         signUpEmail.setOnClickListener(this);//이메일로 가입하기
@@ -32,7 +32,7 @@ public class SignUpStartActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             //<기능> '<' 뒤로 돌아가기
-            case R.id.iv_sign_up_keyboard_left:
+            case R.id.iv_find_pw_keyboard_left:
                 finish();
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;

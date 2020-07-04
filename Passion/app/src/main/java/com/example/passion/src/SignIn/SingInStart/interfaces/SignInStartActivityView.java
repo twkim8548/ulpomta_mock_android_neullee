@@ -2,7 +2,7 @@ package com.example.passion.src.SignIn.SingInStart.interfaces;
 
 public interface SignInStartActivityView {
 
-    void validateFailure(String message);
+    void signInStartSuccess(String jwt);
 
-    void signInSuccess(boolean isSucess, String message);
+    void signInStartFailure(String message);
 }

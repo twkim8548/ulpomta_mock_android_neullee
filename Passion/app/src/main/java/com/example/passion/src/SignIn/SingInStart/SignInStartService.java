@@ -2,8 +2,8 @@ package com.example.passion.src.SignIn.SingInStart;
 
 import com.example.passion.src.SignIn.SingInStart.interfaces.SignInStartActivityView;
 import com.example.passion.src.SignIn.SingInStart.interfaces.SignInStartRetrofitInterface;
-import com.example.passion.src.SignIn.SingInStart.models.SignInBody;
-import com.example.passion.src.SignIn.SingInStart.models.SignInResponse;
+import com.example.passion.src.SignIn.SingInStart.models.SignInStartBody;
+import com.example.passion.src.SignIn.SingInStart.models.SignInStartResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,26 +19,27 @@ public class SignInStartService {
     }
 
     //Post 로그인
-    public void postSingIn(String email, String password) {
+    public void postSingInStart(String email, String password) {
         final SignInStartRetrofitInterface signInStartRetrofitInterface = getRetrofit().create(SignInStartRetrofitInterface.class);
-        signInStartRetrofitInterface.signInTest(new SignInBody(email, password)).enqueue(new Callback<SignInResponse>() {
+        signInStartRetrofitInterface.signInStart(new SignInStartBody(email, password)).enqueue(new Callback<SignInStartResponse>() {
             //성공시 도는 화면
             @Override
-            public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
-                final SignInResponse signInResponse = response.body();
-                if (signInResponse == null) {
-                    mSignInStartActivityView.validateFailure(null);
+            public void onResponse(Call<SignInStartResponse> call, Response<SignInStartResponse> response) {
+                final SignInStartResponse signInStartResponse = response.body();
+                if (signInStartResponse == null) {//<설명> 응답이 없을때
+                    mSignInStartActivityView.signInStartFailure(null);
                     return;
+                } else if (signInStartResponse.getCode() == 200) {//<설명> 응답코드(200) : 로그인 성공
+                    mSignInStartActivityView.signInStartSuccess(signInStartResponse.getResult().getJwt());
+                } else {//<설명>응답코드(...) :로그인 실패
+                    mSignInStartActivityView.signInStartFailure(signInStartResponse.getMessage());
                 }
-
-                mSignInStartActivityView.signInSuccess(signInResponse.getIsSuccess(),signInResponse.getMessage());//반환값
-
             }
 
             //실패시 도는 화면
             @Override
-            public void onFailure(Call<SignInResponse> call, Throwable t) {
-                mSignInStartActivityView.validateFailure(null);
+            public void onFailure(Call<SignInStartResponse> call, Throwable t) {
+                mSignInStartActivityView.signInStartFailure(null);
             }
         });
     }

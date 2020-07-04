@@ -9,7 +9,7 @@
     >
 
     <ImageView
-        android:id="@+id/iv_sign_up_keyboard_left"
+        android:id="@+id/iv_find_pw_keyboard_left"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_keyboard_left"

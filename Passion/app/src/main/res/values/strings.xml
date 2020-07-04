@@ -14,6 +14,7 @@
     <string name="checkPW">비밀번호 확인</string>
     <!--SignUpStartActivity-->
     <string name="login">로그인</string>
+<!--sign_in_start_dialog-->
     <string name="findEmail">이메일 찾기</string>
     <string name="findPW">비밀번호 찾기</string>
     <string name="or">또는</string>
@@ -28,7 +29,9 @@
     <string name="checkEmailAccount">이메일 계정 확인</string>
     <string name="information">﻿·\t이메일로 가입한 계정이 있는지 확인합니다.\n﻿·\t카카오톡/네이버로 가입했다면 이전화면에서 카카오톡/네이버 아이콘을 클릭해주세요.</string>
     <string name="makeNickname">닉네임 만들기</string>
-    <string name="enterNickname">사용할 닉네임을 입력해주세요</string>
+    <!--sign_in_start_dialog-->
+    <string name="enterNickname">닉네임을 입력하세요</string>
+    <string name="pleaseEnterNickname">사용할 닉네임을 입력해주세요</string>
     <string name="letterByte">0/60 Bytes</string>
     <string name="completion">완료</string>
     <string name="d_day">D-Day를 추가해주세요!</string>
