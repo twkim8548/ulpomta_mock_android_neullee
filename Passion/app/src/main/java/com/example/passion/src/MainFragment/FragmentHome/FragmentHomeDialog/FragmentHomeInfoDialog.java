@@ -1,4 +1,4 @@
-package com.example.passion.src.MainFragment.Dialog;
+package com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog;
 
 import android.app.Dialog;
 import android.content.Context;

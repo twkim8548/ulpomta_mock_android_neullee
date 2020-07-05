@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
-import com.example.passion.src.MainFragment.Dialog.OptionDialog;
-import com.example.passion.src.MainFragment.Dialog.interfaces.CustomDialogClickListener;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.OptionDialog;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.interfaces.CustomDialogClickListener;
 
 import java.util.ArrayList;
 

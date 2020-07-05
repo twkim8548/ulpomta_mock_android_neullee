@@ -17,18 +17,21 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".src.SignUp.SignUpStart.SignUpStartActivity"/>
+        <activity android:name=".src.StartActivity.AppStartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".src.SignUp.SignUpStart.SignUpStartActivity" />
         <activity android:name=".src.SignUp.Email.SignupEmailActivity" />
         <activity android:name=".src.SignIn.FindEmailInPw.FindEmailInPwActivity" />
         <activity android:name=".src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity" />
         <activity android:name=".src.MainFragment.FragmentStartActivity.FragmentStartActivity" />
         <activity android:name=".src.SignIn.SingInStart.SignInStartActivity" />
         <activity android:name=".src.StartActivity.StartActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

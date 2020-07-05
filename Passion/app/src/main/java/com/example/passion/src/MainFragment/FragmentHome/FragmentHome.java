@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
 import com.example.passion.src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity;
-import com.example.passion.src.MainFragment.Dialog.FragmentHomeInfoDialog;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.FragmentHomeInfoDialog;
 import com.example.passion.src.MainFragment.FragmentHome.statistics.FragmentHomeAdapter;
 import com.example.passion.src.MainFragment.FragmentHome.statistics.FragmentHomeData;
 

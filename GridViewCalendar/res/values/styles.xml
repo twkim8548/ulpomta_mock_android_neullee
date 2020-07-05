@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="day">
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:background">@drawable/border_day</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="yoil" parent="day">
+        <item name="android:background">@drawable/border_yoil</item>
+        <item name="android:paddingTop">5dip</item>
+        <item name="android:paddingBottom">5dip</item>
+    </style>
+    
+    <style name="yoil_sun" parent="yoil">
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="yoil_sat" parent="yoil">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+</resources>

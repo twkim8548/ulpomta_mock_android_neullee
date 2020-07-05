@@ -16,6 +16,10 @@
     <color name="colorTransparentWhite">#BBFFFFFF</color>
     <color name="colorBlue">#4AA3E8</color>
     <color name="colorIndigo">#454656</color>
+    <color name="colorCircle1">#FFF2EB</color>
+    <color name="colorCircle2">#FFB992</color>
+    <color name="colorCircle3">#FF8E4E</color>
+    <color name="colorCircle4">#FF792D</color>
 
 
 </resources>

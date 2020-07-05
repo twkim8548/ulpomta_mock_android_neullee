@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><!--1.데이터 아이템이 담길 뷰를 위한 XML 레이아웃을 생성-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_fragment_chart"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tv_fragment_chart_day"
+        android:layout_width="20dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="10"
+        android:textSize="15sp"
+        />
+</LinearLayout>

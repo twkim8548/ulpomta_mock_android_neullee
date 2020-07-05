@@ -14,7 +14,7 @@
     <string name="checkPW">비밀번호 확인</string>
     <!--SignUpStartActivity-->
     <string name="login">로그인</string>
-<!--sign_in_start_dialog-->
+    <!--sign_in_start_dialog-->
     <string name="findEmail">이메일 찾기</string>
     <string name="findPW">비밀번호 찾기</string>
     <string name="or">또는</string>
@@ -64,7 +64,22 @@
     <string name="infoTitle">기록삭제,수정,휴식 도움말</string>
     <!--FragmentHomeDialog-->
     <string name="infoMessage">* 새별 5시에 날짜와 시간이 초기화 됩니다.\n\n* 휴식기록 따로 하고싶지 않으시다면 설정에서 기능을 끌 수 있습니다.\n\n* 휴식알림은 앱알림을 켜짐으로 설정해두어야 합니다.\n\n*공부,휴식 기록 삭제, 수정은 통계 탭 타임라임에서 가능합니다.</string>
-
+    <!--activity_app_start-->
+    <string name="month">0000년 7월</string>
+    <!--activity_app_start-->
+    <string name="nickname">닉네임</string>
+    <string name="day">일</string>
+    <string name="sunday">일</string>
+    <string name="monthday">월</string>
+    <string name="tuesday">화</string>
+    <string name="wednesday">수</string>
+    <string name="thursday">목</string>
+    <string name="friday">금</string>
+    <string name="saturday">토</string>
+    <string name="hour1">0~4시간</string>
+    <string name="hour2">4~7시간</string>
+    <string name="hour3">7~10시간</string>
+    <string name="hour4">10+시간</string>
 
     <!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
     <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
