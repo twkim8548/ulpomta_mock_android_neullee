@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.passion.R;
 import com.example.passion.src.MainFragment.FragmentChart.FragmentChart;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome;
+import com.example.passion.src.MainFragment.FragmentPlanner.FragmentPlanner;
+import com.example.passion.src.MainFragment.FragmentStar.FragmentRank;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class FragmentStartActivity extends AppCompatActivity {
@@ -17,6 +19,8 @@ public class FragmentStartActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     FragmentHome fragmentHome;
     FragmentChart fragmentChart;
+    FragmentPlanner fragmentPlanner;
+    FragmentRank fragmentRank;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +32,8 @@ public class FragmentStartActivity extends AppCompatActivity {
         //프래그먼트 생성
         fragmentHome = new FragmentHome();
         fragmentChart = new FragmentChart();
+        fragmentPlanner = new FragmentPlanner();
+        fragmentRank = new FragmentRank();
 
         //제일 처름 띄워줄 뷰 세팅 (commit();까지 해줘야함)
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragmentHome).commitAllowingStateLoss();
@@ -41,9 +47,9 @@ public class FragmentStartActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
 //                    <완료>ic_main_chart
-//                    ic_main_planner
+//                    <완료>ic_main_planner
 //                    <완료> ic_main_home
-//                    ic_main_rank
+//                    <완료> ic_main_rank
 //                    ic_main_group
                     case R.id.ic_main_home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragmentHome).commitAllowingStateLoss();
@@ -52,6 +58,15 @@ public class FragmentStartActivity extends AppCompatActivity {
                     case R.id.ic_main_chart:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main,fragmentChart).commitAllowingStateLoss();
                         return true;
+
+                    case R.id.ic_main_planner:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main,fragmentPlanner).commitAllowingStateLoss();
+                        return true;
+
+                    case R.id.ic_main_rank:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragmentRank).commitAllowingStateLoss();
+                        return true;
+
 
                     default:
                         return true;

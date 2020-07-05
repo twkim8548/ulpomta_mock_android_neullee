@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ic_main_chart"
+        android:icon="@drawable/ic_lock"
+        android:title="통계"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/ic_main_planner"
+        android:icon="@drawable/ic_check"
+        android:title="플래너"
+        android:titleCondensed=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/ic_main_home"
+        android:icon="@drawable/ic_cafe"
+        android:title="홈"
+        app:showAsAction="always" />
+
+</menu>

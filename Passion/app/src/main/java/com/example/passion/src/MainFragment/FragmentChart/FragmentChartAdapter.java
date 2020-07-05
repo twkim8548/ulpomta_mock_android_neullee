@@ -57,6 +57,7 @@ public class FragmentChartAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
+
         holder.tvItemGridView.setText(list.get(position).getDay());
 
         //해당 날짜 텍스트 컬러,배경 변경
@@ -64,10 +65,10 @@ public class FragmentChartAdapter extends BaseAdapter {
         //오늘 day 가져옴
         Integer today = calendar.get(Calendar.DAY_OF_MONTH);
         String sToday = String.valueOf(today);
-        if (sToday.equals(getItem(position))) { //오늘 날짜 초기 서냍
-            holder.layoutItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(),R.drawable.stroke_calender_true));
+        if (sToday.equals(getItem(position))) { //오늘 날짜 초기 선택
+            holder.tvItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(),R.drawable.stroke_calender_true));
 //            holder.layoutItemGridView.setSelected(true);
-            holder.layoutItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(), R.drawable.stroke_calender_true));
+//            holder.layoutItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(), R.drawable.stroke_calender_true));
 
         }
 

@@ -63,14 +63,20 @@ public class FragmentChart extends Fragment implements ObservableScrollViewCallb
         //연,월,일을 따로 저장
         final SimpleDateFormat curYearFormat = new SimpleDateFormat("yyyy", Locale.KOREA);
         final SimpleDateFormat curMonthFormat = new SimpleDateFormat("M", Locale.KOREA);
+        final SimpleDateFormat curToDayFormat = new SimpleDateFormat("d", Locale.KOREA);
+        String checkToday = curToDayFormat.format(date);
         mTvDate.setText(curYearFormat.format(date) + "년 " + curMonthFormat.format(date) + "월");
 
+
+        //<날짜 달력 요일 표시>
         //gridview 요일 표시
         dayList = new ArrayList<item_data>();
 
 
         //캘린더 사용
         mCalendar = Calendar.getInstance();
+
+
         //이번달 1일 무슨요일인지 판단 mCal.set(Year,Month,Day)
         mCalendar.set(Integer.parseInt(curYearFormat.format(date)), Integer.parseInt(curMonthFormat.format(date)) - 1, 1);
         int dayNum = mCalendar.get(Calendar.DAY_OF_WEEK);
@@ -80,18 +86,24 @@ public class FragmentChart extends Fragment implements ObservableScrollViewCallb
         }
         setCalendarDate(mCalendar.get(Calendar.MONTH) + 1);
 
+        //오늘날짜인 경우 true로 바꾸어서 레이아웃을 세팅한다
+        for (int i = 0; i < dayList.size(); i++) {
+            if (checkToday.equals(dayList.get(i).getDay())) {
+                dayList.get(i).setChecked(true);
+                break;
+            }
+        }
+
         gridAdapter = new FragmentChartAdapter(viewGroup.getContext(), dayList);
         gridView.setAdapter(gridAdapter);
 
-        //오늘날짜인지 확인한다
-
-
-
-
+        //날짜 선택시 나오는 화면
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(view.getContext(), position + "선택", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), dayList.get(position).getDay() + "선택", Toast.LENGTH_SHORT).show();
+
+
                 for (int i = 0; i < dayList.size(); i++) {
                     if (i == position) {
                         dayList.get(position).setChecked(true);
@@ -113,7 +125,7 @@ public class FragmentChart extends Fragment implements ObservableScrollViewCallb
     private void setCalendarDate(int month) {
         mCalendar.set(Calendar.MONTH, month - 1);
         for (int i = 0; i < mCalendar.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
-            dayList.add(new item_data("" + (i + 1),false));
+            dayList.add(new item_data("" + (i + 1), false));
         }
     }
 

@@ -80,6 +80,33 @@
     <string name="hour2">4~7시간</string>
     <string name="hour3">7~10시간</string>
     <string name="hour4">10+시간</string>
+    <string name="todo">TODO</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="home_second">Home Second</string>
+    <string name="notice">공지사항</string>
+    <string name="offline">오프라인 모드</string>
+    <string name="function">계정/기능 설정</string>
+    <string name="days">D-Days</string>
+    <string name="help">도움말</string>
+    <string name="inquiry">문의하기</string>
+    <string name="friedAdd">친구초대</string>
+    <string name="review">리뷰 남기기</string>
+    <string name="logout">로그아웃</string>
+    <string name="status">상태메세지를 입력해주세요.</string>
+    <string name="howToLogin">가입방법</string>
+    <string name="howToLoginStatus">789_skymert@naver.com</string>
+    <string name="category">카테고리</string>
+    <string name="categoryStatus">이직</string>
+    <string name="colorTheme">테마색상</string>
 
     <!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
     <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
