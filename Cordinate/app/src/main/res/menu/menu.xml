@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_notice"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="notice" />
+        <item
+            android:id="@+id/nav_offline"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="offline" />
+        <item
+            android:id="@+id/nav_function"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="function" />
+        <item
+            android:id="@+id/nav_days"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="days" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="help" />
+        <item
+            android:id="@+id/nav_inquiry"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="inquiry" />
+        <item
+            android:id="@+id/nav_friendAdd"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="friedAdd" />
+        <item
+            android:id="@+id/nav_review"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="review" />
+        <item
+            android:id="@+id/nav_log_out"
+            android:icon="@drawable/ic_android_black_24dp"
+            android:title="logout" />
+    </group>
+</menu>

@@ -8,12 +8,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-<!--    <include-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        layout="@layout/drawer_toolbar"/>-->
-
-
     <!--상단메뉴-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,42 +16,42 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/iv_main_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu" />
+            <ImageView
+                android:id="@+id/iv_main_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu" />
 
-        <TextView
-            android:id="@+id/tv_main_d_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:gravity="center"
-            android:text="@string/d_day"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp" />
+            <TextView
+                android:id="@+id/tv_main_d_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center"
+                android:text="@string/d_day"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp" />
 
-        <ImageView
-            android:id="@+id/iv_main_lock"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/ic_lock" />
+            <ImageView
+                android:id="@+id/iv_main_lock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_lock" />
 
-        <ImageView
-            android:id="@+id/iv_main_check"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/ic_check" />
+            <ImageView
+                android:id="@+id/iv_main_check"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_check" />
 
-        <ImageView
-            android:id="@+id/iv_main_cafe"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/ic_cafe" />
+            <ImageView
+                android:id="@+id/iv_main_cafe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_cafe" />
 
     </LinearLayout>
 

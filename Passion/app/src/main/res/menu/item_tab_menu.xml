@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ic_tab_people"
+        android:checked="true"
+        android:icon="@drawable/ic_people"
+        android:iconTint="@color/colorTabIconBefore"
+        android:enabled="true"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/ic_tab_check_box"
+        android:icon="@drawable/ic_check_box"
+        android:title=""
+        android:checked="true"
+        android:iconTint="@color/colorTabIconBefore"
+        android:enabled="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/ic_tab_grid"
+        android:icon="@drawable/ic_grid"
+        android:title=""
+        android:checked="true"
+        android:iconTint="@color/colorTabIconBefore"
+        android:enabled="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/ic_tab_dictionary"
+        android:icon="@drawable/ic_dictionary"
+        android:title=""
+        android:checked="true"
+        android:iconTint="@color/colorTabIconBefore"
+        android:enabled="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/ic_tab_timer"
+        android:icon="@drawable/ic_timer"
+        android:title=""
+        android:checked="true"
+        android:iconTint="@color/colorTabIconBefore"
+        android:enabled="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/ic_tab_menu_horiz"
+        android:icon="@drawable/ic_menu_horiz"
+        android:title=""
+        android:checked="true"
+        android:iconTint="@color/colorTabIconBefore"
+        android:enabled="true"
+        app:showAsAction="always" />
+
+</menu>

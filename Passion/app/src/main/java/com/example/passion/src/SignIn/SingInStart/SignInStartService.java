@@ -2,8 +2,9 @@ package com.example.passion.src.SignIn.SingInStart;
 
 import com.example.passion.src.SignIn.SingInStart.interfaces.SignInStartActivityView;
 import com.example.passion.src.SignIn.SingInStart.interfaces.SignInStartRetrofitInterface;
-import com.example.passion.src.SignIn.SingInStart.models.SignInStartBody;
 import com.example.passion.src.SignIn.SingInStart.models.SignInStartResponse;
+
+import java.util.HashMap;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -12,6 +13,7 @@ import retrofit2.Response;
 import static com.example.passion.src.ApplicationClass.getRetrofit;
 
 public class SignInStartService {
+
     private final SignInStartActivityView mSignInStartActivityView;
 
     public SignInStartService(final SignInStartActivityView signInStartActivityView) {
@@ -21,7 +23,11 @@ public class SignInStartService {
     //Post 로그인
     public void postSingInStart(String email, String password) {
         final SignInStartRetrofitInterface signInStartRetrofitInterface = getRetrofit().create(SignInStartRetrofitInterface.class);
-        signInStartRetrofitInterface.signInStart(new SignInStartBody(email, password)).enqueue(new Callback<SignInStartResponse>() {
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("email", email);
+        hashMap.put("password", password);
+
+        signInStartRetrofitInterface.signInStart(hashMap).enqueue(new Callback<SignInStartResponse>() {
             //성공시 도는 화면
             @Override
             public void onResponse(Call<SignInStartResponse> call, Response<SignInStartResponse> response) {

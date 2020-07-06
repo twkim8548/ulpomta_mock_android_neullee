@@ -23,7 +23,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.passion.R;
 import com.example.passion.src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.FragmentHomeInfoDialog;
-import com.example.passion.src.MainFragment.FragmentHome.NavigationDrawer.DrawerMain;
 import com.example.passion.src.MainFragment.FragmentHome.statistics.FragmentHomeAdapter;
 import com.example.passion.src.MainFragment.FragmentHome.statistics.FragmentHomeData;
 import com.google.android.material.navigation.NavigationView;
@@ -61,6 +60,8 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         recyclerView.setAdapter(mFragmentHomeAdapter);//리사이클러뷰 어뎁터 세팅
 
 
+
+        //네비게이션 드로어
         mDrawerLayout = viewGroup.findViewById(R.id.drawer_layout);
         mNavigationView = viewGroup.findViewById(R.id.drawer_navigation_view);
         mIvMenu = viewGroup.findViewById(R.id.iv_main_menu);
@@ -84,6 +85,8 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 //        iv_main_menu
         ImageView drawableMenu = viewGroup.findViewById(R.id.iv_main_menu);
         drawableMenu.setOnClickListener(this);
+
+
 
 
         return viewGroup;//화면
@@ -111,14 +114,6 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
                 dialog.show();
                 break;
 
-            //drawable테스트
-            case R.id.iv_main_menu:
-                Intent intent1 = new Intent(v.getContext(), DrawerMain.class);
-                startActivity(intent1);
-
-
-                break;
-
             default:
                 break;
         }
@@ -138,6 +133,9 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         mFragmentHomeAdapter.notifyDataSetChanged();
 
     }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

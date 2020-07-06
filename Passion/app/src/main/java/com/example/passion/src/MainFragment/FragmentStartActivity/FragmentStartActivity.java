@@ -11,7 +11,7 @@ import com.example.passion.R;
 import com.example.passion.src.MainFragment.FragmentChart.FragmentChart;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome;
 import com.example.passion.src.MainFragment.FragmentPlanner.FragmentPlanner;
-import com.example.passion.src.MainFragment.FragmentStar.FragmentRank;
+import com.example.passion.src.MainFragment.FragmentRank.FragmentRank;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class FragmentStartActivity extends AppCompatActivity {

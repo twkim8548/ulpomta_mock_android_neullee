@@ -6,10 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--    <include-->
-    <!--        layout="@layout/fragment_home"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content" />-->
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/drawer_navigation_view"
@@ -19,6 +15,7 @@
         andoid:layout_gravity="start"
         app:headerLayout="@layout/drawer_header"
         app:menu="@menu/item_drawer_manu" />
+
 
     <!--    드러블네비게이션 : 왼->오 : start : 오->왼 : left-->
 </androidx.drawerlayout.widget.DrawerLayout>

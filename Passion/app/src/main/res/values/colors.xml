@@ -21,6 +21,10 @@
     <color name="colorCircle3">#FF8E4E</color>
     <color name="colorCircle4">#FF792D</color>
     <color name="colorHeader">#B5BAC1</color>
+    <color name="colorBlackTitle">#232323</color>
+    <color name="colorBlackTitleUnder">#1E1E1E</color>
+    <color name="colorBlackTab">#474747</color>
+    <color name="colorTabIconBefore">#787878</color>
 
 
 </resources>
