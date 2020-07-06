@@ -1,4 +1,4 @@
-package com.example.passion.src.AppStartActivity.models;
+package com.example.passion.src.Splash.models;
 
 import com.google.gson.annotations.SerializedName;
 

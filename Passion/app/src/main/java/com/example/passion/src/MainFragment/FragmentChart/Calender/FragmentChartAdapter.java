@@ -1,4 +1,4 @@
-package com.example.passion.src.MainFragment.FragmentChart;
+package com.example.passion.src.MainFragment.FragmentChart.Calender;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -43,21 +43,17 @@ public class FragmentChartAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        //초기화 작업
         ViewHolder holder = null;
-
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.item_fragment_chart, parent, false);//아이템
+            convertView = inflater.inflate(R.layout.item_fragment_chart, parent, false);
             holder = new ViewHolder();
-
-            holder.layoutItemGridView = (LinearLayout) convertView.findViewById(R.id.layout_fragment_chart);//아이템
-            holder.tvItemGridView = (TextView) convertView.findViewById(R.id.tv_fragment_chart_day);//아이템
-
-
+            holder.layoutItemGridView = (LinearLayout) convertView.findViewById(R.id.layout_fragment_chart);
+            holder.tvItemGridView = (TextView) convertView.findViewById(R.id.tv_fragment_chart_day);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
         holder.tvItemGridView.setText(list.get(position).getDay());
 
         //해당 날짜 텍스트 컬러,배경 변경
@@ -66,19 +62,14 @@ public class FragmentChartAdapter extends BaseAdapter {
         Integer today = calendar.get(Calendar.DAY_OF_MONTH);
         String sToday = String.valueOf(today);
         if (sToday.equals(getItem(position))) { //오늘 날짜 초기 선택
-            holder.tvItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(),R.drawable.stroke_calender_true));
-//            holder.layoutItemGridView.setSelected(true);
-//            holder.layoutItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(), R.drawable.stroke_calender_true));
-
+            holder.tvItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(), R.drawable.stroke_calender_true));
         }
 
-
+        //날짜 선택 / 미선택의 결과
         if (list.get(position).isChecked) {
             holder.layoutItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(), R.drawable.stroke_calender_true));
-        }
-        else {
+        } else {
             holder.layoutItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(), R.drawable.stroke_calender_false));
-
         }
 
         return convertView;
@@ -88,5 +79,4 @@ public class FragmentChartAdapter extends BaseAdapter {
         LinearLayout layoutItemGridView;
         TextView tvItemGridView;
     }
-
 }

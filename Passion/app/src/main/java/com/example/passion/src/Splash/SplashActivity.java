@@ -1,11 +1,11 @@
-package com.example.passion.src.AppStartActivity;
+package com.example.passion.src.Splash;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.passion.R;
-import com.example.passion.src.AppStartActivity.interfaces.SplashActivityView;
+import com.example.passion.src.Splash.interfaces.SplashActivityView;
 import com.example.passion.src.BaseActivity;
 import com.example.passion.src.MainFragment.FragmentStartActivity.FragmentStartActivity;
 import com.example.passion.src.SignIn.StartActivity;

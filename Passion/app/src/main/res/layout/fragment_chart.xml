@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?><!--5.그리드뷰와 아이템을 추가할 수 있는 추가기능을 위한 메인 XML 레이아웃을 생성-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_fragment_calender_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorOrange"
+        android:gravity="left|center_vertical"
+        android:paddingVertical="15dp"
+        android:paddingLeft="60dp"
+        android:text="@string/nickname"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
 
     <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
         android:id="@+id/observable_fragment_chart"
@@ -14,18 +27,6 @@
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_fragment_calender_nickname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorOrange"
-                android:gravity="left|center_vertical"
-                android:paddingVertical="15dp"
-                android:paddingLeft="60dp"
-                android:text="@string/nickname"
-                android:textColor="@color/colorWhite"
-                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -220,9 +221,44 @@
                 android:layout_height="10dp"
                 android:background="@color/colorFindPw" />
 
-            <FrameLayout
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_timer_main"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                app:tabIndicatorColor="@color/colorOrange"
+                app:tabIndicatorFullWidth="false"
+                android:layout_marginHorizontal="60dp"
+                app:tabSelectedTextColor="@color/colorOrange"
+                app:tabTextAppearance="@style/tabLayoutTextSize"
+                app:tabTextColor="@color/colorBlack">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일간" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주간" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="월간" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorFindPw" />
+
+            <FrameLayout
+                android:id="@+id/frame_layout_fragment_chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
     </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +15,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -50,6 +50,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //<설명> Fragment 화면 구성을 위한 세팅
         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);//<설명> setContentView와 같은 역할
+        //can_not_fragment_home
 
         //RecyclerView 세팅
         RecyclerView recyclerView = viewGroup.findViewById(R.id.recylerView_main);//리사이클러뷰
@@ -60,13 +61,19 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         recyclerView.setAdapter(mFragmentHomeAdapter);//리사이클러뷰 어뎁터 세팅
 
 
-
         //네비게이션 드로어
-        mDrawerLayout = viewGroup.findViewById(R.id.drawer_layout);
+        mDrawerLayout = viewGroup.findViewById(R.id.drawer_layout);//drawer_layout
         mNavigationView = viewGroup.findViewById(R.id.drawer_navigation_view);
         mIvMenu = viewGroup.findViewById(R.id.iv_main_menu);
         mIvMenu.setOnClickListener(this);
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+
+                return false;
+            }
+        });
 
 
         //과목 추가하기 세팅
@@ -82,11 +89,9 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         ImageView info = viewGroup.findViewById(R.id.iv_fragment_home_info);
         info.setOnClickListener(this);
 
-//        iv_main_menu
+        //메뉴를 클릭하면 drawabl 메뉴 확인
         ImageView drawableMenu = viewGroup.findViewById(R.id.iv_main_menu);
         drawableMenu.setOnClickListener(this);
-
-
 
 
         return viewGroup;//화면
@@ -102,8 +107,6 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
                 //<설명> 과목추가 화면으로 이동 (서버에 저장한다)
                 Intent intent = new Intent(getContext(), AddSubjectActivity.class);
                 startActivityForResult(intent, 1001);//<기능> Activity 를 넘기고 돌아올때까지 기다린다
-
-
                 break;
             //<기능> '?' 정보 안내
             case R.id.iv_fragment_home_info:
@@ -113,7 +116,10 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.show();
                 break;
-
+            // 메뉴를 클릭하면 왼쪽에서 레이아웃 확인
+            case R.id.iv_main_menu:
+                mDrawerLayout.openDrawer(Gravity.LEFT);
+                break;
             default:
                 break;
         }
@@ -131,20 +137,6 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         FragmentHomeData fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, mSubjectName, "00:00:00", R.drawable.ic_more);//시간 변경하기
         mArrayList.add(fragmentHomeData);
         mFragmentHomeAdapter.notifyDataSetChanged();
-
     }
 
-
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId()){
-            case R.id.iv_main_menu:
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

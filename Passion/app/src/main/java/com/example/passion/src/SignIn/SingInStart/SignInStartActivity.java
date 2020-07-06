@@ -55,7 +55,7 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
 
     //<설명> 성공화면
     @Override
-    public void signInStartSuccess(String jwt) {//오타수정
+    public void signInStartSuccess(String jwt) {//오타수정완료
         hideProgressDialog();
         //<설명> ApplicationClass의 sSharedPreferences 를 이용한 헤더에 jwt 저장
         sSharedPreferences = getSharedPreferences("sSpf", MODE_PRIVATE);

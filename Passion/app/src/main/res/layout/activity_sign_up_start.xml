@@ -11,8 +11,8 @@
     <!--뒤로가기-->
     <ImageView
         android:id="@+id/iv_find_pw_keyboard_left"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:src="@drawable/ic_keyboard_left"
         android:tint="@color/colorOrange"
         tools:ignore="ContentDescription" />
@@ -22,28 +22,29 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/passionTimer"
         android:textColor="@color/colorBlack"
-        android:textSize="30sp"
+        android:textSize="27sp"
         android:textStyle="bold" />
 
     <!--가입하기-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:text="@string/toLogin"
         android:textColor="@color/colorOrange"
-        android:textSize="30sp"
+        android:textSize="27sp"
         android:textStyle="bold" />
 
     <!--이메일로 시작하기-->
     <Button
         android:id="@+id/btn_sign_up_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/button_shape_gray"
         android:drawableStart="@drawable/ic_post"
         android:paddingHorizontal="20dp"
@@ -53,8 +54,9 @@
     <Button
         android:id="@+id/btn_sign_up_facebook"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/button_shape_gray"
         android:drawableStart="@drawable/drawable_left_facebook"
         android:paddingHorizontal="20dp"
@@ -64,8 +66,9 @@
     <Button
         android:id="@+id/btn_sign_up_kakao"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/button_shape_gray"
         android:drawableStart="@drawable/drawable_left_kakao"
         android:paddingHorizontal="20dp"
@@ -75,8 +78,9 @@
     <Button
         android:id="@+id/btn_sign_up_naver"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/button_shape_gray"
         android:drawableStart="@drawable/drawable_left_naver"
         android:paddingHorizontal="20dp"
@@ -87,6 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
+        android:layout_marginTop="100dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"

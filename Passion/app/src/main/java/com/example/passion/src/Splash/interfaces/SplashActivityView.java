@@ -1,4 +1,4 @@
-package com.example.passion.src.AppStartActivity.interfaces;
+package com.example.passion.src.Splash.interfaces;
 
 public interface SplashActivityView {
 

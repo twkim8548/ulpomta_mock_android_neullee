@@ -108,8 +108,14 @@
     <string name="categoryStatus">이직</string>
     <string name="colorTheme">테마색상</string>
     <string name="allStudyTime">총 공부시간</string>
+    <string name="allTime">최대 집중 시간</string>
     <string name="subject">과목</string>
     <string name="curTime">현재 집중시간</string>
+    <string name="calender_day">7월 6일 월요일</string>
+    <string name="useApp">(허용앱 0초)</string>
+    <string name="startTime">시작시간</string>
+    <string name="endTime">종료시간</string>
+    <string name="subjectStudy">과목별 공부량</string>
 
     <!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
     <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->

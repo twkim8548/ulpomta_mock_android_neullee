@@ -20,6 +20,7 @@ public class SignUpStartActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_start);
+
         TextView signIn = findViewById(R.id.tv_sign_up_sign_in);//로그인
         signIn.setOnClickListener(this);//로그인
         ImageView ivBack = findViewById(R.id.iv_find_pw_keyboard_left);// '<'뒤로가기 버튼

@@ -109,6 +109,7 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        finish();
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
     }
 }

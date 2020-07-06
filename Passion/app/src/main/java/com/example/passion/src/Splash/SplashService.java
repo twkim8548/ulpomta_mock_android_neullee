@@ -1,8 +1,8 @@
-package com.example.passion.src.AppStartActivity;
+package com.example.passion.src.Splash;
 
-import com.example.passion.src.AppStartActivity.interfaces.SplashActivityView;
-import com.example.passion.src.AppStartActivity.interfaces.SplashRetrofitInterface;
-import com.example.passion.src.AppStartActivity.models.InfoResponse;
+import com.example.passion.src.Splash.interfaces.SplashActivityView;
+import com.example.passion.src.Splash.interfaces.SplashRetrofitInterface;
+import com.example.passion.src.Splash.models.InfoResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!--오늘날짜-->
+    <TextView
+        android:id="@+id/tv_calender_day_to_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/calender_day"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp" />
+
+    <!--첫번째 안내-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <!--총공부시간-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/allStudyTime"
+                android:textColor="@color/colorOrange"
+                android:textSize="15sp" />
+
+            <!--총공부시간-->
+            <TextView
+                android:id="@+id/tv_calender_day_study_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:textColor="@color/colorBlack"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_calender_day_app_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/useApp"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+        <!--최대 집중시간-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/allTime"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorOrange"
+                android:textSize="15sp" />
+
+            <!--최대 집중시간-->
+            <TextView
+                android:id="@+id/tv_calender_day_max_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:textColor="@color/colorBlack"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--두번째 안내-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--시작시간-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startTime"
+                android:textColor="@color/colorOrange"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp" />
+
+            <!--시작시간-->
+            <TextView
+                android:id="@+id/tv_calender_day_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:textColor="@color/colorBlack"
+                android:textSize="25sp"
+                tools:ignore="DuplicateIds" />
+        </LinearLayout>
+
+        <!--종료시간-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/endTime"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorOrange"
+                android:textSize="15sp" />
+
+            <!--종료시간-->
+            <TextView
+                android:id="@+id/tv_calender_day_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:textColor="@color/colorBlack"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorFindPw" />
+    <!--하단의 그래프 등 자료 넣기    -->
+
+
+</LinearLayout>

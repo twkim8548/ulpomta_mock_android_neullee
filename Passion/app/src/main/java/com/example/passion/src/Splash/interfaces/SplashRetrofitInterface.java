@@ -1,6 +1,6 @@
-package com.example.passion.src.AppStartActivity.interfaces;
+package com.example.passion.src.Splash.interfaces;
 
-import com.example.passion.src.AppStartActivity.models.InfoResponse;
+import com.example.passion.src.Splash.models.InfoResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
