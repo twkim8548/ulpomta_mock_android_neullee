@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -23,13 +25,14 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
     private String mStrSubject;
     private EditText mEtEnterContents;
     private AddSubjectService mAddSubjectService;
+    private ImageView ivBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_subject);
 
-        ImageView ivBack = findViewById(R.id.iv_add_subject_keyboard_left);//'<' 뒤로가기
+        ivBack = findViewById(R.id.iv_add_subject_keyboard_left);//'<' 뒤로가기
         ivBack.setOnClickListener(this);//'<' 뒤로가기
         tvAddSubject = findViewById(R.id.tv_addGoal_add);//추가 클릭
         tvAddSubject.setOnClickListener(this);
@@ -54,9 +57,9 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
     public void addSubjectSuccess(String message) {
         hideCustomProgressDialog();
         //입력한 과목을 SharedPreference에 저장한다
-        SharedPreferences spf = getSharedPreferences("spf",MODE_PRIVATE);
+        SharedPreferences spf = getSharedPreferences("spf", MODE_PRIVATE);
         SharedPreferences.Editor editor = spf.edit();
-        editor.putString("subjectName",mStrSubject);
+        editor.putString("subjectName", mStrSubject);
         editor.apply();
 
         //과목 추가 > 성공 > 입력한 과목을 FragmentHome 의 리스뷰에 표기가 된다
@@ -66,11 +69,17 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
 
     @Override
     public void onClick(View v) {
+        //애니메이션
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.fade);
+
         switch (v.getId()) {
             //<기능> '<' 뒤로가기 버튼
             //<설명> 과목추가 > '<' 클릭 >
             case R.id.iv_add_subject_keyboard_left:
-                SharedPreferences spf = getSharedPreferences("spf",MODE_PRIVATE);
+                //버튼 애니메이션
+                ivBack.startAnimation(animation);
+
+                SharedPreferences spf = getSharedPreferences("spf", MODE_PRIVATE);
                 SharedPreferences.Editor editor = spf.edit();
                 editor.clear();
                 editor.commit();
@@ -80,6 +89,9 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
             //<기능> 추가 버튼
             //<설명> 입력한 과목을 서버 저장 후 리사이클러뷰 목록에 이름으로 보냅니다.
             case R.id.tv_addGoal_add:
+                //버튼 애니메이션
+                tvAddSubject.startAnimation(animation);
+
                 //입력한 과목 변수저장
                 mStrSubject = mEtEnterContents.getText().toString();
                 //<기능> 입력한 과목 '전달'
@@ -113,7 +125,7 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        SharedPreferences spf = getSharedPreferences("spf",MODE_PRIVATE);
+        SharedPreferences spf = getSharedPreferences("spf", MODE_PRIVATE);
         SharedPreferences.Editor editor = spf.edit();
         editor.clear();
         editor.commit();

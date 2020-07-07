@@ -1,9 +1,8 @@
-package com.example.passion.src.MainFragment.FragmentHome.NavigationDrawer;
+package com.example.passion.src.MainFragment.FragmentHome.Drawer;
 
 import android.os.Bundle;
 import android.widget.Toolbar;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -12,7 +11,6 @@ import com.example.passion.R;
 public class DrawerMain extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
-    ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
 
 

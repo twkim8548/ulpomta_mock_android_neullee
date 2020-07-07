@@ -1,6 +1,6 @@
-package com.example.passion.src.MainFragment.FragmentHome;
+package com.example.passion.src.MainFragment.FragmentHome.FragmentHome;
 
-import com.example.passion.src.MainFragment.FragmentHome.interfaces.FragmentHomeActivityView;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.interfaces.FragmentHomeActivityView;
 
 public class FragmentHomeService {
     private final FragmentHomeActivityView mFragmentHomeActivityView;

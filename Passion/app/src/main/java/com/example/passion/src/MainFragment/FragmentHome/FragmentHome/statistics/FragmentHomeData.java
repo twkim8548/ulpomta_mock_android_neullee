@@ -1,4 +1,4 @@
-package com.example.passion.src.MainFragment.FragmentHome.statistics;
+package com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics;
 
 public class FragmentHomeData {
     private int ivPlay;

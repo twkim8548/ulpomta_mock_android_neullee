@@ -17,23 +17,26 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".CustomCircleProgressBar"></activity>
-        <activity android:name=".src.Timer.TimerMain"></activity>
-        <activity android:name=".src.MainFragment.FragmentHome.NavigationDrawer.DrawerMain" />
-        <activity android:name=".src.Splash.SplashActivity">
+        <activity android:name=".src.MainFragment.FragmentHome.ToolBar.Ddays.Ddays"></activity>
+        <activity android:name=".src.MainFragment.FragmentHome.ToolBar.PhoneLock" />
+        <activity android:name=".src.MainFragment.FragmentHome.Drawer.StatusMessage" />
+        <activity android:name=".CustomCircleProgressBar" />
+        <activity android:name=".src.Timer.TimerMain" />
+        <activity android:name=".src.MainFragment.FragmentHome.Drawer.DrawerMain" />
+        <activity android:name=".src.Splash.SplashActivity" />
+        <activity android:name=".src.SignUp.SignUpStart.SignUpStartActivity" />
+        <activity android:name=".src.SignUp.Email.SignupEmailActivity" />
+        <activity android:name=".src.SignIn.FindEmailInPw.FindEmailInPwActivity" />
+        <activity android:name=".src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity" />
+        <activity android:name=".src.MainFragment.FragmentStartActivity.FragmentStartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".src.SignUp.SignUpStart.SignUpStartActivity"></activity>
-        <activity android:name=".src.SignUp.Email.SignupEmailActivity" />
-        <activity android:name=".src.SignIn.FindEmailInPw.FindEmailInPwActivity" />
-        <activity android:name=".src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity" />
-        <activity android:name=".src.MainFragment.FragmentStartActivity.FragmentStartActivity"></activity>
         <activity android:name=".src.SignIn.SingInStart.SignInStartActivity" />
-        <activity android:name=".src.SignIn.StartActivity"></activity>
+        <activity android:name=".src.SignIn.StartActivity" />
     </application>
 
 </manifest>

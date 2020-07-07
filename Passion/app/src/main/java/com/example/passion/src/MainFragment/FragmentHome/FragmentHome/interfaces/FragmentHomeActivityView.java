@@ -1,4 +1,4 @@
-package com.example.passion.src.MainFragment.FragmentHome.interfaces;
+package com.example.passion.src.MainFragment.FragmentHome.FragmentHome.interfaces;
 
 public interface FragmentHomeActivityView {
 

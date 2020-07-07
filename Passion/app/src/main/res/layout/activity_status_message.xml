@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.passion.src.MainFragment.FragmentHome.Drawer.StatusMessage">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Toolbar
+                android:id="@+id/drawer_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorOrange" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_status_keyboard_left"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_keyboard_left"
+            android:tint="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="70dp"
+            android:text="@string/statusMessage"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/et_enter_status_message"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buton_shape_grey_status"
+        android:gravity="start"
+        android:hint="@string/etStatusMessage"
+        android:lines="8"
+        android:maxLength="200"
+        android:maxLines="10"
+        android:minLines="6"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_status_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/bytes"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn_status_commit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_rec_orange"
+        android:text="@string/completion"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp" />
+</LinearLayout>
