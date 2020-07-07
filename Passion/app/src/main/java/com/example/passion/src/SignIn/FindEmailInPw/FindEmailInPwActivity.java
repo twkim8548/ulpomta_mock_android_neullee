@@ -45,13 +45,13 @@ public class FindEmailInPwActivity extends BaseActivity implements FindEmailInPw
 
     @Override
     public void findEmailInPwFailure(String message) {
-        hideProgressDialog();
+        hideCustomProgressDialog();
         showCustomToast(message == null || message.isEmpty() ? getString(R.string.network_error) : message);//네트워크 오류
     }
 
     @Override
     public void findEmailInPwSuccess(String message) {
-        hideProgressDialog();
+        hideCustomProgressDialog();
 
         //이메일 인증에 성공하면 비밀번호 재성정 화면으로 넘어간다
         //레이아웃을 아직 안만들었음

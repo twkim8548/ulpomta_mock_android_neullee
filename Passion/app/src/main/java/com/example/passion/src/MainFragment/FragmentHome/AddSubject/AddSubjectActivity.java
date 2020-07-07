@@ -40,19 +40,19 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
     }
 
     private void tryPostAddSubject() {
-        showProgressDialog();
+        showCustomProgressDialog();
         mAddSubjectService.postAddSubject(mStrSubject); //입력한 과목 이름을 넣어준다
     }
 
     @Override
     public void addSubjectFailure(String message) {
-        hideProgressDialog();
+        hideCustomProgressDialog();
         showCustomToast(message == null || message.isEmpty() ? getString(R.string.network_error) : message);
     }
 
     @Override
     public void addSubjectSuccess(String message) {
-        hideProgressDialog();
+        hideCustomProgressDialog();
         //입력한 과목을 SharedPreference에 저장한다
         SharedPreferences spf = getSharedPreferences("spf",MODE_PRIVATE);
         SharedPreferences.Editor editor = spf.edit();
@@ -70,6 +70,10 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
             //<기능> '<' 뒤로가기 버튼
             //<설명> 과목추가 > '<' 클릭 >
             case R.id.iv_add_subject_keyboard_left:
+                SharedPreferences spf = getSharedPreferences("spf",MODE_PRIVATE);
+                SharedPreferences.Editor editor = spf.edit();
+                editor.clear();
+                editor.commit();
                 finish();
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
                 break;
@@ -109,6 +113,10 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        SharedPreferences spf = getSharedPreferences("spf",MODE_PRIVATE);
+        SharedPreferences.Editor editor = spf.edit();
+        editor.clear();
+        editor.commit();
         finish();
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
     }

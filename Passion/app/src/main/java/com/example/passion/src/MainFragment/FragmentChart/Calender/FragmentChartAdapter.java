@@ -1,6 +1,7 @@
 package com.example.passion.src.MainFragment.FragmentChart.Calender;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +69,7 @@ public class FragmentChartAdapter extends BaseAdapter {
         //날짜 선택 / 미선택의 결과
         if (list.get(position).isChecked) {
             holder.layoutItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(), R.drawable.stroke_calender_true));
+
         } else {
             holder.layoutItemGridView.setBackground(ContextCompat.getDrawable(convertView.getContext(), R.drawable.stroke_calender_false));
         }

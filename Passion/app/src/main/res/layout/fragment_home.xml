@@ -36,7 +36,7 @@
                 android:gravity="center"
                 android:text="@string/d_day"
                 android:textColor="@color/colorWhite"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/iv_main_lock"
@@ -186,11 +186,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:drawableLeft="@drawable/ic_add"
+                    android:drawableStart="@drawable/ic_add"
                     android:drawablePadding="10dp"
                     android:gravity="center_vertical"
                     android:text="@string/addSubject"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </LinearLayout>
         </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
 
@@ -202,7 +202,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="left"
-        >
+        andoid:ignore="RtlHardcoded">
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/drawer_navigation_view"

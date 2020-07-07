@@ -49,14 +49,15 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
 
     //<설명> 네트워크 작업
     private void tryPostSignIn() {
-        showProgressDialog();
+        showCustomProgressDialog();
+        System.out.println("id = " + mStrEmail + " , pw = " + mStrPW);
         mSignInStartService.postSingInStart(mStrEmail, mStrPW);
     }
 
     //<설명> 성공화면
     @Override
     public void signInStartSuccess(String jwt) {//오타수정완료
-        hideProgressDialog();
+        hideCustomProgressDialog();
         //<설명> ApplicationClass의 sSharedPreferences 를 이용한 헤더에 jwt 저장
         sSharedPreferences = getSharedPreferences("sSpf", MODE_PRIVATE);
         SharedPreferences.Editor editor = sSharedPreferences.edit();
@@ -73,7 +74,7 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
     //<설명> 실패화면
     @Override
     public void signInStartFailure(String message) {
-        hideProgressDialog();
+        hideCustomProgressDialog();
 
         if (message == null || message.isEmpty()) {//<기능>메세지값이 없을때
             showCustomToast(getString(R.string.network_error));

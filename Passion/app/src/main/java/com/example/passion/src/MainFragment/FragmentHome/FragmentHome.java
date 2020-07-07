@@ -1,17 +1,16 @@
 package com.example.passion.src.MainFragment.FragmentHome;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,7 +24,6 @@ import com.example.passion.src.MainFragment.FragmentHome.AddSubject.AddSubjectAc
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.FragmentHomeInfoDialog;
 import com.example.passion.src.MainFragment.FragmentHome.statistics.FragmentHomeAdapter;
 import com.example.passion.src.MainFragment.FragmentHome.statistics.FragmentHomeData;
-import com.google.android.material.navigation.NavigationView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,8 +36,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
     private String mSubjectName;
 
     private DrawerLayout mDrawerLayout;
-    private NavigationView mNavigationView;
-    private ImageView mIvMenu;
+//    private ImageView mIvMenu;
 
     //[구현대상]
     //<타이머 리셋>
@@ -63,17 +60,8 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 
         //네비게이션 드로어
         mDrawerLayout = viewGroup.findViewById(R.id.drawer_layout);//drawer_layout
-        mNavigationView = viewGroup.findViewById(R.id.drawer_navigation_view);
-        mIvMenu = viewGroup.findViewById(R.id.iv_main_menu);
+        ImageView mIvMenu = viewGroup.findViewById(R.id.iv_main_menu);
         mIvMenu.setOnClickListener(this);
-        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
-                return false;
-            }
-        });
 
 
         //과목 추가하기 세팅
@@ -82,7 +70,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 
         //오늘날짜 세팅
         TextView toDay = viewGroup.findViewById(R.id.tv_fragment_home_today);//오늘날짜
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy" + "." + "M" + "." + "d"); //'오늘날짜' 구성
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy" + "." + "M" + "." + "d"); //'오늘날짜' 구성
         toDay.setText(simpleDateFormat.format(new Date()));
 
         //정보 세팅
@@ -103,7 +91,6 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
             //<기능> 과목 추가하기
             //<설명> 과목 추가 > 과목 이름 추가하는 엑티비티
             case R.id.tv_FragThree_addSubject:
-                Toast.makeText(v.getContext(), "개발중", Toast.LENGTH_SHORT).show();
                 //<설명> 과목추가 화면으로 이동 (서버에 저장한다)
                 Intent intent = new Intent(getContext(), AddSubjectActivity.class);
                 startActivityForResult(intent, 1001);//<기능> Activity 를 넘기고 돌아올때까지 기다린다
@@ -130,13 +117,19 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data);
         //<설명>AddSubjectActivity 에서 저장된 과목 불러온다.
         SharedPreferences spf = getContext().getSharedPreferences("spf", Context.MODE_PRIVATE);
-        mSubjectName = spf.getString("subjectName", "");
+        mSubjectName = spf.getString("subjectName", null);
 
+        if (mSubjectName!=null){
+            FragmentHomeData fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, mSubjectName, "00:00:00", R.drawable.ic_more);//시간 변경하기
+            mArrayList.add(fragmentHomeData);
+            mFragmentHomeAdapter.notifyDataSetChanged();
+        }
         //<설명> 리스트뷰에
         //<구현대상> 시간이 남으면 ivPlay의 tint 색 변경하기
-        FragmentHomeData fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, mSubjectName, "00:00:00", R.drawable.ic_more);//시간 변경하기
-        mArrayList.add(fragmentHomeData);
-        mFragmentHomeAdapter.notifyDataSetChanged();
+
     }
+
+
+
 
 }

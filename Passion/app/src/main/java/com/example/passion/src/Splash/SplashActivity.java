@@ -25,14 +25,20 @@ public class SplashActivity extends BaseActivity implements SplashActivityView {
 
     //<설명> 네트워크 작업
     private void getCheckJwt() {
-        showProgressDialog();
+        showCustomProgressDialog();
         mSplashService.getCheckJwt();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        hideCustomProgressDialog();
     }
 
     @Override
     public void checkJwtSuccess(int code) {
         Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
-        showProgressDialog();
+        showCustomProgressDialog();
 
         Intent intent = new Intent(this, FragmentStartActivity.class);
         startActivity(intent);
@@ -41,8 +47,7 @@ public class SplashActivity extends BaseActivity implements SplashActivityView {
 
     @Override
     public void checkJwtFailure(String message) {
-        Toast.makeText(this, "실패", Toast.LENGTH_SHORT).show();
-        showProgressDialog();
+        showCustomProgressDialog();
 
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);

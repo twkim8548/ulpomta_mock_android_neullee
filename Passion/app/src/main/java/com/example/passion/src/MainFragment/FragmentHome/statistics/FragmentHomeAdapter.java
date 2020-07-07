@@ -50,7 +50,6 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapte
                     public void onPositiveClick() {
 
                     }
-
                     @Override
                     public void onNegativeClick() {
 
@@ -70,6 +69,10 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapte
             @Override
             public void onClick(View v) {
                 //클릭시 카운트 화면으로 넘어간다
+
+
+
+
             }
         });
     }

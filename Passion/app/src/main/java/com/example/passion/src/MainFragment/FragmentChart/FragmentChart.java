@@ -60,10 +60,7 @@ public class FragmentChart extends Fragment implements ObservableScrollViewCallb
         //초기값 세팅
         fragmentCalenderDay = new FragmentCalenderDay();
         transaction.add(R.id.frame_layout_fragment_chart, fragmentCalenderDay).commit();
-        //TabLayout에 목록 세팅
-//        mTabLayout.addTab(mTabLayout.newTab().setText("일간"));
-//        mTabLayout.addTab(mTabLayout.newTab().setText("주간"));
-//        mTabLayout.addTab(mTabLayout.newTab().setText("월간"));
+        //TabLayout 클릭
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -120,7 +117,6 @@ public class FragmentChart extends Fragment implements ObservableScrollViewCallb
                 break;
             }
         }
-
 
         //날짜를 그리드뷰에 연결함
         gridAdapter = new FragmentChartAdapter(viewGroup.getContext(), dayList);

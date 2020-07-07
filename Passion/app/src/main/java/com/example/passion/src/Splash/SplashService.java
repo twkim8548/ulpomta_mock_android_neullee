@@ -10,15 +10,15 @@ import retrofit2.Response;
 
 import static com.example.passion.src.ApplicationClass.getRetrofit;
 
-public class SplashService {
+class SplashService {
     private SplashActivityView mSplashActivityView;
 
-    public SplashService(final SplashActivityView mSplashActivityView) {
+    SplashService(final SplashActivityView mSplashActivityView) {
         this.mSplashActivityView = mSplashActivityView;
     }
 
     //Post 로그인
-    public void getCheckJwt() {
+    void getCheckJwt() {
         final SplashRetrofitInterface splashRetrofitInterface = getRetrofit().create(SplashRetrofitInterface.class);
         splashRetrofitInterface.checkJwt().enqueue(new Callback<InfoResponse>() {
             //성공시 도는 화면
@@ -27,7 +27,6 @@ public class SplashService {
                 final InfoResponse infoResponse = response.body();
                 if (infoResponse == null) {//<설명> 응답이 없을때
                     mSplashActivityView.checkJwtFailure(null);
-                    return;
                 } else if (infoResponse.getCode() == 200) {//<설명> 응답코드(200) : 로그인 성공
                     mSplashActivityView.checkJwtSuccess(infoResponse.getCode());
                 } else {//<설명>응답코드(...) :로그인 실패
