@@ -31,7 +31,7 @@ public class FindEmailInPwActivity extends BaseActivity implements FindEmailInPw
         //이메일 입력
         mEtEmail = findViewById(R.id.et_find_pw_enter_Email);
         //이메일계정확인
-        Button BtnFindPW = findViewById(R.id.btn_find_pw_check_email);
+        Button BtnFindPW = findViewById(R.id.btn_nickname_change);
         BtnFindPW.setOnClickListener(this);
         //서비스 객체화
         mFindEmailInPwService = new FindEmailInPwService(this);
@@ -69,7 +69,7 @@ public class FindEmailInPwActivity extends BaseActivity implements FindEmailInPw
                 break;
 
             //<기능> '이메일 계정확인' 버튼을 누르면 자체적으로 유효성검사 후 네트워크 통신을 통해 알럿창이 확인됩니다.
-            case R.id.btn_find_pw_check_email:
+            case R.id.btn_nickname_change:
                 //<기능> 입력한 email 저장
                 String email = mEtEmail.getText().toString();
 

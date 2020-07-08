@@ -31,9 +31,9 @@
     <string name="makeNickname">닉네임 만들기</string>
     <!--sign_in_start_dialog-->
     <string name="enterNickname">닉네임을 입력하세요</string>
-    <string name="pleaseEnterNickname">사용할 닉네임을 입력해주세요</string>
+    <string name="pleaseEnterNickname">변경하실 닉네임을 입력하세요</string>
     <string name="letterByte">0/60 Bytes</string>
-    <string name="completion">완료</string>
+    <string name="completion">변경하기</string>
     <string name="d_day">D-Day를 추가해주세요.</string>
     <string name="date">오늘 날짜</string>
     <string name="time">00 : 00 : 00</string>
@@ -130,6 +130,15 @@
     <string name="addContents">추가하기</string>
     <string name="functionSetting">계정/기능 설정</string>
     <string name="rankApp">열품타 이직 랭킹</string>
+    <string name="statusMessageFunction">상태메세지</string>
+    <string name="changePw">비밀번호 변경</string>
+    <string name="zeroPeople">0명</string>
+    <string name="cutOffUser">차단유저</string>
+    <string name="canUseRest">휴식 기능 사용</string>
+    <string name="allowApp">허용앱 설정</string>
+    <string name="banApp">금지앱 설정</string>
+    <string name="Withdrawal">탈퇴하기</string>
+    <string name="changeNickname">* 닉네임 변경은 5분뒤 적용됩니다.</string>
 
     <!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
     <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->

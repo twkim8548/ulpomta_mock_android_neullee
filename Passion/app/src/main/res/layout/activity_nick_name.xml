@@ -2,22 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorOrange"
     android:orientation="vertical"
-    android:padding="15dp">
+    android:padding="5dp" >
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorOrange"
-        android:orientation="horizontal"
-        android:padding="15dp">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Toolbar
+                android:id="@+id/function_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorOrange" />
+        </LinearLayout>
 
         <ImageView
-            android:id="@+id/iv_palloNickname_keyboard_left"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:id="@+id/iv_function_keyboard_left"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/ic_keyboard_left"
             android:tint="@color/colorWhite" />
 
@@ -25,11 +39,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginLeft="70dp"
             android:text="@string/makeNickname"
             android:textColor="@color/colorWhite"
-            android:textSize="20dp" />
-    </LinearLayout>
+            android:textSize="18sp" />
+    </FrameLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,34 +55,46 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="23sp"
             android:gravity="center"
+            android:textSize="15sp"
             android:text="@string/letterByte"
-            android:textColor="@color/colorTransparentWhite"
-            android:layout_marginTop="30dp"/>
+            android:textColor="@color/colorTransparentWhite" />
 
         <EditText
-            android:id="@+id/et_palloNickname_enterNickname"
+            android:id="@+id/et_nickname_enter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="30dp"
             android:background="@null"
             android:ems="60"
             android:gravity="center"
             android:hint="@string/pleaseEnterNickname"
+            android:focusable="true"
             android:lines="1"
             android:textColor="@color/colorOrange"
             android:textColorHint="@color/colorTransparentWhite"
-            android:textSize="20dp"
-            android:layout_marginBottom="30dp"/>
+            android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btn_find_pw_check_email"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/btn_nickname_change"
+            android:layout_width="130dp"
+            android:layout_height="43dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:background="@drawable/button_shape_white"
             android:text="@string/completion"
             android:textColor="@color/colorOrange"
             android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/changeNickname"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="20sp"
+            android:layout_gravity="center"/>
+
     </LinearLayout>
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.passion.src.MainFragment.FragmentHome.Drawer.StatusMessage">
+    tools:context="com.example.passion.src.MainFragment.FragmentHome.Drawer.Header.StatusMessage">
 
     <FrameLayout
         android:layout_width="match_parent"

@@ -47,6 +47,7 @@
         android:hint="@string/enterEmail"
         android:lines="1"
         android:paddingBottom="20dp"
+        android:inputType="text"
         android:textColor="@color/coloLightGrayV2"
         android:textSize="17sp" />
 

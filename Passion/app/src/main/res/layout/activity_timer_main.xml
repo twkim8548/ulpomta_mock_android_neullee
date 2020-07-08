@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBlack"
     android:orientation="vertical"
-    tools:context="com.example.passion.src.Timer.TimerMain">
+    tools:context="com.example.passion.src.Timer.TimerMainActivity">
 
     <!--상단 타이틀-->
     <LinearLayout

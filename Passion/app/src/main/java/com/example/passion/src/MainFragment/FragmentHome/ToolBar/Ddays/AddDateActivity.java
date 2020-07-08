@@ -18,12 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.passion.R;
 import com.google.gson.Gson;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
-public class AddDate extends AppCompatActivity implements View.OnClickListener {
+public class AddDateActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tvCalender;
     int mCurYear, mCurMonth, mCurDate;//현재 날짜
@@ -45,10 +42,11 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener {
         //오늘날짜 세팅
         //날짜 클릭 > 달력
         tvCalender = findViewById(R.id.date_d_days_add_calender);
-        Date calDate = Calendar.getInstance().getTime();
-        String curDate = new SimpleDateFormat("yyy년  M월  d일", Locale.getDefault()).format(calDate);
-        tvCalender.setText(curDate);
         tvCalender.setOnClickListener(this);
+
+//        Date calDate = Calendar.getInstance().getTime();
+//        String curDate = new SimpleDateFormat("yyy년  M월  d일", Locale.getDefault()).format(calDate);
+//        tvCalender.setText(curDate);
 
     }
 
@@ -132,9 +130,9 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener {
                         chooseCalendar.set(mChooseYear, mChooseMonth, mChooseDate);
                         mResultChoosDay = chooseCalendar.getTimeInMillis();
                         //선택한 날짜 세팅
-                        tvCalender.setText(year + "년 " + (month + 1) + "월 " + dayOfMonth + "일");
+                        tvCalender.setText(mChooseYear + "년 " + (mChooseMonth + 1) + "월 " + mChooseDate + "일");
                     }
-                }, mCurYear, mCurMonth, mCurDate);
+                }, 2020, 7, 8);
                 mDatePickerDialog = new DatePickerDialog(this, R.style.DialogTheme);
                 mDatePickerDialog.setTitle("SELECT DATE");
                 mDatePickerDialog.setCancelable(true);

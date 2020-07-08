@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context="com.example.passion.src.MainFragment.FragmentHome.Drawer.FunctionActivity">
+    tools:context=".src.MainFragment.FragmentHome.Drawer.Menu.Function.FunctionActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -47,39 +47,261 @@
     </FrameLayout>
 
     <LinearLayout
-        android:id="@+id/layout_function_nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="18dp"
+        android:paddingTop="25dp">
 
+        <!--닉네임-->
         <LinearLayout
+            android:id="@+id/layout_function_nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nickname"
-                android:textColor="@color/colorBlack"
-                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableRight="@drawable/ic_keyboard_arrow_right"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/coloLightGrayV2"
+                android:text="@string/nickname"
+                android:textColor="@color/colorBlackTab"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_function_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="right"
                 android:text="@string/nickname"
                 android:textColor="@color/colorOrange"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_keyboard_arrow_right"
+                android:tint="@color/coloMoreLightGray" />
         </LinearLayout>
 
+        <!--카테고리-->
+        <LinearLayout
+            android:id="@+id/layout_function_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/category"
+                android:textColor="@color/colorBlackTab"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_function_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/categoryStatus"
+                android:textColor="@color/colorOrange"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_keyboard_arrow_right"
+                android:tint="@color/coloMoreLightGray" />
+        </LinearLayout>
+
+        <!--상태메세지-->
+        <LinearLayout
+            android:id="@+id/layout_function_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/statusMessageFunction"
+                android:textColor="@color/colorBlackTab"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_keyboard_arrow_right"
+                android:tint="@color/coloMoreLightGray" />
+        </LinearLayout>
+
+        <!--비밀번호 변경-->
+        <LinearLayout
+            android:id="@+id/layout_function_change_pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/changePw"
+                android:textColor="@color/colorBlackTab"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_keyboard_arrow_right"
+                android:tint="@color/coloMoreLightGray" />
+        </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!--차단유저-->
+        <LinearLayout
+            android:id="@+id/layout_function_cut_off_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cutOffUser"
+                android:textColor="@color/colorBlackTab"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_function_cut_off_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/zeroPeople"
+                android:textColor="@color/colorOrange"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_keyboard_arrow_right"
+                android:tint="@color/coloMoreLightGray" />
+        </LinearLayout>
+
+        <!--휴식 기능 사용-->
+        <LinearLayout
+            android:id="@+id/layout_function_rest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/canUseRest"
+                android:textColor="@color/colorBlackTab"
+                android:textSize="15sp" />
+
+            <Switch
+                android:id="@+id/switch_function"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorOrange" />
+        </LinearLayout>
+
+        <!--허용앱 설정-->
+        <LinearLayout
+            android:id="@+id/layout_function_allow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/allowApp"
+                android:textColor="@color/colorBlackTab"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_keyboard_arrow_right"
+                android:tint="@color/coloMoreLightGray" />
+        </LinearLayout>
+
+        <!--금지앱 설정-->
+        <LinearLayout
+            android:id="@+id/layout_function_ban"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/banApp"
+                android:textColor="@color/colorBlackTab"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_keyboard_arrow_right"
+                android:tint="@color/coloMoreLightGray" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:text="@string/Withdrawal"
+        android:textColor="@color/colorRedOrange"
+        android:textSize="15sp" />
 
 </LinearLayout>

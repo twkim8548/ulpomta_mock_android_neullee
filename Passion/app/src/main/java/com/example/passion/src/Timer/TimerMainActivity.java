@@ -9,7 +9,7 @@ import com.example.passion.R;
 import com.example.passion.src.Timer.Adapter.TimerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
-public class TimerMain extends AppCompatActivity {
+public class TimerMainActivity extends AppCompatActivity {
 
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
@@ -44,5 +44,12 @@ public class TimerMain extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
     }
 }

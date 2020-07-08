@@ -1,11 +1,14 @@
 package com.example.passion.src.MainFragment.FragmentStartActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.example.passion.R;
 import com.example.passion.src.MainFragment.FragmentChart.FragmentChart;
@@ -56,11 +59,11 @@ public class FragmentStartActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.ic_main_chart:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main,fragmentChart).commitAllowingStateLoss();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragmentChart).commitAllowingStateLoss();
                         return true;
 
                     case R.id.ic_main_planner:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main,fragmentPlanner).commitAllowingStateLoss();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragmentPlanner).commitAllowingStateLoss();
                         return true;
 
                     case R.id.ic_main_rank:
@@ -75,4 +78,24 @@ public class FragmentStartActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("종료하시겠습니까").setMessage("나는 꿈꾸는 만큼 도달할 수 있다!");
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ActivityCompat.finishAffinity(FragmentStartActivity.this);
+                overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
+            }
+        });
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+    }
 }

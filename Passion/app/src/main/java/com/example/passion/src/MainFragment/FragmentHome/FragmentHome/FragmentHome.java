@@ -27,9 +27,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
 import com.example.passion.src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity;
-import com.example.passion.src.MainFragment.FragmentHome.ToolBar.Ddays.Ddays;
+import com.example.passion.src.MainFragment.FragmentHome.Drawer.Menu.Function.FunctionActivity;
+import com.example.passion.src.MainFragment.FragmentHome.ToolBar.Ddays.DdaysActivity;
 import com.example.passion.src.MainFragment.FragmentHome.ToolBar.PhoneLock.PhoneLock;
-import com.example.passion.src.MainFragment.FragmentHome.Drawer.StatusMessage;
+import com.example.passion.src.MainFragment.FragmentHome.Drawer.Header.StatusMessage;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.FragmentHomeInfoDialog;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.FragmentHomeAdapter;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.FragmentHomeData;
@@ -148,7 +149,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
                 break;
             //D-days
             case R.id.tv_main_d_day:
-                Intent intent2 = new Intent(getContext(), Ddays.class);
+                Intent intent2 = new Intent(getContext(), DdaysActivity.class);
                 startActivity(intent2);
                 getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;
@@ -188,7 +189,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
 //        <완료>nav_notice
-//        nav_offline
+//        <완료>nav_offline
 //        nav_function
 //        nav_days
 //        nav_help
@@ -209,7 +210,12 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
                         "오프라인에서 측정된 시간은 온라인 모드로 돌아올때 한번에 합쳐집니다.\n\n" +
                         "오프라인 모드로 변경하시겠습니까?\n\n";
                 String cancel = "취소", check = "확인";
-                alertDialog(title,message,cancel,check);
+                alertDialog(title, message, cancel, check);
+                break;
+            case R.id.nav_function:
+                Intent intent1 = new Intent(getContext(), FunctionActivity.class);
+                startActivity(intent1);
+                getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;
         }
         return false;
@@ -232,4 +238,6 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
         });
         builder.show();
     }
+
+
 }

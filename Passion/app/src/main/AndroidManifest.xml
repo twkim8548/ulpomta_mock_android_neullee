@@ -17,26 +17,29 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".src.MainFragment.FragmentHome.Drawer.FunctionActivity"></activity>
+        <activity android:name=".src.MainFragment.FragmentHome.Drawer.Menu.Function.Nickname.NickNameActivity"></activity>
+        <activity android:name=".src.MainFragment.FragmentHome.Drawer.Menu.Function.FunctionActivity" />
         <activity android:name=".src.MainFragment.FragmentHome.ToolBar.StudyPlanner.StudyPlanner" />
-        <activity android:name=".src.MainFragment.FragmentHome.ToolBar.Ddays.AddDate" />
-        <activity android:name=".src.MainFragment.FragmentHome.ToolBar.Ddays.Ddays" />
+        <activity android:name=".src.MainFragment.FragmentHome.ToolBar.Ddays.AddDateActivity" />
+        <activity android:name=".src.MainFragment.FragmentHome.ToolBar.Ddays.DdaysActivity" />
         <activity android:name=".src.MainFragment.FragmentHome.ToolBar.PhoneLock.PhoneLock" />
-        <activity android:name=".src.MainFragment.FragmentHome.Drawer.StatusMessage" />
+        <activity android:name=".src.MainFragment.FragmentHome.Drawer.Header.StatusMessage" />
         <activity android:name=".CustomCircleProgressBar" />
-        <activity android:name=".src.Timer.TimerMain" />
-        <activity android:name=".src.MainFragment.FragmentHome.Drawer.DrawerMainActivity" />
-        <activity android:name=".src.Splash.SplashActivity" />
-        <activity android:name=".src.SignUp.SignUpStart.SignUpStartActivity" />
-        <activity android:name=".src.SignUp.Email.SignupEmailActivity" />
-        <activity android:name=".src.SignIn.FindEmailInPw.FindEmailInPwActivity" />
-        <activity android:name=".src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity" />
-        <activity android:name=".src.MainFragment.FragmentStartActivity.FragmentStartActivity">
+        <activity android:name=".src.Timer.TimerMainActivity" />
+        <activity android:name=".src.MainFragment.FragmentHome.Drawer.DrawerMain.DrawerMainActivity" />
+        <activity android:name=".src.Splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".src.SignUp.SignUpStart.SignUpStartActivity" />
+        <activity android:name=".src.SignUp.Email.SignupEmailActivity" />
+        <activity android:name=".src.SignIn.FindEmailInPw.FindEmailInPwActivity" />
+        <activity android:name=".src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity" />
+        <activity android:name=".src.MainFragment.FragmentStartActivity.FragmentStartActivity">
+
         </activity>
         <activity android:name=".src.SignIn.SingInStart.SignInStartActivity" />
         <activity android:name=".src.SignIn.StartActivity" />

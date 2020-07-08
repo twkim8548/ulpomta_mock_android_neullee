@@ -27,6 +27,7 @@
     <color name="colorBlackTab">#474747</color>
     <color name="colorTabIconBefore">#787878</color>
     <color name="colorBackground">#F9F9FB</color>
+    <color name="colorRedOrange">#E13737</color>
 
 
 </resources>

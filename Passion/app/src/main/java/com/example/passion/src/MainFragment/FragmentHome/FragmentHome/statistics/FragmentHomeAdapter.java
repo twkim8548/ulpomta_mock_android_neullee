@@ -1,5 +1,8 @@
 package com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,11 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.OptionDialog;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.interfaces.CustomDialogClickListener;
+import com.example.passion.src.Timer.TimerMainActivity;
 
 import java.util.ArrayList;
 
@@ -68,7 +73,12 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapte
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Context context = v.getContext();
                 //클릭시 카운트 화면으로 넘어간다
+                Intent intent = new Intent(v.getContext(), TimerMainActivity.class);
+                context.startActivity(intent);
+                ((Activity) context).overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
+
 
 
 

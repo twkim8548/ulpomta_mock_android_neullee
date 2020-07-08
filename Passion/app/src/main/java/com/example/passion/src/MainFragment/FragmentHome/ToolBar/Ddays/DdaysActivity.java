@@ -1,7 +1,6 @@
 package com.example.passion.src.MainFragment.FragmentHome.ToolBar.Ddays;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,13 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class Ddays extends AppCompatActivity implements View.OnClickListener {
+public class DdaysActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView mIvBack;
     private FloatingActionButton mFloatingActionButton;
@@ -51,24 +47,24 @@ public class Ddays extends AppCompatActivity implements View.OnClickListener {
     protected void onStart() {
         super.onStart();
         //추가된 데이터 가져오기
-        SharedPreferences spf = getSharedPreferences("spfArray", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = spf.getString("ArrayList", null);
-        Type type = new TypeToken<ArrayList<DdaysData>>() {
-        }.getType();
-        ArrayList<DdaysData> data = gson.fromJson(json, type);
+//        SharedPreferences spf = getSharedPreferences("spfArray", MODE_PRIVATE);
+//        Gson gson = new Gson();
+//        String json = spf.getString("ArrayList", null);
+//        Type type = new TypeToken<ArrayList<DdaysData>>() {
+//        }.getType();
+//        ArrayList<DdaysData> data = gson.fromJson(json, type);
 
         //값이 있을때 데이터 추가, 없을때는 모두 clear를 진행한다
-        if (json != null) {
-            //왜 안나오지? => 이상하다..ㅠㅜ
-            //이게 맞는건지..?
-            for (int i = 0; i < data.size(); i++) {
-                mArrayList.add(data.get(i));
-            }
-            mAdapter.notifyDataSetChanged();
-        } else {
-            mArrayList.clear();
-        }
+//        if (json != null) {
+//            //왜 안나오지? => 이상하다..ㅠㅜ
+//            //이게 맞는건지..?
+//            for (int i = 0; i < data.size(); i++) {
+//                mArrayList.add(data.get(i));
+//            }
+//            mAdapter.notifyDataSetChanged();
+//        } else {
+//            mArrayList.clear();
+//        }
 
 
     }
@@ -84,7 +80,7 @@ public class Ddays extends AppCompatActivity implements View.OnClickListener {
 
             //플로팅 버튼
             case R.id.flat_btn_d_days:
-                Intent intent = new Intent(this, AddDate.class);
+                Intent intent = new Intent(this, AddDateActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;

@@ -59,7 +59,7 @@
             android:textSize="18dp" />
 
         <Button
-            android:id="@+id/btn_find_pw_check_email"
+            android:id="@+id/btn_nickname_change"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"

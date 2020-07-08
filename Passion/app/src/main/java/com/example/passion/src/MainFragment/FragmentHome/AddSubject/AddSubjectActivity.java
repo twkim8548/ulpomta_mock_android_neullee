@@ -82,7 +82,7 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
                 SharedPreferences spf = getSharedPreferences("spf", MODE_PRIVATE);
                 SharedPreferences.Editor editor = spf.edit();
                 editor.clear();
-                editor.commit();
+                editor.apply();
                 finish();
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
                 break;
@@ -115,7 +115,12 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
                 break;
             case R.id.btn_addGoal_circle:
                 Toast.makeText(this, "시간이 남으면 개발예정입니다.", Toast.LENGTH_SHORT).show();
+                SharedPreferences spf1 = getSharedPreferences("spf", MODE_PRIVATE);
+                SharedPreferences.Editor editor1 = spf1.edit();
+                editor1.clear();
+                editor1.apply();
                 finish();
+                overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
                 break;
             default:
                 break;
@@ -128,8 +133,8 @@ public class AddSubjectActivity extends BaseActivity implements AddSubjectActivi
         SharedPreferences spf = getSharedPreferences("spf", MODE_PRIVATE);
         SharedPreferences.Editor editor = spf.edit();
         editor.clear();
-        editor.commit();
+        editor.apply();
         finish();
-        overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션 => 베이스에 넣을 수 있는 지 확인하기
     }
 }
