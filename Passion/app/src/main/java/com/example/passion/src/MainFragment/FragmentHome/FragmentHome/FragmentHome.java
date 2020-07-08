@@ -1,7 +1,9 @@
 package com.example.passion.src.MainFragment.FragmentHome.FragmentHome;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,11 +28,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.passion.R;
 import com.example.passion.src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity;
 import com.example.passion.src.MainFragment.FragmentHome.ToolBar.Ddays.Ddays;
-import com.example.passion.src.MainFragment.FragmentHome.ToolBar.PhoneLock;
+import com.example.passion.src.MainFragment.FragmentHome.ToolBar.PhoneLock.PhoneLock;
 import com.example.passion.src.MainFragment.FragmentHome.Drawer.StatusMessage;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.FragmentHomeInfoDialog;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.FragmentHomeAdapter;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.FragmentHomeData;
+import com.example.passion.src.MainFragment.FragmentHome.ToolBar.StudyPlanner.StudyPlanner;
 import com.google.android.material.navigation.NavigationView;
 
 import java.text.SimpleDateFormat;
@@ -41,16 +44,8 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
 
     private ArrayList<FragmentHomeData> mArrayList;
     private FragmentHomeAdapter mFragmentHomeAdapter;
-    private String mSubjectName;
     private ImageButton ivBtnAddSubject;
-    private NavigationView mNavigationView;
-    private TextView mTvHeader;
-    private ImageView mIvPhonLock;
-    private TextView mTvDdays;
-
-
     private DrawerLayout mDrawerLayout;
-//    private ImageView mIvMenu;
 
     //[구현대상]
     //<타이머 리셋>
@@ -73,17 +68,17 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
 
         //네비게이션 드로어
         mDrawerLayout = viewGroup.findViewById(R.id.drawer_layout);//drawer_layout
-        ImageView mIvMenu = viewGroup.findViewById(R.id.iv_main_menu);
+        @SuppressLint("CutPasteId") ImageView mIvMenu = viewGroup.findViewById(R.id.iv_main_menu);
         mIvMenu.setOnClickListener(this);
 
         //상태메세지 클릭
         //반영 불가
         //question 질문 올림
-//        mTvHeader = viewGroup.findViewById(R.id.tv_drawer_status_message);//drawer_layout
+//        TextView mTvHeader = viewGroup.findViewById(R.id.tv_drawer_status_message);//drawer_layout
 //        mTvHeader.setOnClickListener(this);
 
         //네비게이션뷰 세팅
-        mNavigationView = viewGroup.findViewById(R.id.drawer_navigation_view);
+        NavigationView mNavigationView = viewGroup.findViewById(R.id.drawer_navigation_view);
         mNavigationView.setNavigationItemSelectedListener(this);
 
 
@@ -92,13 +87,16 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
         ivBtnAddSubject.setOnClickListener(this);//클릭 메소드 > <Fragment 적용불가>
 
         //폰잠금
-        mIvPhonLock = viewGroup.findViewById(R.id.iv_main_lock);
+        ImageView mIvPhonLock = viewGroup.findViewById(R.id.iv_main_lock);
         mIvPhonLock.setOnClickListener(this);
 
         //D-days를 입력해주세요
-        mTvDdays = viewGroup.findViewById(R.id.tv_main_d_day);
+        TextView mTvDdays = viewGroup.findViewById(R.id.tv_main_d_day);
         mTvDdays.setOnClickListener(this);
 
+        //study Planner
+        ImageView mTvStudyPlanner = viewGroup.findViewById(R.id.iv_main_check);
+        mTvStudyPlanner.setOnClickListener(this);
 
         //오늘날짜 세팅
         TextView toDay = viewGroup.findViewById(R.id.tv_fragment_home_today);//오늘날짜
@@ -142,23 +140,22 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
             case R.id.iv_main_menu:
                 mDrawerLayout.openDrawer(Gravity.LEFT);
                 break;
-//            case R.id.tv_drawer_status_message:
-//                Intent intent1 = new Intent(getContext(), StatusMessage.class);
-//                startActivity(intent1);
-//                getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-//                break;
-
             //폰잠금
             case R.id.iv_main_lock:
                 Intent intent1 = new Intent(getContext(), PhoneLock.class);
-                startActivityForResult(intent1, 1001);//<기능> Activity 를 넘기고 돌아올때까지 기다린다
+                startActivity(intent1);
                 getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;
-
             //D-days
             case R.id.tv_main_d_day:
                 Intent intent2 = new Intent(getContext(), Ddays.class);
-                startActivityForResult(intent2, 1001);//<기능> Activity 를 넘기고 돌아올때까지 기다린다
+                startActivity(intent2);
+                getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+                break;
+            //StudyPlanner
+            case R.id.iv_main_check:
+                Intent intent3 = new Intent(getContext(), StudyPlanner.class);
+                startActivity(intent3);
                 getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;
 
@@ -173,7 +170,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
         super.onActivityResult(requestCode, resultCode, data);
         //<설명>AddSubjectActivity 에서 저장된 과목 불러온다.
         SharedPreferences spf = getContext().getSharedPreferences("spf", Context.MODE_PRIVATE);
-        mSubjectName = spf.getString("subjectName", null);
+        String mSubjectName = spf.getString("subjectName", null);
 
         if (mSubjectName != null) {
             FragmentHomeData fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, mSubjectName, "00:00:00", R.drawable.ic_more);//시간 변경하기
@@ -190,7 +187,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-//        nav_notice
+//        <완료>nav_notice
 //        nav_offline
 //        nav_function
 //        nav_days
@@ -206,7 +203,33 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;
+            case R.id.nav_offline:
+                String title = "오프라인모드";
+                String message = "\n\n오프라인 모드는 인터넷 사용없이 측정하는 모드입니다.\n\n" +
+                        "오프라인에서 측정된 시간은 온라인 모드로 돌아올때 한번에 합쳐집니다.\n\n" +
+                        "오프라인 모드로 변경하시겠습니까?\n\n";
+                String cancel = "취소", check = "확인";
+                alertDialog(title,message,cancel,check);
+                break;
         }
         return false;
+    }
+
+    public void alertDialog(String title, String message, String cancel, String check) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle(title).setMessage(message);
+        builder.setNegativeButton(cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.setPositiveButton(check, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
     }
 }

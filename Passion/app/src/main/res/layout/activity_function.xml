@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context="com.example.passion.src.MainFragment.FragmentHome.ToolBar.Ddays.Ddays">
+    tools:context="com.example.passion.src.MainFragment.FragmentHome.Drawer.FunctionActivity">
 
     <FrameLayout
-        android:id="@+id/frame_layout_d_days"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,14 +21,14 @@
             android:orientation="vertical">
 
             <Toolbar
-                android:id="@+id/d_days_tool_bar"
+                android:id="@+id/function_tool_bar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorOrange" />
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/iv_d_days_keyboard_left"
+            android:id="@+id/iv_function_keyboard_left"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
@@ -41,29 +41,45 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="70dp"
-            android:text="@string/days"
+            android:text="@string/functionSetting"
             android:textColor="@color/colorWhite"
             android:textSize="18sp" />
     </FrameLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_d_days"
+    <LinearLayout
+        android:id="@+id/layout_function_nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frame_layout_d_days" />
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/flat_btn_d_days"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_margin="15dp"
-        android:backgroundTint="@color/colorOrange"
-        android:src="@drawable/ic_add_white"
-        app:borderWidth="0dp"
-        app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nickname"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/coloLightGrayV2"
+                android:gravity="right"
+                android:text="@string/nickname"
+                android:textColor="@color/colorOrange"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

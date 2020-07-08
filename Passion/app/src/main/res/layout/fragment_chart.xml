@@ -5,17 +5,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_fragment_calender_nickname"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorOrange"
-        android:gravity="left|center_vertical"
-        android:paddingVertical="15dp"
-        android:paddingLeft="60dp"
-        android:text="@string/nickname"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Toolbar
+                android:id="@+id/study_planner_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorOrange" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="70dp"
+            android:text="@string/nickname"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+    </FrameLayout>
 
     <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
         android:id="@+id/observable_fragment_chart"
@@ -125,8 +142,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_circle"
                         android:tint="@color/colorCircle1" />
@@ -149,8 +166,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_circle"
                         android:tint="@color/colorCircle2" />
@@ -173,8 +190,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_circle"
                         android:tint="@color/colorCircle3" />
@@ -198,8 +215,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_circle"
                         android:tint="@color/colorCircle4" />
@@ -225,10 +242,10 @@
                 android:id="@+id/tab_timer_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="60dp"
                 android:background="@color/colorWhite"
                 app:tabIndicatorColor="@color/colorOrange"
                 app:tabIndicatorFullWidth="false"
-                android:layout_marginHorizontal="60dp"
                 app:tabSelectedTextColor="@color/colorOrange"
                 app:tabTextAppearance="@style/tabLayoutTextSize"
                 app:tabTextColor="@color/colorBlack">

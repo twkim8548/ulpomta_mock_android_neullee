@@ -1,4 +1,4 @@
-package com.example.passion.src.MainFragment.FragmentHome.ToolBar;
+package com.example.passion.src.MainFragment.FragmentHome.ToolBar.PhoneLock;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -53,10 +53,10 @@ public class PhoneLock extends AppCompatActivity {
     private void alertHandel() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("폰잠금");
-        builder.setMessage("이 기능은 베타 테스트 중입니다.\n테스트 기간 중에는 최대 5시간 동안만 잠글 수 있습니다." +
+        builder.setMessage("\n이 기능은 베타 테스트 중입니다.\n테스트 기간 중에는 최대 5시간 동안만 잠글 수 있습니다." +
                 "\n\n기종에 따라 정상 작동 하지 않을 수 있습니다." +
-                "\n\n 문제있을시" +
-                "\n\npallo.ypt@gmail.com로 메일주세요");
+                "\n문제있을시" +
+                "\n\npallo.ypt@gmail.com로 메일주세요\n\n");
         builder.setPositiveButton("확인", null);
         builder.show();
     }

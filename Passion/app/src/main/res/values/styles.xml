@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
+<!--    Theme.AppCompat.Light.NoActionBar-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -9,6 +10,7 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@color/colorTransparentWhite</item>
         <item name="android:windowTranslucentStatus">true</item>
+
     </style>
 
     <!--fragment_chart-->
@@ -34,4 +36,10 @@
     <style name="tabLayoutTextSize" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">17sp</item>
     </style>
+
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorBlue</item>
+    </style>
+
 </resources>

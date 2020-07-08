@@ -8,7 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.passion.R;
 
-public class DrawerMain extends AppCompatActivity {
+public class DrawerMainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     Toolbar toolbar;
@@ -17,7 +17,7 @@ public class DrawerMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drawable_main);
+        setContentView(R.layout.activity_drawable_main);
 
         toolbar = findViewById(R.id.drawer_tool_bar);
         drawerLayout = findViewById(R.id.drawer_layout);
