@@ -12,10 +12,10 @@ public class SignUpEmailService {
     //[확인] API가 나오면 코드 수정
 //    public void postSignUpEmail() {
 //        final FindEmailInPwRetrofitInterface palloSignInRetrofitInterface = getRetrofit().create(FindEmailInPwRetrofitInterface.class);
-//        palloSignInRetrofitInterface.getTest().enqueue(new Callback<DefaultResponse>() {
+//        palloSignInRetrofitInterface.getTest().enqueue(new Callback<FragmentHomeResponse>() {
 //            @Override
-//            public void onResponse(Call<DefaultResponse> call, Response<DefaultResponse> response) {
-//                final DefaultResponse defaultResponse = response.body();
+//            public void onResponse(Call<FragmentHomeResponse> call, Response<FragmentHomeResponse> response) {
+//                final FragmentHomeResponse defaultResponse = response.body();
 //                if (defaultResponse == null) {
 //                    mSignUpEmailActivityView.validateFailure(null);
 //                    return;
@@ -25,7 +25,7 @@ public class SignUpEmailService {
 //            }
 //
 //            @Override
-//            public void onFailure(Call<DefaultResponse> call, Throwable t) {
+//            public void onFailure(Call<FragmentHomeResponse> call, Throwable t) {
 //                mSignUpEmailActivityView.validateFailure(null);
 //            }
 //        });

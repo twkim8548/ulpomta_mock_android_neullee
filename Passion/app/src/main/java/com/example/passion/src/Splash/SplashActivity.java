@@ -38,7 +38,7 @@ public class SplashActivity extends BaseActivity implements SplashActivityView {
     @Override
     public void checkJwtSuccess(int code) {
         Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
-        showCustomProgressDialog();
+        hideCustomProgressDialog();
 
         Intent intent = new Intent(this, FragmentStartActivity.class);
         startActivity(intent);
@@ -47,7 +47,7 @@ public class SplashActivity extends BaseActivity implements SplashActivityView {
 
     @Override
     public void checkJwtFailure(String message) {
-        showCustomProgressDialog();
+        hideCustomProgressDialog();
 
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);

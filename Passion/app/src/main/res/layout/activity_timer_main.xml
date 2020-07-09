@@ -41,11 +41,11 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <Chronometer
+                android:id="@+id/chronometer_main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/time"
                 android:textColor="@color/colorWhite"
                 android:textSize="50sp" />
 
@@ -79,10 +79,10 @@
                     android:text="@string/subject"
                     android:textColor="@color/colorWhite" />
 
-                <TextView
+                <Chronometer
+                    android:id="@+id/chronometer_subject"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/time"
                     android:textColor="@color/colorWhite"
                     android:textSize="20dp" />
             </LinearLayout>
@@ -101,10 +101,10 @@
                     android:text="@string/curTime"
                     android:textColor="@color/colorWhite" />
 
-                <TextView
+                <Chronometer
+                    android:id="@+id/chronometer_cur_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/time"
                     android:textColor="@color/colorWhite"
                     android:textSize="20dp" />
             </LinearLayout>

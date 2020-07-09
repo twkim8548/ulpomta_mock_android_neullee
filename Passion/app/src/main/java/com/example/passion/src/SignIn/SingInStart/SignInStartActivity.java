@@ -3,14 +3,12 @@ package com.example.passion.src.SignIn.SingInStart;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
@@ -18,10 +16,9 @@ import com.example.passion.R;
 import com.example.passion.src.ApplicationClass;
 import com.example.passion.src.BaseActivity;
 import com.example.passion.src.MainFragment.FragmentStartActivity.FragmentStartActivity;
+import com.example.passion.src.SignIn.FindEmailDialog.FindEmailDialogActivity;
 import com.example.passion.src.SignIn.FindEmailInPw.FindEmailInPwActivity;
 import com.example.passion.src.SignIn.SingInStart.interfaces.SignInStartActivityView;
-
-import static com.example.passion.src.ApplicationClass.sSharedPreferences;
 
 public class SignInStartActivity extends BaseActivity implements SignInStartActivityView, View.OnClickListener {
 
@@ -34,6 +31,7 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_start);
+
         mEtEmail = findViewById(R.id.et_sign_in_start_find_enter_email);
         mEtPW = findViewById(R.id.et_sign_in_start_find_enter_pw);
         TextView mFindPW = findViewById(R.id.tv_sign_in_start_find_pw);//비밀번호 찾기
@@ -59,10 +57,12 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
     public void signInStartSuccess(String jwt) {//오타수정완료
         hideCustomProgressDialog();
         //<설명> ApplicationClass의 sSharedPreferences 를 이용한 헤더에 jwt 저장
-        sSharedPreferences = getSharedPreferences("sSpf", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sSharedPreferences.edit();
-        editor.putString(ApplicationClass.X_ACCESS_TOKEN, jwt);//헤더에 jwt 토큰값 넣는 부분!!!!
-        editor.apply();
+
+        ApplicationClass.X_ACCESS_TOKEN=jwt;
+//        sSharedPreferences = getSharedPreferences("sSpf", MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sSharedPreferences.edit();
+//        editor.putString(ApplicationClass.X_ACCESS_TOKEN, jwt);//헤더에 jwt 토큰값 넣는 부분!!!!
+//        editor.apply();
 
         Intent intent = new Intent(SignInStartActivity.this, FragmentStartActivity.class);
         startActivity(intent);
@@ -133,25 +133,9 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
             //[미구현]
             //닉네임을 입력하세요 => 사용자가 입력할 수 있도록 커스텀 다이얼로그를 설정해야한다
             case R.id.tv_sign_in_start_find_email:
-                String title = "이메일 찾기",
-                        hintContents = "닉네임을 입력하세요",
-                        cancel = "취소",
-                        check = "확인";
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);//this = v.getContext
-                builder.setTitle(title).setMessage(hintContents);
-                builder.setPositiveButton(check, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(SignInStartActivity.this, "네트워크 통신을 해야합니다.", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                builder.setNegativeButton(cancel, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
+                Intent intent1 = new Intent(this, FindEmailDialogActivity.class);
+                startActivity(intent1);
+                overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;
 
             //<기능> <- 버튼

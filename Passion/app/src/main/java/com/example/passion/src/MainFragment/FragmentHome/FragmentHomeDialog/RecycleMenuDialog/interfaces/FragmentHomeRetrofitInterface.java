@@ -1,6 +1,6 @@
-package com.example.passion.src.MainFragment.FragmentHome.FragmentHome.interfaces;
+package com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.RecycleMenuDialog.interfaces;
 
-import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.models.FragmentHomeResponse;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.RecycleMenuDialog.models.FragmentHomeResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

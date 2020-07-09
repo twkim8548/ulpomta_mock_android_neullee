@@ -1,4 +1,4 @@
-package com.example.passion.src.SignIn.SingInStart.Dialog.models;
+package com.example.passion.src.SignIn.FindEmailDialog.models;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -8,13 +8,13 @@ public class UserInfo {
     private String email;
 
     @SerializedName("createdAt")
-    private String pswd;
+    private String createdAt;
 
     public String getEmail() {
         return email;
     }
 
-    public String getPswd() {
-        return pswd;
+    public String getCreatedAt() {
+        return createdAt;
     }
 }

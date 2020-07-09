@@ -17,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,13 +28,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
 import com.example.passion.src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity;
-import com.example.passion.src.MainFragment.FragmentHome.Drawer.Menu.Function.FunctionActivity;
-import com.example.passion.src.MainFragment.FragmentHome.ToolBar.Ddays.DdaysActivity;
-import com.example.passion.src.MainFragment.FragmentHome.ToolBar.PhoneLock.PhoneLock;
 import com.example.passion.src.MainFragment.FragmentHome.Drawer.Header.StatusMessage;
-import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.FragmentHomeInfoDialog;
+import com.example.passion.src.MainFragment.FragmentHome.Drawer.Menu.Function.FunctionActivity;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.interfaces.FragmentHomeActivityView;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.models.FragmentHomeResponse;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.models.SubjectTime;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.FragmentHomeAdapter;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.FragmentHomeData;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.FragmentHomeInfoDialog;
+import com.example.passion.src.MainFragment.FragmentHome.ToolBar.Ddays.DdaysActivity;
+import com.example.passion.src.MainFragment.FragmentHome.ToolBar.PhoneLock.PhoneLock;
 import com.example.passion.src.MainFragment.FragmentHome.ToolBar.StudyPlanner.StudyPlanner;
 import com.google.android.material.navigation.NavigationView;
 
@@ -41,16 +45,45 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class FragmentHome extends Fragment implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class FragmentHome extends Fragment implements FragmentHomeActivityView, View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     private ArrayList<FragmentHomeData> mArrayList;
     private FragmentHomeAdapter mFragmentHomeAdapter;
     private ImageButton ivBtnAddSubject;
     private DrawerLayout mDrawerLayout;
+    private TextView mTvStatus, mTvNickname;
+    private FragmentHomeService mFragmentHomeService;
+    private FragmentHomeData fragmentHomeData;
 
+
+    private void getSubject() {
+        mFragmentHomeService.getSubject();
+    }
     //[구현대상]
     //<타이머 리셋>
     //1. 새벽 5시가 되는 경우 전체 타이머 시간이 리셋됩니다.
+
+    @Override
+    public void fragmentHomeSuccess(FragmentHomeResponse fragmentHomeResponse) {
+
+        for (SubjectTime subjectTime : fragmentHomeResponse.getSubjectTime()) {
+            FragmentHomeData fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, subjectTime.getSubject(), subjectTime.getTime(), R.drawable.ic_more);//시간 변경하기
+            mArrayList.add(fragmentHomeData);
+        }
+        mFragmentHomeAdapter.notifyDataSetChanged();
+
+
+//        fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, "토익", "00:00:00", R.drawable.ic_more);//시간 변경하기
+//        fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, "영어", "00:00:00", R.drawable.ic_more);//시간 변경하기
+//        fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, "개발", "00:00:00", R.drawable.ic_more);//시간 변경하기
+//        mArrayList.add(fragmentHomeData);
+//        mFragmentHomeAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void fragmentHomeFailure(String message) {
+        Toast.makeText(getContext(), "네트워크 통신의 오류가 존재합니다. FragmentHome"+message, Toast.LENGTH_SHORT).show();
+    }
 
     @Nullable
     @Override
@@ -66,17 +99,22 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
         mFragmentHomeAdapter = new FragmentHomeAdapter(mArrayList);//어뎁터
         recyclerView.setAdapter(mFragmentHomeAdapter);//리사이클러뷰 어뎁터 세팅
 
+        //네트워크 통신을 위한 세팅
+        mFragmentHomeService = new FragmentHomeService(this);
+
 
         //네비게이션 드로어
         mDrawerLayout = viewGroup.findViewById(R.id.drawer_layout);//drawer_layout
         @SuppressLint("CutPasteId") ImageView mIvMenu = viewGroup.findViewById(R.id.iv_main_menu);
         mIvMenu.setOnClickListener(this);
 
+
         //상태메세지 클릭
         //반영 불가
         //question 질문 올림
-//        TextView mTvHeader = viewGroup.findViewById(R.id.tv_drawer_status_message);//drawer_layout
-//        mTvHeader.setOnClickListener(this);
+        mTvStatus = viewGroup.findViewById(R.id.tv_drawer_status_message);//drawer_layout
+        mTvNickname = viewGroup.findViewById(R.id.tv_nav_drawer_header);//drawer_layout
+        mTvStatus.setOnClickListener(this);
 
         //네비게이션뷰 세팅
         NavigationView mNavigationView = viewGroup.findViewById(R.id.drawer_navigation_view);
@@ -112,8 +150,24 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
         ImageView drawableMenu = viewGroup.findViewById(R.id.iv_main_menu);
         drawableMenu.setOnClickListener(this);
 
+        //과목 불러오기 : 저장된 과목을 조회하여 들어왔는지 확인
+        getSubject();
 
         return viewGroup;//화면
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        //상태메세지 변경하기
+        SharedPreferences spf = getContext().getSharedPreferences("spf_status", Context.MODE_PRIVATE);
+        String getSpfMessage = spf.getString("status", "");
+        //상태메세지 값이 있다면 텍스트를 세팅합니다.
+        if (getSpfMessage != null) {
+            mTvStatus.setText(getSpfMessage);
+        }
+
+
     }
 
     @Override
@@ -122,8 +176,11 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
             //<기능> 과목 추가하기
             //<설명> 과목 추가 > 과목 이름 추가하는 엑티비티
             case R.id.btn_FragThree_addSubject:
+                //버튼 애니메이션
                 Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.fade);
                 ivBtnAddSubject.startAnimation(animation);
+
+
                 //<설명> 과목추가 화면으로 이동 (서버에 저장한다)
                 Intent intent = new Intent(getContext(), AddSubjectActivity.class);
                 startActivityForResult(intent, 1001);//<기능> Activity 를 넘기고 돌아올때까지 기다린다
@@ -159,7 +216,12 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
                 startActivity(intent3);
                 getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;
-
+            //상태메세지
+            case R.id.tv_drawer_status_message:
+                Intent intent4 = new Intent(getContext(), StatusMessage.class);
+                startActivity(intent4);
+                getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+                break;
 
             default:
                 break;
@@ -200,6 +262,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
 
         switch (item.getItemId()) {
             case R.id.nav_notice:
+                //공지사항 레이아웃 만들기
                 Intent intent = new Intent(getContext(), StatusMessage.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
@@ -212,6 +275,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener, Navi
                 String cancel = "취소", check = "확인";
                 alertDialog(title, message, cancel, check);
                 break;
+            //계정기능 설정
             case R.id.nav_function:
                 Intent intent1 = new Intent(getContext(), FunctionActivity.class);
                 startActivity(intent1);

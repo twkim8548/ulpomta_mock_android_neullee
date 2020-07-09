@@ -1,9 +1,9 @@
-package com.example.passion.src.MainFragment.FragmentHome.FragmentHome;
+package com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.RecycleMenuDialog;
 
 import com.example.passion.src.ApplicationClass;
-import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.interfaces.FragmentHomeActivityView;
-import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.interfaces.FragmentHomeRetrofitInterface;
-import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.models.FragmentHomeResponse;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.RecycleMenuDialog.interfaces.FragmentHomeActivityView;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.RecycleMenuDialog.interfaces.FragmentHomeRetrofitInterface;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.RecycleMenuDialog.models.FragmentHomeResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;

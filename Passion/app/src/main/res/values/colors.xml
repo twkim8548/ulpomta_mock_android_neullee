@@ -28,6 +28,7 @@
     <color name="colorTabIconBefore">#787878</color>
     <color name="colorBackground">#F9F9FB</color>
     <color name="colorRedOrange">#E13737</color>
+    <color name="transparent">#1A000000</color>
 
 
 </resources>

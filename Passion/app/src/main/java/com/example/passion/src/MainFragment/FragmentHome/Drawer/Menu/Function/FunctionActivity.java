@@ -37,6 +37,7 @@ public class FunctionActivity extends AppCompatActivity implements View.OnClickL
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
                 break;
 
+                //닉네임 만들기
             case R.id.layout_function_nickname:
                 Intent intent = new Intent(this, NickNameActivity.class);
                 startActivity(intent);

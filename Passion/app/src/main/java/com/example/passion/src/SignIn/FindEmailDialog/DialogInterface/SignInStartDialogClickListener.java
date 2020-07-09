@@ -1,4 +1,4 @@
-package com.example.passion.src.SignIn.SingInStart.Dialog.DialogInterface;
+package com.example.passion.src.SignIn.FindEmailDialog.DialogInterface;
 
 public interface SignInStartDialogClickListener {
 

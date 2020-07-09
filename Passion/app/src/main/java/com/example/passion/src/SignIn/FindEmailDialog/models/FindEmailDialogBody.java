@@ -1,8 +1,8 @@
-package com.example.passion.src.SignIn.SingInStart.Dialog.models;
+package com.example.passion.src.SignIn.FindEmailDialog.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SignInStartDialogBody {
+public class FindEmailDialogBody {
     @SerializedName("nickname")
     private String nickname;
 
