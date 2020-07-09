@@ -59,8 +59,8 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
         //<설명> ApplicationClass의 sSharedPreferences 를 이용한 헤더에 jwt 저장
 
         ApplicationClass.X_ACCESS_TOKEN=jwt;
-//        sSharedPreferences = getSharedPreferences("sSpf", MODE_PRIVATE);
-//        SharedPreferences.Editor editor = sSharedPreferences.edit();
+//        SharedPreferences sharedPreferences = getSharedPreferences("sSpf", MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
 //        editor.putString(ApplicationClass.X_ACCESS_TOKEN, jwt);//헤더에 jwt 토큰값 넣는 부분!!!!
 //        editor.apply();
 

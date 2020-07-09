@@ -15,21 +15,32 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
-import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.RecycleMenuDialog.OptionDialog;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.RecycleMenuDialog.RecycleMenuDialog;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.interfaces.CustomDialogClickListener;
 import com.example.passion.src.Timer.TimerMainActivity;
 
 import java.util.ArrayList;
 
-public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapter.CustomViewHolder> implements View.OnClickListener {
+public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapter.CustomViewHolder> {
 
     private String mSubject;
-
     private ArrayList<FragmentHomeData> dataArrayList;
+    private OnItemClickListener mListener;
 
     public FragmentHomeAdapter(ArrayList<FragmentHomeData> dataArrayList) {
         this.dataArrayList = dataArrayList;
     }
+
+    public interface OnItemClickListener {
+        void onItemClick(View v, int pos);
+
+
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener;
+    }
+
 
     @NonNull
     @Override
@@ -38,6 +49,7 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapte
         CustomViewHolder holder = new CustomViewHolder(view);
         return holder;
     }
+
 
     //리스트뷰 초기화
     public class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -65,11 +77,30 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapte
         holder.tvTime.setText(dataArrayList.get(position).getTvTime());
         holder.ivMenu.setImageResource(dataArrayList.get(position).getIvMenu());
 
-        //리스트뷰 인덱스
-        mSubject = dataArrayList.get(position).getTvSubject();
-
         //메뉴 클릭
-        holder.ivMenu.setOnClickListener(this);
+        holder.ivMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSubject = dataArrayList.get(holder.getAdapterPosition()).getTvSubject(); //리스트뷰 제목 넘기기
+
+                //클릭시 커스텀 다이얼로그 화면이 나옵니다.
+                RecycleMenuDialog recycleMenuDialog = new RecycleMenuDialog(v.getContext(), new CustomDialogClickListener() {
+                    @Override
+                    public void onPositiveClick() {
+
+                    }
+
+                    @Override
+                    public void onNegativeClick() {
+
+                    }
+                }, mSubject);//제목을 넘겨받는다
+                recycleMenuDialog.setCancelable(true);
+                recycleMenuDialog.setCanceledOnTouchOutside(true);
+                recycleMenuDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+                recycleMenuDialog.show();
+            }
+        });
 
         //리스트뷰 클릭
         holder.itemView.setTag(position);
@@ -94,32 +125,6 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapte
     @Override
     public int getItemCount() {
         return (null != dataArrayList ? dataArrayList.size() : 0);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.iv_item_menu:
-                //클릭시 커스텀 다이얼로그 화면이 나옵니다.
-                OptionDialog optionDialog = new OptionDialog(v.getContext(), new CustomDialogClickListener() {
-                    @Override
-                    public void onPositiveClick() {
-
-                    }
-
-                    @Override
-                    public void onNegativeClick() {
-
-                    }
-                }, mSubject);//제목을 넘겨받는다
-                optionDialog.setCancelable(true);
-                optionDialog.setCanceledOnTouchOutside(true);
-                optionDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
-                optionDialog.show();
-                break;
-
-
-        }
     }
 
 

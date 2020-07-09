@@ -54,6 +54,7 @@ public class FragmentHome extends Fragment implements FragmentHomeActivityView, 
     private TextView mTvStatus, mTvNickname;
     private FragmentHomeService mFragmentHomeService;
     private FragmentHomeData fragmentHomeData;
+    private TextView mAllTime;
 
 
     private void getSubject() {
@@ -71,18 +72,13 @@ public class FragmentHome extends Fragment implements FragmentHomeActivityView, 
             mArrayList.add(fragmentHomeData);
         }
         mFragmentHomeAdapter.notifyDataSetChanged();
+        mAllTime.setText(fragmentHomeResponse.getTotal());
 
-
-//        fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, "토익", "00:00:00", R.drawable.ic_more);//시간 변경하기
-//        fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, "영어", "00:00:00", R.drawable.ic_more);//시간 변경하기
-//        fragmentHomeData = new FragmentHomeData(R.drawable.ic_play, "개발", "00:00:00", R.drawable.ic_more);//시간 변경하기
-//        mArrayList.add(fragmentHomeData);
-//        mFragmentHomeAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void fragmentHomeFailure(String message) {
-        Toast.makeText(getContext(), "네트워크 통신의 오류가 존재합니다. FragmentHome"+message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "네트워크 통신의 오류가 존재합니다. FragmentHome" + message, Toast.LENGTH_SHORT).show();
     }
 
     @Nullable
@@ -99,8 +95,13 @@ public class FragmentHome extends Fragment implements FragmentHomeActivityView, 
         mFragmentHomeAdapter = new FragmentHomeAdapter(mArrayList);//어뎁터
         recyclerView.setAdapter(mFragmentHomeAdapter);//리사이클러뷰 어뎁터 세팅
 
+
+//        mFragmentHomeAdapter=new FragmentHomeAdapter(getActivity(),mArrayList,new FragmentHomeAdapter())
         //네트워크 통신을 위한 세팅
         mFragmentHomeService = new FragmentHomeService(this);
+
+        //총 공부시간
+        mAllTime = viewGroup.findViewById(R.id.tv_main_time);
 
 
         //네비게이션 드로어
@@ -153,6 +154,7 @@ public class FragmentHome extends Fragment implements FragmentHomeActivityView, 
         //과목 불러오기 : 저장된 과목을 조회하여 들어왔는지 확인
         getSubject();
 
+
         return viewGroup;//화면
     }
 
@@ -166,6 +168,13 @@ public class FragmentHome extends Fragment implements FragmentHomeActivityView, 
         if (getSpfMessage != null) {
             mTvStatus.setText(getSpfMessage);
         }
+
+
+
+
+        //수정, 삭제가 되면 홈화면에서 데이터 업데이트를 진행한다.
+//        mFragmentHomeAdapter.notifyDataSetChanged();
+
 
 
     }

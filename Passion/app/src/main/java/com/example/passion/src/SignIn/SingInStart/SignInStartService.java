@@ -1,5 +1,10 @@
 package com.example.passion.src.SignIn.SingInStart;
 
+import android.content.SharedPreferences;
+
+import androidx.core.app.ActivityCompat;
+
+import com.example.passion.src.ApplicationClass;
 import com.example.passion.src.SignIn.SingInStart.interfaces.SignInStartActivityView;
 import com.example.passion.src.SignIn.SingInStart.interfaces.SignInStartRetrofitInterface;
 import com.example.passion.src.SignIn.SingInStart.models.SignInStartResponse;
@@ -27,7 +32,7 @@ public class SignInStartService {
         hashMap.put("email", email);
         hashMap.put("password", password);
 
-        signInStartRetrofitInterface.signInStart(hashMap).enqueue(new Callback<SignInStartResponse>() {
+        signInStartRetrofitInterface.signInStart(ApplicationClass.X_ACCESS_TOKEN,hashMap).enqueue(new Callback<SignInStartResponse>() {
             //성공시 도는 화면
             @Override
             public void onResponse(Call<SignInStartResponse> call, Response<SignInStartResponse> response) {

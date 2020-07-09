@@ -2,15 +2,7 @@ package com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.Rec
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class FragmentHomeResponse {
-    @SerializedName("total")
-    private String total;
-
-    @SerializedName("subjectTime")
-    private List<SubjectTime> subjectTime;
-
+public class RecycleMenuDialogResponse {
     @SerializedName("isSuccess")
     private boolean isSuccess;
 
@@ -19,14 +11,6 @@ public class FragmentHomeResponse {
 
     @SerializedName("message")
     private String message;
-
-    public String getTotal() {
-        return total;
-    }
-
-    public List<SubjectTime> getSubjectTime() {
-        return subjectTime;
-    }
 
     public boolean isSuccess() {
         return isSuccess;

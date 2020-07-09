@@ -137,7 +137,6 @@ public class TimerMainActivity extends AppCompatActivity{
             //onPause의 플래그
             mFlag = true;
         }
-
     }
 
     @Override
@@ -147,8 +146,14 @@ public class TimerMainActivity extends AppCompatActivity{
         mTimeSaveSubject = mChronometerSubject.getBase() - SystemClock.elapsedRealtime();
         SharedPreferences spf = getSharedPreferences("saveTime",MODE_PRIVATE);
         SharedPreferences.Editor editor = spf.edit();
-        editor.putLong("mTimeSaveMain",mTimeSaveMain);
+
+        String check = String.valueOf(mTimeSaveMain);
+        editor.putString("strTimeSaveMain",check);
+
+        editor.putLong("mTimeSaveMain",mTimeSaveMain);//총시간
         editor.putLong("mTimeSaveSubject",mTimeSaveSubject);
+
+
         editor.commit();
     }
 
@@ -158,5 +163,4 @@ public class TimerMainActivity extends AppCompatActivity{
         finish();
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);//애니메이션
     }
-
 }
