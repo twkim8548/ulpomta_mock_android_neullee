@@ -1,8 +1,9 @@
 package com.example.passion.src.SignUp.Email.interfaces;
 
-import com.example.passion.src.SignUp.Email.models.DefaultResponse;
+import com.example.passion.src.SignUp.Email.models.SignupEmailResponse;
 
-import okhttp3.RequestBody;
+import java.util.HashMap;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -10,5 +11,5 @@ import retrofit2.http.POST;
 public interface SignUpEmailRetrofitInterface {
 
     @POST("/signup")
-    Call<DefaultResponse> signUpEmail (@Body RequestBody params);
+    Call<SignupEmailResponse> signUpEmail (@Body HashMap<String, Object> hashMap);
 }

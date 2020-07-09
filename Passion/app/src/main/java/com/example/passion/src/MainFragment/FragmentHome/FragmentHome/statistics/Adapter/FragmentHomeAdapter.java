@@ -1,4 +1,4 @@
-package com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics;
+package com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,20 +15,44 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.passion.R;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.Adapter.interfaces.FragmentHomeAdapterActivityView;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.FragmentHomeData;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.RecycleMenuDialog.RecycleMenuDialog;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.interfaces.CustomDialogClickListener;
 import com.example.passion.src.Timer.TimerMainActivity;
 
 import java.util.ArrayList;
 
-public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapter.CustomViewHolder> {
+public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapter.CustomViewHolder> implements FragmentHomeAdapterActivityView {
 
     private String mSubject;
     private ArrayList<FragmentHomeData> dataArrayList;
     private OnItemClickListener mListener;
+    private FragmentHomeAdapterService fragmentHomeAdapterService;
+    private Context context;
 
     public FragmentHomeAdapter(ArrayList<FragmentHomeData> dataArrayList) {
         this.dataArrayList = dataArrayList;
+    }
+
+    private void getSubject(int subjectId) {
+        fragmentHomeAdapterService = new FragmentHomeAdapterService(this);
+        fragmentHomeAdapterService.getSubject(subjectId);
+    }
+
+
+    @Override
+    public void fragmentHomeAdapterSuccess(int code) {
+//        Toast.makeText(context, "FragmentHomeAdapter 성공화면", Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    @Override
+    public void fragmentHomeAdapterFailure(String message) {
+//        Toast.makeText(context, "FragmentHomeAdapter 실패화면", Toast.LENGTH_SHORT).show();
+
+
     }
 
     public interface OnItemClickListener {
@@ -113,6 +137,8 @@ public class FragmentHomeAdapter extends RecyclerView.Adapter<FragmentHomeAdapte
                 SharedPreferences.Editor editor = spf.edit();
                 editor.putInt("position", position);
                 editor.commit();
+
+                getSubject(position);
 
                 //클릭시 카운트 화면으로 넘어간다
                 Intent intent = new Intent(v.getContext(), TimerMainActivity.class);

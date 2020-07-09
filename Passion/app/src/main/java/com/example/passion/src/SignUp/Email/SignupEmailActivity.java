@@ -6,20 +6,53 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
 import com.example.passion.R;
 import com.example.passion.src.BaseActivity;
-import com.example.passion.src.MainFragment.FragmentHome.AddSubject.interfaces.AddSubjectActivityView;
+import com.example.passion.src.SignUp.Email.interfaces.SignUpEmailActivityView;
 
-public class SignupEmailActivity extends BaseActivity implements AddSubjectActivityView, View.OnClickListener {
+public class SignupEmailActivity extends BaseActivity implements SignUpEmailActivityView, View.OnClickListener {
 
 
     private EditText mEnterEmail, mEnterPw, mEnterCheckPw;//입력 : 이메일,비밀번호, 비밀번호 확인
     private String mStrEmail, mStrPw, mStrPwCheck;//유효성 검사를 위한 String 멤버변수
+    private SignUpEmailService signUpEmailService;
+
+    private void postSignUpEmail() {
+        showCustomProgressDialog();
+        signUpEmailService.postSignUpEmail(mStrEmail,mStrPwCheck);
+    }
+
+    @Override
+    public void signUpEmailSuccess(String message) {
+        hideCustomProgressDialog();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("열품타 회원가입").setMessage(message);
+        builder.setPositiveButton("학인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
+
+    @Override
+    public void signUpEmailFailure(String message) {
+        hideCustomProgressDialog();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("열품타 회원가입").setMessage(message);
+        builder.setPositiveButton("학인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,6 +62,7 @@ public class SignupEmailActivity extends BaseActivity implements AddSubjectActiv
         ivBack.setOnClickListener(this);//'<' 뒤로가기
         Button btnLogin = findViewById(R.id.btn_sign_up_login);//로그인
         btnLogin.setOnClickListener(this);//로그인
+        signUpEmailService = new SignUpEmailService(this);
 //        EditText mEnterEmail = findViewById(R.id.et_sign_up_enter_email);//이메일 입력
 //        EditText mEnterPw = findViewById(R.id.et_sign_up_enter_pw);//이메일 입력
 //        EditText mEnterCheckPw = findViewById(R.id.et_sign_up_enter_check_pw);//이메일 입력
@@ -82,9 +116,10 @@ public class SignupEmailActivity extends BaseActivity implements AddSubjectActiv
                 //      서버 입장 : 회원가입 API 생성이 어렵다.
                 //      클라 입장 : 해당 API 생성이 어렵다면 클라 자체적으로 유효성 검사로 이메일 보낸것처럼 알럿만 띄우겠다.
                 else {
-                    Toast.makeText(this, "API통신을 작업해야합니다. 없으면 알럿창으로만 대체할 예정입니다.", Toast.LENGTH_SHORT).show();
-                    String message = mStrEmail + "으로 발송된 메일의 링크를 클릭하여 열품타 계정 만들기를 완료해주세요. \n\nPlease click on the lick in the email sent to\n" + mStrEmail + "\nto complete your account creation.";
-                    sendAlertDialog(message);
+//                    Toast.makeText(this, "API통신을 작업해야합니다. 없으면 알럿창으로만 대체할 예정입니다.", Toast.LENGTH_SHORT).show();
+//                    String message = mStrEmail + "으로 발송된 메일의 링크를 클릭하여 열품타 계정 만들기를 완료해주세요. \n\nPlease click on the lick in the email sent to\n" + mStrEmail + "\nto complete your account creation.";
+//                    sendAlertDialog(message);
+                    postSignUpEmail();
 
                     break;
                 }
@@ -114,14 +149,6 @@ public class SignupEmailActivity extends BaseActivity implements AddSubjectActiv
         builder.show();
     }
 
-    //API통신 없을 수도 있음
-    @Override
-    public void addSubjectFailure(String message) {
 
-    }
 
-    @Override
-    public void addSubjectSuccess(String message) {
-
-    }
 }

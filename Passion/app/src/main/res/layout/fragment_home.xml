@@ -149,9 +149,8 @@
                             android:layout_width="15dp"
                             android:layout_height="15dp"
                             android:layout_gravity="center_vertical"
-                            android:src="@drawable/ic_alarm_on" />
+                            android:src="@drawable/ic_timer_off" />
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <!--리스트뷰-->

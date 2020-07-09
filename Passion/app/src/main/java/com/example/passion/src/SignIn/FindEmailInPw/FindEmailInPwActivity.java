@@ -2,16 +2,19 @@ package com.example.passion.src.SignIn.FindEmailInPw;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import com.example.passion.R;
 import com.example.passion.src.BaseActivity;
+import com.example.passion.src.SignIn.FindEmailInPw.SendEmail.SendEmailActivity;
 import com.example.passion.src.SignIn.FindEmailInPw.interfaces.FindEmailInPwActivityView;
 
 public class FindEmailInPwActivity extends BaseActivity implements FindEmailInPwActivityView, View.OnClickListener {
@@ -37,27 +40,42 @@ public class FindEmailInPwActivity extends BaseActivity implements FindEmailInPw
         mFindEmailInPwService = new FindEmailInPwService(this);
     }
 
-    private void getFindEmailInPw() {
+    private void getFindEmailInPw(String email) {
+        showCustomProgressDialog();
         //입력한 이메일을 서비스에 넣어준다
-        mFindEmailInPwService.getFindEmailInPw(mStrEmail);
-    }
-
-
-    @Override
-    public void findEmailInPwFailure(String message) {
-        hideCustomProgressDialog();
-        showCustomToast(message == null || message.isEmpty() ? getString(R.string.network_error) : message);//네트워크 오류
+        mFindEmailInPwService.getFindEmailInPw(email);
     }
 
     @Override
-    public void findEmailInPwSuccess(String message) {
+    public void FindEmailPwSuccess(String message) {
+        Toast.makeText(this, "성공화면", Toast.LENGTH_SHORT).show();
         hideCustomProgressDialog();
-
-        //이메일 인증에 성공하면 비밀번호 재성정 화면으로 넘어간다
-        //레이아웃을 아직 안만들었음
-        //api 완성되면 레이아웃 만들기
-
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("이메일계정확인").setMessage(message);
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(), SendEmailActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+    @Override
+    public void FindEmailPwFailure(String message) {
+        Toast.makeText(this, "실패화면", Toast.LENGTH_SHORT).show();
+
+        hideCustomProgressDialog();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("이메일계정확인").setMessage(message);
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -82,12 +100,9 @@ public class FindEmailInPwActivity extends BaseActivity implements FindEmailInPw
                 //<기능> email의 유효성 검사를 알럿창을 통해 보여준다
                 //<설명> 이메일 유효성검사 true & 입력한 글자 수가 1글자 이상
                 if (email.matches(emailValidation)) {
-                    //<기능> 네트워크 통신
-                    showCustomToast("API를 만드는 중입니다.");
-//                    getFindEmailInPw(); -> 구현되면 //해제하기
+                    getFindEmailInPw(email);
                     break;
-                }
-                if (!(email.matches(emailValidation))) {
+                } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                     builder.setTitle(Title);
                     builder.setMessage(Contents);
@@ -100,8 +115,6 @@ public class FindEmailInPwActivity extends BaseActivity implements FindEmailInPw
                     builder.show();
                     break;
                 }
-
-
         }
     }
 

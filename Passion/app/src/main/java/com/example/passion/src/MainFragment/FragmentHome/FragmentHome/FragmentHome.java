@@ -33,9 +33,10 @@ import com.example.passion.src.MainFragment.FragmentHome.Drawer.Menu.Function.Fu
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.interfaces.FragmentHomeActivityView;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.models.FragmentHomeResponse;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.models.SubjectTime;
-import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.FragmentHomeAdapter;
+import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.Adapter.FragmentHomeAdapter;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHome.statistics.FragmentHomeData;
 import com.example.passion.src.MainFragment.FragmentHome.FragmentHomeDialog.FragmentHomeInfoDialog;
+import com.example.passion.src.MainFragment.FragmentHome.NumPicker.NumberPickerActivity;
 import com.example.passion.src.MainFragment.FragmentHome.ToolBar.Ddays.DdaysActivity;
 import com.example.passion.src.MainFragment.FragmentHome.ToolBar.PhoneLock.PhoneLock;
 import com.example.passion.src.MainFragment.FragmentHome.ToolBar.StudyPlanner.StudyPlanner;
@@ -72,7 +73,7 @@ public class FragmentHome extends Fragment implements FragmentHomeActivityView, 
             mArrayList.add(fragmentHomeData);
         }
         mFragmentHomeAdapter.notifyDataSetChanged();
-        mAllTime.setText(fragmentHomeResponse.getTotal());
+
 
     }
 
@@ -151,8 +152,16 @@ public class FragmentHome extends Fragment implements FragmentHomeActivityView, 
         ImageView drawableMenu = viewGroup.findViewById(R.id.iv_main_menu);
         drawableMenu.setOnClickListener(this);
 
+        //휴식알림 설정
+        ImageView ivAlarm = viewGroup.findViewById(R.id.iv_main_timerOff);
+        ivAlarm.setOnClickListener(this);
+
         //과목 불러오기 : 저장된 과목을 조회하여 들어왔는지 확인
         getSubject();
+
+
+        //수정, 삭제가 되면 홈화면에서 데이터 업데이트를 진행한다.
+        mFragmentHomeAdapter.notifyDataSetChanged();
 
 
         return viewGroup;//화면
@@ -169,14 +178,13 @@ public class FragmentHome extends Fragment implements FragmentHomeActivityView, 
             mTvStatus.setText(getSpfMessage);
         }
 
+        //시간 불러오기
+        SharedPreferences spf2 = getContext().getSharedPreferences("saveTime", Context.MODE_PRIVATE);
+        String str = spf2.getString("df","00:00:00");
 
-
-
-        //수정, 삭제가 되면 홈화면에서 데이터 업데이트를 진행한다.
-//        mFragmentHomeAdapter.notifyDataSetChanged();
-
-
-
+        if (str != null) {
+            mAllTime.setText(str);
+        }
     }
 
     @Override
@@ -230,6 +238,17 @@ public class FragmentHome extends Fragment implements FragmentHomeActivityView, 
                 Intent intent4 = new Intent(getContext(), StatusMessage.class);
                 startActivity(intent4);
                 getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+                break;
+
+            case R.id.iv_main_timerOff:
+                NumberPickerActivity numberPicker = new NumberPickerActivity(v.getContext());
+                numberPicker.show();
+                numberPicker.setCancelable(true);
+                numberPicker.setCanceledOnTouchOutside(true);
+
+//                Intent intent5 = new Intent(getContext(), NumberPickerActivity.class);
+//                startActivity(intent5);
+//                getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                 break;
 
             default:

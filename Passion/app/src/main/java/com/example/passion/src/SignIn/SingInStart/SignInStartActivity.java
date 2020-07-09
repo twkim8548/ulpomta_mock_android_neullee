@@ -3,6 +3,7 @@ package com.example.passion.src.SignIn.SingInStart;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,8 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
     private EditText mEtEmail, mEtPW;//입력 : 이메일 / 비밀번호
     private String mStrEmail, mStrPW;//저장 : 이메일 / 비밀번호
     private SignInStartService mSignInStartService;//전역변수 : 서비스
+    String emailMessage = "인증되지 않은 이메일주소입니다. 다시 입력해주세요";
+    String pwMessage = "비밀번호가 일치하지 않습니다. 다시 확인해주세요";
 
 
     @Override
@@ -59,10 +62,11 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
         //<설명> ApplicationClass의 sSharedPreferences 를 이용한 헤더에 jwt 저장
 
         ApplicationClass.X_ACCESS_TOKEN=jwt;
-//        SharedPreferences sharedPreferences = getSharedPreferences("sSpf", MODE_PRIVATE);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.putString(ApplicationClass.X_ACCESS_TOKEN, jwt);//헤더에 jwt 토큰값 넣는 부분!!!!
-//        editor.apply();
+        
+        SharedPreferences sharedPreferences = getSharedPreferences("sSpf", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(ApplicationClass.X_ACCESS_TOKEN, jwt);//헤더에 jwt 토큰값 넣는 부분!!!!
+        editor.apply();
 
         Intent intent = new Intent(SignInStartActivity.this, FragmentStartActivity.class);
         startActivity(intent);
@@ -108,8 +112,7 @@ public class SignInStartActivity extends BaseActivity implements SignInStartActi
                 //<설명> 다이얼로그 메세지 창
                 //<수정> 실제 앱 : 인증되지 않은 이메일주소입니다. 메일 수신함에서 인증링크를 클릭해주세요
                 //      -> 로그인에 맞지 않은 문구이기 때문에 클라에서 자체로 문구를 변경
-                String emailMessage = "인증되지 않은 이메일주소입니다. 다시 입력해주세요";
-                String pwMessage = "비밀번호가 일치하지 않습니다. 다시 확인해주세요";
+
                 if (!(mStrEmail.matches(emailValidation))) {//<기능>이메일 형식이 안맞을때
                     signInAlertDialog(emailMessage);
                     break;

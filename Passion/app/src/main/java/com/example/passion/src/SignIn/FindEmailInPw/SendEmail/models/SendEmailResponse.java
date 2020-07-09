@@ -1,16 +1,21 @@
-package com.example.passion.src.SignUp.Email.models;
+package com.example.passion.src.SignIn.FindEmailInPw.SendEmail.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DefaultResponse {
+public class SendEmailResponse {
+
+    @SerializedName("isSuccess")
+    private boolean isSuccess;
+
     @SerializedName("code")
     private int code;
 
     @SerializedName("message")
     private String message;
 
-    @SerializedName("isSuccess")
-    private boolean isSuccess;
+    public boolean isSuccess() {
+        return isSuccess;
+    }
 
     public int getCode() {
         return code;
@@ -18,9 +23,5 @@ public class DefaultResponse {
 
     public String getMessage() {
         return message;
-    }
-
-    public boolean getIsSuccess() {
-        return isSuccess;
     }
 }

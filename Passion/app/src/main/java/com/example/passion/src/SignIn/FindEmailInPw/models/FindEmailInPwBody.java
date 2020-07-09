@@ -8,7 +8,7 @@ public class FindEmailInPwBody {
     @SerializedName("email")
     private String email;
 
-    public FindEmailInPwBody(String email) {
-        this.email = email;
+    public String getEmail() {
+        return email;
     }
 }

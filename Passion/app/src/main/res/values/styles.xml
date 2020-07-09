@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <!--    Theme.AppCompat.Light.NoActionBar-->
@@ -63,5 +63,16 @@
         <item name="android:windowNoTitle">true</item>
         <item name="windowNoTitle" tools:ignore="DuplicateDefinition">true</item>
     </style>
+
+    <!--    <activity android:name=".SenEmailActivity"-->
+    <!--        android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"/>-->
+    <style name="numberPickerCustomSize">
+        <!--Display textSize-->
+        <item name="android:textSize">30dp</item>
+        <!--Display textColor-->
+        <item name="android:editTextColor">@color/colorBlue</item>
+        <item name="colorControlNormal">@color/transparent</item>
+    </style>
+
 
 </resources>

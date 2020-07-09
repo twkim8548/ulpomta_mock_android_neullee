@@ -17,6 +17,10 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
+        <activity android:name=".src.MainFragment.FragmentHome.NumPicker.NumberPickerActivity"></activity>
+        <activity android:name=".src.SignIn.FindEmailInPw.SendEmail.CheckMessageTwo.MessageActivity" />
+        <activity android:name=".src.SignIn.FindEmailInPw.SendEmail.CheckMessageOne.CheckActivity" />
+        <activity android:name=".src.SignIn.FindEmailInPw.SendEmail.SendEmailActivity" />
         <activity android:name=".src.MainFragment.FragmentHome.Drawer.Menu.Function.Nickname.NickNameActivity" />
         <activity android:name=".src.MainFragment.FragmentHome.Drawer.Menu.Function.FunctionActivity" />
         <activity android:name=".src.MainFragment.FragmentHome.ToolBar.StudyPlanner.StudyPlanner" />
@@ -36,21 +40,14 @@
         </activity>
         <activity android:name=".src.SignUp.SignUpStart.SignUpStartActivity" />
         <activity android:name=".src.SignUp.Email.SignupEmailActivity" />
-        <activity android:name=".src.SignIn.FindEmailInPw.FindEmailInPwActivity"></activity>
+        <activity android:name=".src.SignIn.FindEmailInPw.FindEmailInPwActivity" />
         <activity android:name=".src.MainFragment.FragmentHome.AddSubject.AddSubjectActivity" />
-        <activity android:name=".src.MainFragment.FragmentStartActivity.FragmentStartActivity">
-
-
-
-        </activity>
-        <activity android:name=".src.SignIn.SingInStart.SignInStartActivity">
-
-        </activity>
+        <activity android:name=".src.MainFragment.FragmentStartActivity.FragmentStartActivity" />
+        <activity android:name=".src.SignIn.SingInStart.SignInStartActivity" />
         <activity android:name=".src.SignIn.StartActivity" />
         <activity
             android:name=".src.SignIn.FindEmailDialog.FindEmailDialogActivity"
-            android:theme="@style/Transparent"
-             />
+            android:theme="@style/Transparent" />
     </application>
 
 </manifest>

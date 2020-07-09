@@ -175,8 +175,8 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/ic_graph"
                     android:tint="@color/colorOrange" />
@@ -184,22 +184,24 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:text="@string/subjectStudy"
-                    android:textColor="@color/colorBlack" />
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <!--하단의 그래프 등 자료 넣기    -->
-<!--            <org.eazegraph.lib.charts.BarChart xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--                android:id="@+id/bar_chart_fragment_calender_day"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginHorizontal="40dp"-->
-<!--                android:padding="20dp"-->
-<!--                app:egBarWidth="20dp"-->
-<!--                app:egEnableScroll="true"-->
-<!--                app:egFixedBarWidth="true"-->
-<!--                app:egLegendHeight="40dp"-->
-<!--                app:egShowDecimal="true" />-->
+            <!--            <org.eazegraph.lib.charts.BarChart xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--                android:id="@+id/bar_chart_fragment_calender_day"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginHorizontal="40dp"-->
+            <!--                android:padding="20dp"-->
+            <!--                app:egBarWidth="20dp"-->
+            <!--                app:egEnableScroll="true"-->
+            <!--                app:egFixedBarWidth="true"-->
+            <!--                app:egLegendHeight="40dp"-->
+            <!--                app:egShowDecimal="true" />-->
 
             <org.eazegraph.lib.charts.VerticalBarChart
                 android:id="@+id/vertical_bar_chart_calender_day"
@@ -217,21 +219,43 @@
                 app:egLegendHeight="40dp"
                 app:egShowDecimal="true" />
 
+            <!--과목별 공부량-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="30dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_graph"
+                    android:tint="@color/colorOrange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="공부/휴식 비율"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp" />
+            </LinearLayout>
 
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/pie_chart_fragment_calender_day"
-                android:layout_marginHorizontal="40dp"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="300dp"
+                android:layout_marginHorizontal="40dp" />
 
-            <com.github.mikephil.charting.charts.HorizontalBarChart
-                android:id="@+id/horizontal_bar_chart_fragment_calender_day"
-                android:layout_width="match_parent"
-                android:layout_height="1000dp"
-                android:layout_marginHorizontal="40dp"
-                />
+            <!--            <com.github.mikephil.charting.charts.HorizontalBarChart-->
+            <!--                android:id="@+id/horizontal_bar_chart_fragment_calender_day"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="1000dp"-->
+            <!--                android:layout_marginHorizontal="40dp"-->
+            <!--                />-->
 
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

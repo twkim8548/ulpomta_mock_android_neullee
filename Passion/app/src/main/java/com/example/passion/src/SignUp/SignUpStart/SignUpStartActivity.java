@@ -7,14 +7,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.passion.R;
+import com.example.passion.src.BaseActivity;
 import com.example.passion.src.SignIn.SingInStart.SignInStartActivity;
 import com.example.passion.src.SignUp.Email.SignupEmailActivity;
 
-public class SignUpStartActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class SignUpStartActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +26,7 @@ public class SignUpStartActivity extends AppCompatActivity implements View.OnCli
         Button signUpEmail = findViewById(R.id.btn_sign_up_email);//이메일로 가입하기
         signUpEmail.setOnClickListener(this);//이메일로 가입하기
     }
+
 
     @Override
     public void onClick(View v) {
